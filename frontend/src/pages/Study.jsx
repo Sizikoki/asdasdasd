@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link, useNavigate } from 'react-router-dom';
-import { Search, BookOpen, ArrowLeft, ChevronDown, ChevronRight } from 'lucide-react';
+import { Search, BookOpen, ArrowLeft, ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,6 +19,7 @@ export const Study = () => {
   const [selectedSystem, setSelectedSystem] = useState(systemParam);
   const [expandedCategories, setExpandedCategories] = useState({ [mainCategoryParam]: true });
   const [searchQuery, setSearchQuery] = useState('');
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [filteredTerms, setFilteredTerms] = useState([]);
 
   useEffect(() => {
@@ -78,55 +79,66 @@ export const Study = () => {
   return (
     <div className="min-h-screen bg-muted/30 flex">
       {/* Left Sidebar */}
-      <div className="w-64 bg-background border-r border-border flex-shrink-0 overflow-y-auto">
-        <div className="p-4 border-b border-border">
-          <Link to="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-2">
-            <ArrowLeft className="w-4 h-4 mr-1" />
-            Ana Sayfaya Dön
-          </Link>
-          <h2 className="text-lg font-semibold mt-2">Kategoriler</h2>
-        </div>
-        <div className="p-2">
-          {mainCategories.map((mainCat) => (
-            <div key={mainCat.id} className="mb-2">
-              {/* Main Category Header */}
+      <div className={`${sidebarOpen ? 'w-64' : 'w-0'} bg-background border-r border-border flex-shrink-0 overflow-y-auto transition-all duration-300 ${!sidebarOpen && 'border-r-0'}`}>
+        <div className={`${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-300`}>
+          <div className="p-4 border-b border-border">
+            <div className="flex items-center justify-between mb-2">
+              <Link to="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground">
+                <ArrowLeft className="w-4 h-4 mr-1" />
+                Ana Sayfaya Dön
+              </Link>
               <button
-                onClick={() => handleMainCategoryToggle(mainCat.id)}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${selectedMainCategory === mainCat.id
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-foreground hover:bg-muted'
-                  }`}
+                onClick={() => setSidebarOpen(false)}
+                className="p-1 rounded-lg hover:bg-muted transition-colors"
+                aria-label="Close menu"
               >
-                <span>{mainCat.name}</span>
-                {expandedCategories[mainCat.id] ? (
-                  <ChevronDown className="w-4 h-4" />
-                ) : (
-                  <ChevronRight className="w-4 h-4" />
-                )}
+                <X className="w-5 h-5" />
               </button>
-
-              {/* Subcategories (Body Systems) */}
-              {expandedCategories[mainCat.id] && (
-                <div className="ml-3 mt-1 space-y-1">
-                  {bodySystems.map((system) => (
-                    <button
-                      key={system.id}
-                      onClick={() => {
-                        handleMainCategorySelect(mainCat.id);
-                        handleSystemChange(system.id);
-                      }}
-                      className={`w-full text-left px-3 py-1.5 rounded-lg text-sm transition-colors ${selectedMainCategory === mainCat.id && selectedSystem === system.id
-                        ? 'bg-primary text-primary-foreground'
-                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                        }`}
-                    >
-                      {system.name}
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
-          ))}
+            <h2 className="text-lg font-semibold mt-2">Kategoriler</h2>
+          </div>
+          <div className="p-2">
+            {mainCategories.map((mainCat) => (
+              <div key={mainCat.id} className="mb-2">
+                {/* Main Category Header */}
+                <button
+                  onClick={() => handleMainCategoryToggle(mainCat.id)}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${selectedMainCategory === mainCat.id
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-foreground hover:bg-muted'
+                    }`}
+                >
+                  <span>{mainCat.name}</span>
+                  {expandedCategories[mainCat.id] ? (
+                    <ChevronDown className="w-4 h-4" />
+                  ) : (
+                    <ChevronRight className="w-4 h-4" />
+                  )}
+                </button>
+
+                {/* Subcategories (Body Systems) */}
+                {expandedCategories[mainCat.id] && (
+                  <div className="ml-3 mt-1 space-y-1">
+                    {bodySystems.map((system) => (
+                      <button
+                        key={system.id}
+                        onClick={() => {
+                          handleMainCategorySelect(mainCat.id);
+                          handleSystemChange(system.id);
+                        }}
+                        className={`w-full text-left px-3 py-1.5 rounded-lg text-sm transition-colors ${selectedMainCategory === mainCat.id && selectedSystem === system.id
+                          ? 'bg-primary text-primary-foreground'
+                          : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                          }`}
+                      >
+                        {system.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -135,8 +147,19 @@ export const Study = () => {
         <div className="max-w-6xl mx-auto px-6 py-8">
           {/* Header */}
           <div className="mb-6">
-            <div className="mb-4">
-              <div>
+            <div className="mb-4 flex items-start gap-4">
+              {/* Hamburger Menu Button - Only show when sidebar is closed */}
+              {!sidebarOpen && (
+                <button
+                  onClick={() => setSidebarOpen(true)}
+                  className="p-2 rounded-lg hover:bg-muted transition-colors flex-shrink-0"
+                  aria-label="Open menu"
+                >
+                  <Menu className="w-6 h-6" />
+                </button>
+              )}
+
+              <div className="flex-1">
                 <h1 className="text-3xl font-bold">Tıbbi Terimler</h1>
                 <p className="text-muted-foreground mt-1">
                   {currentMainCategory?.name} - {currentSystem?.name}
@@ -179,13 +202,13 @@ export const Study = () => {
                   </div>
 
                   {/* Terms Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="flex flex-wrap gap-4">
                     {subcatData.terms.map((term) => {
                       const progress = getTermProgress(term.id);
                       return (
                         <Card
                           key={term.id}
-                          className={`transition-all hover:shadow-md ${progress.learned ? 'border-success bg-success/5' : ''
+                          className={`w-[280px] transition-all hover:shadow-md ${progress.learned ? 'border-success bg-success/5' : ''
                             }`}
                         >
                           <CardContent className="p-4">
