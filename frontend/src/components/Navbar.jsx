@@ -33,10 +33,10 @@ export const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-md border-b border-border shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
+          {/* Logo - Always stays left */}
+          <Link to="/" className="flex items-center space-x-2 group flex-shrink-0">
             <div className="p-2 bg-primary rounded-lg shadow-md group-hover:shadow-glow transition-all">
               <Activity className="w-6 h-6 text-primary-foreground" />
             </div>
@@ -45,15 +45,15 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-1 flex-1 justify-center max-w-2xl mx-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`px-4 py-2 rounded-lg font-medium transition-all ${isActive(link.path)
-                    ? 'bg-primary text-primary-foreground shadow-md'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  ? 'bg-primary text-primary-foreground shadow-md'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                   }`}
               >
                 {link.label}
@@ -61,8 +61,8 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* User Menu / Auth Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* User Menu / Auth Buttons - Always stays right */}
+          <div className="hidden md:flex items-center space-x-3 flex-shrink-0">
             {loggedIn ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -118,8 +118,8 @@ export const Navbar = () => {
                 to={link.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 rounded-lg font-medium transition-all ${isActive(link.path)
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:bg-muted'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:bg-muted'
                   }`}
               >
                 {link.label}
