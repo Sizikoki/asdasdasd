@@ -1,5 +1,23 @@
 // Medical Terminology Data - Extracted from PDFs
 
+// Body Systems for sidebar navigation
+export const bodySystems = [
+  { id: 'movement', name: 'Hareket Sistemi' },
+  { id: 'respiratory', name: 'Solunum Sistemi' },
+  { id: 'skin', name: 'Deri Sistemi' },
+  { id: 'circulatory', name: 'Dolaşım Sistemi' },
+  { id: 'sensory', name: 'Duyu Organları' },
+  { id: 'endocrine', name: 'Endokrin Sistemi' },
+  { id: 'pharmacology', name: 'Farmakoloji' },
+  { id: 'general', name: 'Genel Terimler' },
+  { id: 'blood', name: 'Kan ve Bağışıklık' },
+  { id: 'oncology', name: 'Onkoloji' },
+  { id: 'radiology', name: 'Radyoloji' },
+  { id: 'digestive', name: 'Sindirim Sistemi' },
+  { id: 'urinary', name: 'Üriner Sistem' }
+];
+
+// Legacy categories for backward compatibility
 export const categories = [
   { id: 'anatomy', name: 'Anatomik Terimler', icon: 'Bone', color: 'primary' },
   { id: 'surgery', name: 'Ameliyat Terimleri', icon: 'Scissors', color: 'secondary' },
@@ -7,13 +25,58 @@ export const categories = [
   { id: 'pathology', name: 'Semptomlar ve Patoloji', icon: 'Activity', color: 'success' }
 ];
 
+// Subcategories organized by body system
+export const subcategoriesBySystem = {
+  movement: [
+    { id: 'anatomy', name: 'Anatomi' },
+    { id: 'support', name: 'Destek Dokuları' },
+    { id: 'joints', name: 'Eklemler & Hareket' }
+  ],
+  respiratory: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ],
+  skin: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ],
+  circulatory: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ],
+  sensory: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ],
+  endocrine: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ],
+  pharmacology: [
+    { id: 'general', name: 'Genel' }
+  ],
+  general: [
+    { id: 'general', name: 'Genel' }
+  ],
+  blood: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ],
+  oncology: [
+    { id: 'general', name: 'Genel' }
+  ],
+  radiology: [
+    { id: 'general', name: 'Genel' }
+  ],
+  digestive: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ],
+  urinary: [
+    { id: 'anatomy', name: 'Anatomi' }
+  ]
+};
+
 export const medicalTermsData = {
   anatomy: [
-    { id: 1, term: 'Abductor', turkish: 'Uzaklaştırıcı Kas', roots: 'ab- (uzak) + ducere (götürmek)', definition: 'Vücut parçasını orta hattan uzaklaştıran kas', category: 'anatomy' },
-    { id: 2, term: 'Acetabular', turkish: 'Asetabular, Kalça Yuvası', roots: 'acetabulum (küçük kase)', definition: 'Kalça kemiğinde femur başını alan yuva ile ilgili', category: 'anatomy' },
-    { id: 3, term: 'Acromioclavicular', turkish: 'Akromiyoklaviküler', roots: 'acromion (omuz ucu) + clavicula (köprücük kemiği)', definition: 'Kürek kemiği çıkıntısı ile köprücük kemiği arasındaki eklem', category: 'anatomy' },
-    { id: 4, term: 'Adductor', turkish: 'Yaklaştırıcı Kas', roots: 'ad- (yakın) + ducere (götürmek)', definition: 'Vücut parçasını orta hatta yaklaştıran kas', category: 'anatomy' },
-    { id: 5, term: 'Articular Cartilage', turkish: 'Eklem Kıkırdağı', roots: 'articularis (eklem) + cartilago (kıkırdak)', definition: 'Kemiklerin eklem yüzeylerini kaplayan düz doku', category: 'anatomy' },
+    { id: 1, term: 'Abductor', turkish: 'Uzaklaştırıcı Kas', roots: 'ab- (uzak) + ducere (götürmek)', definition: 'Vücut parçasını orta hattan uzaklaştıran kas', category: 'anatomy', system: 'movement', subcategory: 'anatomy' },
+    { id: 2, term: 'Acetabular', turkish: 'Asetabular, Kalça Yuvası', roots: 'acetabulum (küçük kase)', definition: 'Kalça kemiğinde femur başını alan yuva ile ilgili', category: 'anatomy', system: 'movement', subcategory: 'anatomy' },
+    { id: 3, term: 'Acromioclavicular', turkish: 'Akromiyoklaviküler', roots: 'acromion (omuz ucu) + clavicula (köprücük kemiği)', definition: 'Kürek kemiği çıkıntısı ile köprücük kemiği arasındaki eklem', category: 'anatomy', system: 'movement', subcategory: 'joints' },
+    { id: 4, term: 'Adductor', turkish: 'Yaklaştırıcı Kas', roots: 'ad- (yakın) + ducere (götürmek)', definition: 'Vücut parçasını orta hatta yaklaştıran kas', category: 'anatomy', system: 'movement', subcategory: 'anatomy' },
+    { id: 5, term: 'Articular Cartilage', turkish: 'Eklem Kıkırdağı', roots: 'articularis (eklem) + cartilago (kıkırdak)', definition: 'Kemiklerin eklem yüzeylerini kaplayan düz doku', category: 'anatomy', system: 'movement', subcategory: 'support' },
     { id: 6, term: 'Brachial', turkish: 'Brakial, Kol Kemiğine Ait', roots: 'brachium (kol)', definition: 'Omuz ile dirsek arasındaki üst kol bölgesi', category: 'anatomy' },
     { id: 7, term: 'Calcaneal', turkish: 'Kalkaneal, Topuk Kemiğine Ait', roots: 'calcaneus (topuk kemiği)', definition: 'Ayaktaki topuk kemiği ile ilgili', category: 'anatomy' },
     { id: 8, term: 'Carpal', turkish: 'Karpal, El Bileği Kemiğine Ait', roots: 'carpos (bilek)', definition: 'El bileğindeki kemikler ile ilgili', category: 'anatomy' },
@@ -92,6 +155,18 @@ export const getTermsByCategory = (categoryId) => {
   return medicalTermsData[categoryId] || [];
 };
 
+// Get terms by body system
+export const getTermsBySystem = (systemId) => {
+  const allTerms = getAllTerms();
+  return allTerms.filter(term => term.system === systemId);
+};
+
+// Get terms by system and subcategory
+export const getTermsBySubcategory = (systemId, subcategoryId) => {
+  const allTerms = getAllTerms();
+  return allTerms.filter(term => term.system === systemId && term.subcategory === subcategoryId);
+};
+
 // Get random terms for games
 export const getRandomTerms = (count = 10, categoryId = null) => {
   const terms = categoryId ? getTermsByCategory(categoryId) : getAllTerms();
@@ -103,7 +178,7 @@ export const getRandomTerms = (count = 10, categoryId = null) => {
 export const searchTerms = (query) => {
   const allTerms = getAllTerms();
   const lowerQuery = query.toLowerCase();
-  return allTerms.filter(term => 
+  return allTerms.filter(term =>
     term.term.toLowerCase().includes(lowerQuery) ||
     term.turkish.toLowerCase().includes(lowerQuery) ||
     term.definition.toLowerCase().includes(lowerQuery)
