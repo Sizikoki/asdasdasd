@@ -21,6 +21,7 @@ export const Study = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [filteredTerms, setFilteredTerms] = useState([]);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   useEffect(() => {
     if (searchQuery) {
@@ -28,14 +29,14 @@ export const Study = () => {
     } else {
       setFilteredTerms(getTermsBySystem(selectedSystem, selectedMainCategory));
     }
-  }, [selectedSystem, selectedMainCategory, searchQuery]);
+  }, [selectedSystem, selectedMainCategory, searchQuery, refreshTrigger]);
 
   const handleMarkAsLearned = (termId) => {
     const progress = getTermProgress(termId);
     const newStatus = !progress.learned;
     saveProgress(termId, newStatus);
     toast.success(newStatus ? 'Terim öğrenildi olarak işaretlendi!' : 'Öğrenildi işareti kaldırıldı');
-    setFilteredTerms([...filteredTerms]); // Force re-render
+    setRefreshTrigger(prev => prev + 1); // Force re-render by updating state
   };
 
   const handleMainCategoryToggle = (categoryId) => {
