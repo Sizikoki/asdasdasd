@@ -58,6 +58,10 @@ export const subcategoriesBySystem = {
     { id: 'anatomy', name: 'Anatomi' }
   ],
   skin: [
+    { id: 'skin_structures_lesions', name: 'Deri, Ekleri ve Lezyon Tipleri' },
+    { id: 'skin_functions_physiology', name: 'Deri İşlevleri ve Fizyolojisi' },
+    { id: 'skin_diseases_pathology', name: 'Deri Hastalıkları ve Patolojik Süreçler' },
+    { id: 'dermatologic_diagnosis_treatment', name: 'Dermatolojik Tanı ve Tedavi Yöntemleri' },
     { id: 'anatomy', name: 'Anatomi' }
   ],
   circulatory: [
@@ -69,9 +73,23 @@ export const subcategoriesBySystem = {
     { id: 'anatomy', name: 'Anatomi' }
   ],
   sensory: [
+    { id: 'eye_globe_structures', name: 'Göz Küresi ve Yardımcı Yapılar' },
+    { id: 'vision_eye_movements', name: 'Görme İşlevi ve Göz Hareketleri' },
+    { id: 'vision_loss_diseases', name: 'Görme Kaybı ve Göz Hastalıkları' },
+    { id: 'examination_surgical', name: 'Göz Muayenesi ve Cerrahi İşlemler' },
+    { id: 'ear_structures', name: 'Kulak Yapıları ve İşitme Yolu' },
+    { id: 'hearing_balance_sound', name: 'İşitme, Denge ve Ses İletimi' },
+    { id: 'hearing_loss_diseases', name: 'İşitme Kaybı ve Kulak Hastalıkları' },
+    { id: 'ear_examination_surgical', name: 'Kulak Muayenesi ve Cerrahi İşlemler' },
+    { id: 'smell_taste_structures', name: 'Koku ve Tat Alma Yapıları' },
+    { id: 'smell_taste_perception', name: 'Koku ve Tat Algısı' },
+    { id: 'smell_taste_disorders', name: 'Koku ve Tat Bozuklukları' },
     { id: 'anatomy', name: 'Anatomi' }
   ],
   endocrine: [
+    { id: 'endocrine_glands_organs', name: 'Endokrin Bezler ve Organlar' },
+    { id: 'hormones_metabolic_controls', name: 'Hormonlar ve Metabolik Kontroller' },
+    { id: 'endocrine_clinical_manifestations', name: 'Endokrin Bozuklukların Klinik Görünümleri' },
     { id: 'anatomy', name: 'Anatomi' }
   ],
   pharmacology: [
@@ -122,6 +140,10 @@ export const subcategoriesBySystem = {
   nervous: [
     { id: 'central_peripheral_structures', name: 'Merkezi ve Çevresel Sinir Yapıları' },
     { id: 'mental_sensory_functions', name: 'Zihinsel Süreçler ve Duyusal İşlevler' },
+    { id: 'motor_autonomic_functions', name: 'Motor (Hareket) ve Otonom İşlevler' },
+    { id: 'neurological_disease_mechanisms', name: 'Nörolojik Hastalık Mekanizmaları' },
+    { id: 'psychiatric_mood_disorders', name: 'Psikiyatrik Durumlar ve Duygulanım Bozuklukları' },
+    { id: 'diagnostic_interventional', name: 'Nörolojik Tanı ve Girişimsel Yöntemler' },
     { id: 'anatomy', name: 'Anatomi' }
   ]
 };
@@ -515,6 +537,252 @@ export const medicalTermsData = {
     { id: 1266, term: 'Calcul/o', turkish: 'Hesap', roots: 'calcul/o', definition: 'Hesaplama yeteneği', category: 'roots', system: 'nervous', subcategory: 'mental_sensory_functions', mainCategory: 'roots' },
     { id: 1267, term: 'Orient/o', turkish: 'Yön', roots: 'orient/o', definition: 'Yönelim, oryantasyon', category: 'roots', system: 'nervous', subcategory: 'mental_sensory_functions', mainCategory: 'roots' },
     { id: 1268, term: 'Cop/o', turkish: 'Kesilmek', roots: 'cop/o', definition: 'Kesilme, senkop', category: 'roots', system: 'nervous', subcategory: 'mental_sensory_functions', mainCategory: 'roots' },
+
+    // Motor (Hareket) ve Otonom İşlevler - Sinir Sistemi
+    { id: 1269, term: 'My/o', turkish: 'Kas', roots: 'my/o', definition: 'Kas yapısı', category: 'roots', system: 'nervous', subcategory: 'motor_autonomic_functions', mainCategory: 'roots' },
+    { id: 1270, term: 'Muscul/o', turkish: 'Kas', roots: 'muscul/o', definition: 'Kas dokusu', category: 'roots', system: 'nervous', subcategory: 'motor_autonomic_functions', mainCategory: 'roots' },
+    { id: 1271, term: 'Kines/o', turkish: 'Hareket', roots: 'kines/o', definition: 'Hareket, kinezi', category: 'roots', system: 'nervous', subcategory: 'motor_autonomic_functions', mainCategory: 'roots' },
+    { id: 1272, term: 'Troph/o', turkish: 'Beslenme', roots: 'troph/o', definition: 'Beslenme, trofi', category: 'roots', system: 'nervous', subcategory: 'motor_autonomic_functions', mainCategory: 'roots' },
+    { id: 1273, term: 'Ton/o', turkish: 'Tonus', roots: 'ton/o', definition: 'Kas tonusu', category: 'roots', system: 'nervous', subcategory: 'motor_autonomic_functions', mainCategory: 'roots' },
+
+    // Nörolojik Hastalık Mekanizmaları - Sinir Sistemi
+    { id: 1274, term: 'Paralys/o', turkish: 'Felç', roots: 'paralys/o', definition: 'Felc, paralizi', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1275, term: 'Pleg/o', turkish: 'Felç', roots: 'pleg/o', definition: 'Felc, pleji', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1276, term: 'Pals/o', turkish: 'Felç', roots: 'pals/o', definition: 'Felc, palsi', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1277, term: 'Vers/o', turkish: 'Dönmek', roots: 'vers/o', definition: 'Dönme, versiyon', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1278, term: 'Asthen/o', turkish: 'Güçsüzlük', roots: 'asthen/o', definition: 'Güçsüzlük, asteni', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1279, term: 'Epileps/o', turkish: 'Nöbet', roots: 'epileps/o', definition: 'Epilepsi nöbeti', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1280, term: 'Leps/o', turkish: 'Nöbet', roots: 'leps/o', definition: 'Nöbet, lepsi', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1281, term: 'Convuls/o', turkish: 'Kasılma', roots: 'convuls/o', definition: 'Konvülsiyon, kasılma', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1282, term: 'Tic', turkish: 'İstemsiz hareket', roots: 'tic', definition: 'Tik, istemsiz hareket', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1283, term: 'Alg/o', turkish: 'Ağrı', roots: 'alg/o', definition: 'Ağrı, alji', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1284, term: 'Phob/o', turkish: 'Korku', roots: 'phob/o', definition: 'Korku, fobi', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1285, term: 'Lus/o', turkish: 'Aldatmak (illüzyon)', roots: 'lus/o', definition: 'Yanılgı, illüzyon', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1286, term: 'Degener/o', turkish: 'Bozulma', roots: 'degener/o', definition: 'Dejenerasyon, bozulma', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1287, term: 'Myelin/o', turkish: 'Miyelin', roots: 'myelin/o', definition: 'Miyelin kılıf', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1288, term: 'Malac/o', turkish: 'Yumuşama', roots: 'malac/o', definition: 'Yumuşama, malazi', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1289, term: 'Schis/o', turkish: 'Yarılma', roots: 'schis/o', definition: 'Yarılma, şizi', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1290, term: 'Tab/o', turkish: 'Erime', roots: 'tab/o', definition: 'Erime, tabes', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1291, term: 'Angi/o', turkish: 'Damar', roots: 'angi/o', definition: 'Kan damarları', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1292, term: 'Hemorrhag/o', turkish: 'Kanama', roots: 'hemorrhag/o', definition: 'Kanama, hemoraj', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1293, term: 'Hemat/o', turkish: 'Kan', roots: 'hemat/o', definition: 'Kan, hematom', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1294, term: 'Compress/o', turkish: 'Bası', roots: 'compress/o', definition: 'Bası, kompresyon', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+    { id: 1295, term: 'Tens/o', turkish: 'Basınç', roots: 'tens/o', definition: 'Basınç, tansiyon', category: 'roots', system: 'nervous', subcategory: 'neurological_disease_mechanisms', mainCategory: 'roots' },
+
+    // Psikiyatrik Durumlar ve Duygulanım Bozuklukları - Sinir Sistemi
+    { id: 1296, term: 'Anxiet/o', turkish: 'Kaygı', roots: 'anxiet/o', definition: 'Kaygı, anksiyete', category: 'roots', system: 'nervous', subcategory: 'psychiatric_mood_disorders', mainCategory: 'roots' },
+    { id: 1297, term: 'Obsess/o', turkish: 'Saplantı', roots: 'obsess/o', definition: 'Saplantı, obsesyon', category: 'roots', system: 'nervous', subcategory: 'psychiatric_mood_disorders', mainCategory: 'roots' },
+    { id: 1298, term: 'Compuls/o', turkish: 'Zorlama', roots: 'compuls/o', definition: 'Zorlantı, kompulsiyon', category: 'roots', system: 'nervous', subcategory: 'psychiatric_mood_disorders', mainCategory: 'roots' },
+    { id: 1299, term: 'Hyster/o', turkish: 'Histeri (tarihsel)', roots: 'hyster/o', definition: 'Histeri, eski psikiyatrik terim', category: 'roots', system: 'nervous', subcategory: 'psychiatric_mood_disorders', mainCategory: 'roots' },
+    { id: 1300, term: 'Delir/o', turkish: 'Bilinç taşması', roots: 'delir/o', definition: 'Deliryum, bilinç bozukluğu', category: 'roots', system: 'nervous', subcategory: 'psychiatric_mood_disorders', mainCategory: 'roots' },
+    { id: 1301, term: 'Hallucin/o', turkish: 'Hayal görmek', roots: 'hallucin/o', definition: 'Halüsinasyon, yanı algı', category: 'roots', system: 'nervous', subcategory: 'psychiatric_mood_disorders', mainCategory: 'roots' },
+    { id: 1302, term: 'Schiz/o', turkish: 'Bölünme', roots: 'schiz/o', definition: 'Bölünme, şizofreni', category: 'roots', system: 'nervous', subcategory: 'psychiatric_mood_disorders', mainCategory: 'roots' },
+
+    // Nörolojik Tanı ve Girişimsel Yöntemler - Sinir Sistemi
+    { id: 1303, term: 'Tom/o', turkish: 'Kesit', roots: 'tom/o', definition: 'Kesit, tomografi', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1304, term: 'Graph/o', turkish: 'Yazmak / Kayıt', roots: 'graph/o', definition: 'Kayıt, grafi', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1305, term: 'Imag/o', turkish: 'Görüntü', roots: 'imag/o', definition: 'Görüntüleme', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1306, term: 'Electr/o', turkish: 'Elektrik', roots: 'electr/o', definition: 'Elektrik, EEG', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1307, term: 'Echo', turkish: 'Yankı', roots: 'echo', definition: 'Yankı, ultrason', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1308, term: 'Magnet/o', turkish: 'Mıknatıs', roots: 'magnet/o', definition: 'Manyetik, MRI', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1309, term: 'Reson/o', turkish: 'Rezonans', roots: 'reson/o', definition: 'Rezonans, MR', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1310, term: 'Punct/o', turkish: 'Delmek', roots: 'punct/o', definition: 'Delmek, ponksiyon', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1311, term: 'Anastomos/o', turkish: 'Cerrahi bağlantı', roots: 'anastomos/o', definition: 'Cerrahi bağlantı, anastomoz', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1312, term: 'Plast/o', turkish: 'Onarım', roots: 'plast/o', definition: 'Onarım, plastik cerrahi', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1313, term: 'Syring/o', turkish: 'Kanal, tüp', roots: 'syring/o', definition: 'Kanal, siringomiyeli', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1314, term: 'Vertig/o', turkish: 'Dönme', roots: 'vertig/o', definition: 'Vertigo, baş dönmesi', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1315, term: 'Stup/o', turkish: 'Donakalma', roots: 'stup/o', definition: 'Stüpor, donakalma', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+    { id: 1316, term: 'Rrhaph/o', turkish: 'Dikmek', roots: 'rrhaph/o', definition: 'Cerrahi dikme, rafi', category: 'roots', system: 'nervous', subcategory: 'diagnostic_interventional', mainCategory: 'roots' },
+
+    // Göz Küresi ve Yardımcı Yapılar - Duyu Organları (Göz)
+    { id: 1317, term: 'Ophthalm/o', turkish: 'Göz', roots: 'ophthalm/o', definition: 'Göz organı', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1318, term: 'Orbit/o', turkish: 'Orbita', roots: 'orbit/o', definition: 'Göz çukuru', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1319, term: 'Uve/o', turkish: 'Uvea', roots: 'uve/o', definition: 'Gözün orta tabakası', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1320, term: 'Scler/o', turkish: 'Sklera', roots: 'scler/o', definition: 'Gözün beyaz tabakası', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1321, term: 'Chori/o', turkish: 'Koroid', roots: 'chori/o', definition: 'Koroid tabaka', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1322, term: 'Choroid/o', turkish: 'Koroid', roots: 'choroid/o', definition: 'Koroid tabaka', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1323, term: 'Retin/o', turkish: 'Retina', roots: 'retin/o', definition: 'Ağ tabaka', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1324, term: 'Kerat/o', turkish: 'Kornea', roots: 'kerat/o', definition: 'Sayı tabaka', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1325, term: 'Phak/o', turkish: 'Lens', roots: 'phak/o', definition: 'Göz merceği', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1326, term: 'Phac/o', turkish: 'Lens', roots: 'phac/o', definition: 'Göz merceği', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1327, term: 'Con/o', turkish: 'Koni (fotoreseptör)', roots: 'con/o', definition: 'Koni hücresi', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1328, term: 'Irid/o', turkish: 'İris', roots: 'irid/o', definition: 'Gözün renkli kısmı', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1329, term: 'Ir/o', turkish: 'İris', roots: 'ir/o', definition: 'Gözün renkli kısmı', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1330, term: 'Cycl/o', turkish: 'Siliyer cisim', roots: 'cycl/o', definition: 'Siliyer yapı', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1331, term: 'Cor/o', turkish: 'Gözbebeği', roots: 'cor/o', definition: 'Püpil', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1332, term: 'Papill/o', turkish: 'Papilla', roots: 'papill/o', definition: 'Optik papilla', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1333, term: 'Blephar/o', turkish: 'Göz kapağı', roots: 'blephar/o', definition: 'Göz kapağı', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1334, term: 'Dacry/o', turkish: 'Gözyaşı', roots: 'dacry/o', definition: 'Gözyaşı sistemi', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1335, term: 'Lacrim/o', turkish: 'Gözyaşı', roots: 'lacrim/o', definition: 'Gözyaşı sistemi', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+    { id: 1336, term: 'Conjunctiv/o', turkish: 'Konjonktiva', roots: 'conjunctiv/o', definition: 'Göz bağ dokus', category: 'roots', system: 'sensory', subcategory: 'eye_globe_structures', mainCategory: 'roots' },
+
+    // Görme İşlevi ve Göz Hareketleri - Duyu Organları (Göz)
+    { id: 1337, term: 'Op/o', turkish: 'Görme', roots: 'op/o', definition: 'Görme işlevi', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1338, term: 'Ops/o', turkish: 'Görme', roots: 'ops/o', definition: 'Görme işlevi', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1339, term: 'Phot/o', turkish: 'Işık', roots: 'phot/o', definition: 'Işık', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1340, term: 'Stigmat/o', turkish: 'Odak, nokta', roots: 'stigmat/o', definition: 'Odak noktası, astigmatizma', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1341, term: 'Trop/o', turkish: 'Dönme', roots: 'trop/o', definition: 'Dönme, tropi', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1342, term: 'My/o', turkish: 'Kas', roots: 'my/o', definition: 'Göz kası', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1343, term: 'Pleg/o', turkish: 'Felç', roots: 'pleg/o', definition: 'Felç, pleji', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1344, term: 'Spasm/o', turkish: 'Spazm', roots: 'spasm/o', definition: 'Kas spazmları', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1345, term: 'Nystagm/o', turkish: 'Sallanma', roots: 'nystagm/o', definition: 'Göz sallanması, nistagmus', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1346, term: 'Ton/o', turkish: 'Basınç', roots: 'ton/o', definition: 'Göz içi basıncı', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1347, term: 'Mi/o', turkish: 'Küçülme', roots: 'mi/o', definition: 'Püpil daralması, miyozis', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1348, term: 'Miot/o', turkish: 'Küçülme', roots: 'miot/o', definition: 'Püpil daralması, miyozis', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+    { id: 1349, term: 'Mydri/o', turkish: 'Genişleme', roots: 'mydri/o', definition: 'Püpil genişlemesi, midriazis', category: 'roots', system: 'sensory', subcategory: 'vision_eye_movements', mainCategory: 'roots' },
+
+    // Görme Kaybı ve Göz Hastalıkları - Duyu Organları (Göz)
+    { id: 1350, term: 'Ambly/o', turkish: 'Zayıflık', roots: 'ambly/o', definition: 'Görme zayıflığı, ambliyopi', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1351, term: 'Chalaz/o', turkish: 'Gevşeme', roots: 'chalaz/o', definition: 'Gevşeme, şalazyon', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1352, term: 'Ptos/o', turkish: 'Düşme', roots: 'ptos/o', definition: 'Düşme, pitozis', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1353, term: 'Dipl/o', turkish: 'Çift', roots: 'dipl/o', definition: 'Çift görme, diplopi', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1354, term: 'Omal/o', turkish: 'Düzensiz', roots: 'omal/o', definition: 'Düzensizlik, anomali', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1355, term: 'Asthen/o', turkish: 'Güçsüzlük', roots: 'asthen/o', definition: 'Göz yorgunluğu, asteni', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1356, term: 'My/o', turkish: 'Kısa (miyopi)', roots: 'my/o', definition: 'Miyopi, yakın görme', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1357, term: 'Presby/o', turkish: 'Yaşlı', roots: 'presby/o', definition: 'Yaşlılık, presbiyopi', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1358, term: 'Nyctal/o', turkish: 'Gece', roots: 'nyctal/o', definition: 'Gece körlüğü, niktalopi', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1359, term: 'Angi/o', turkish: 'Damar', roots: 'angi/o', definition: 'Damar yapıları', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1360, term: 'Glauc/o', turkish: 'Grimsi-yeşil', roots: 'glauc/o', definition: 'Glokom, yeşil su', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1361, term: 'Edem/o', turkish: 'Ödem', roots: 'edem/o', definition: 'Ödem, şişlik', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1362, term: 'Myc/o', turkish: 'Mantar', roots: 'myc/o', definition: 'Mantar enfeksiyonu', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1363, term: 'Malac/o', turkish: 'Yumuşama', roots: 'malac/o', definition: 'Yumuşama, malazi', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1364, term: 'Cataract/o', turkish: 'Bulanıklık', roots: 'cataract/o', definition: 'Katarakt, göz perdes', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+    { id: 1365, term: 'Phob/o', turkish: 'Korku', roots: 'phob/o', definition: 'Korku, fobi', category: 'roots', system: 'sensory', subcategory: 'vision_loss_diseases', mainCategory: 'roots' },
+
+    // Göz Muayenesi ve Cerrahi İşlemler - Duyu Organları (Göz)
+    { id: 1366, term: 'Plast/o', turkish: 'Onarım', roots: 'plast/o', definition: 'Onarım, plastik cerrahi', category: 'roots', system: 'sensory', subcategory: 'examination_surgical', mainCategory: 'roots' },
+    { id: 1367, term: 'Tach/o', turkish: 'Ayrılmak', roots: 'tach/o', definition: 'Ayrılma, dekolman', category: 'roots', system: 'sensory', subcategory: 'examination_surgical', mainCategory: 'roots' },
+    { id: 1368, term: 'Pex/o', turkish: 'Sabitlemek', roots: 'pex/o', definition: 'Sabitleme, peksi', category: 'roots', system: 'sensory', subcategory: 'examination_surgical', mainCategory: 'roots' },
+    { id: 1369, term: 'Sten/o', turkish: 'Daralma', roots: 'sten/o', definition: 'Daralma, stenoz', category: 'roots', system: 'sensory', subcategory: 'examination_surgical', mainCategory: 'roots' },
+    { id: 1370, term: 'Coagul/o', turkish: 'Pıhtılaşma', roots: 'coagul/o', definition: 'Pıhtılaşma, koagülasyon', category: 'roots', system: 'sensory', subcategory: 'examination_surgical', mainCategory: 'roots' },
+    { id: 1371, term: 'Son/o', turkish: 'Ses (USG)', roots: 'son/o', definition: 'Ses, ultrason', category: 'roots', system: 'sensory', subcategory: 'examination_surgical', mainCategory: 'roots' },
+
+    // Kulak Yapıları ve İşitme Yolu - Duyu Organları (Kulak)
+    { id: 1372, term: 'Ot/o', turkish: 'Kulak', roots: 'ot/o', definition: 'Kulak organı', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1373, term: 'Cochle/o', turkish: 'Koklea', roots: 'cochle/o', definition: 'Salyangoz, iç kulak', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1374, term: 'Labyrinth/o', turkish: 'Labirent', roots: 'labyrinth/o', definition: 'İç kulak labirenti', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1375, term: 'Tympan/o', turkish: 'Timpan (kulak zarı)', roots: 'tympan/o', definition: 'Kulak zarı', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1376, term: 'Myring/o', turkish: 'Kulak zarı', roots: 'myring/o', definition: 'Kulak zarı', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1377, term: 'Eustach/o', turkish: 'Östaki tüpü', roots: 'eustach/o', definition: 'Östaki tüpü (eponim)', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1378, term: 'Malle/o', turkish: 'Malleus', roots: 'malle/o', definition: 'Çekiç kemiği', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1379, term: 'Incud/o', turkish: 'İnkus', roots: 'incud/o', definition: 'Örs kemiği', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1380, term: 'Staped/o', turkish: 'Stapes', roots: 'staped/o', definition: 'Üzengi kemiği', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1381, term: 'Ossicul/o', turkish: 'Kemikçikler', roots: 'ossicul/o', definition: 'Kulak kemikçikleri', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+    { id: 1382, term: 'Trag/o', turkish: 'Çıkıntı (tragus)', roots: 'trag/o', definition: 'Tragus çıkıntısı', category: 'roots', system: 'sensory', subcategory: 'ear_structures', mainCategory: 'roots' },
+
+    // İşitme, Denge ve Ses İletimi - Duyu Organları (Kulak)
+    { id: 1383, term: 'Acus/o', turkish: 'İşitme', roots: 'acus/o', definition: 'İşitme işlevi', category: 'roots', system: 'sensory', subcategory: 'hearing_balance_sound', mainCategory: 'roots' },
+    { id: 1384, term: 'Audi/o', turkish: 'İşitme', roots: 'audi/o', definition: 'İşitme işlevi', category: 'roots', system: 'sensory', subcategory: 'hearing_balance_sound', mainCategory: 'roots' },
+    { id: 1385, term: 'Audit/o', turkish: 'İşitme', roots: 'audit/o', definition: 'İşitme işlevi', category: 'roots', system: 'sensory', subcategory: 'hearing_balance_sound', mainCategory: 'roots' },
+    { id: 1386, term: 'Acoust/o', turkish: 'Ses', roots: 'acoust/o', definition: 'Ses, akustik', category: 'roots', system: 'sensory', subcategory: 'hearing_balance_sound', mainCategory: 'roots' },
+    { id: 1387, term: 'Pas/o', turkish: 'Geçmek', roots: 'pas/o', definition: 'Geçme, pasaj', category: 'roots', system: 'sensory', subcategory: 'hearing_balance_sound', mainCategory: 'roots' },
+    { id: 1388, term: 'Reflex/o', turkish: 'Geri dönüş', roots: 'reflex/o', definition: 'Refleks, geri dönüş', category: 'roots', system: 'sensory', subcategory: 'hearing_balance_sound', mainCategory: 'roots' },
+    { id: 1389, term: 'Vertig/o', turkish: 'Dönme', roots: 'vertig/o', definition: 'Vertigo, baş dönmesi', category: 'roots', system: 'sensory', subcategory: 'hearing_balance_sound', mainCategory: 'roots' },
+
+    // İşitme Kaybı ve Kulak Hastalıkları - Duyu Organları (Kulak)
+    { id: 1390, term: 'Ambly/o', turkish: 'Zayıflık', roots: 'ambly/o', definition: 'İşitme zayıflığı', category: 'roots', system: 'sensory', subcategory: 'hearing_loss_diseases', mainCategory: 'roots' },
+    { id: 1391, term: 'Tinn/o', turkish: 'Çınlama', roots: 'tinn/o', definition: 'Kulak çınlaması, tinnitus', category: 'roots', system: 'sensory', subcategory: 'hearing_loss_diseases', mainCategory: 'roots' },
+    { id: 1392, term: 'Alg/o', turkish: 'Ağrı', roots: 'alg/o', definition: 'Ağrı, alji', category: 'roots', system: 'sensory', subcategory: 'hearing_loss_diseases', mainCategory: 'roots' },
+    { id: 1393, term: 'Rrhe/o', turkish: 'Akıntı', roots: 'rrhe/o', definition: 'Akıntı, otore', category: 'roots', system: 'sensory', subcategory: 'hearing_loss_diseases', mainCategory: 'roots' },
+    { id: 1394, term: 'Rrhag/o', turkish: 'Kanama', roots: 'rrhag/o', definition: 'Kanama, otoraji', category: 'roots', system: 'sensory', subcategory: 'hearing_loss_diseases', mainCategory: 'roots' },
+
+    // Kulak Muayenesi ve Cerrahi İşlemler - Duyu Organları (Kulak)
+    { id: 1395, term: 'Impedans/o', turkish: 'Direnç', roots: 'impedans/o', definition: 'Empedans, direnç', category: 'roots', system: 'sensory', subcategory: 'ear_examination_surgical', mainCategory: 'roots' },
+    { id: 1396, term: 'Emiss/o', turkish: 'Yayılma', roots: 'emiss/o', definition: 'Emisyon, yayılma', category: 'roots', system: 'sensory', subcategory: 'ear_examination_surgical', mainCategory: 'roots' },
+    { id: 1397, term: 'Plast/o', turkish: 'Onarım', roots: 'plast/o', definition: 'Onarım, plastik cerrahi', category: 'roots', system: 'sensory', subcategory: 'ear_examination_surgical', mainCategory: 'roots' },
+    { id: 1398, term: 'Synthes/o', turkish: 'Birleştirme', roots: 'synthes/o', definition: 'Birleştirme, aspirasyon', category: 'roots', system: 'sensory', subcategory: 'ear_examination_surgical', mainCategory: 'roots' },
+
+    // Deri, Ekleri ve Lezyon Tipleri - Deri Sistemi
+    { id: 1399, term: 'Derm/o', turkish: 'Deri', roots: 'derm/o', definition: 'Deri tabakası', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1400, term: 'Dermat/o', turkish: 'Deri', roots: 'dermat/o', definition: 'Deri tabakası', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1401, term: 'Onych/o', turkish: 'Tırnak', roots: 'onych/o', definition: 'Tırnak yapısı', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1402, term: 'Capit/o', turkish: 'Baş derisi', roots: 'capit/o', definition: 'Baş derisi', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1403, term: 'Barb/o', turkish: 'Sakal', roots: 'barb/o', definition: 'Sakal bölgesi', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1404, term: 'Corpor/o', turkish: 'Vücut', roots: 'corpor/o', definition: 'Vücut derisi', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1405, term: 'Adip/o', turkish: 'Yağ', roots: 'adip/o', definition: 'Yağ dokusu', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1406, term: 'Cellul/o', turkish: 'Hücre', roots: 'cellul/o', definition: 'Hücre yapısı', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1407, term: 'Ped/o', turkish: 'Ayak', roots: 'ped/o', definition: 'Ayak derisi', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1408, term: 'Macul/o', turkish: 'Makül', roots: 'macul/o', definition: 'Düz leke', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1409, term: 'Papill/o', turkish: 'Papilla', roots: 'papill/o', definition: 'Papilla yapısı', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1410, term: 'Papul/o', turkish: 'Papül', roots: 'papul/o', definition: 'Kabartı lezyon', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1411, term: 'Pustul/o', turkish: 'Püstül', roots: 'pustul/o', definition: 'İrinli lezyon', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1412, term: 'Urtic/o', turkish: 'Ürtiker', roots: 'urtic/o', definition: 'Kurdeşen', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+    { id: 1413, term: 'Nev/o', turkish: 'Nevüs', roots: 'nev/o', definition: 'Ben, nevüs', category: 'roots', system: 'skin', subcategory: 'skin_structures_lesions', mainCategory: 'roots' },
+
+    // Deri İşlevleri ve Fizyolojisi - Deri Sistemi
+    { id: 1414, term: 'Pigment/o', turkish: 'Pigment', roots: 'pigment/o', definition: 'Renk pigmenti', category: 'roots', system: 'skin', subcategory: 'skin_functions_physiology', mainCategory: 'roots' },
+    { id: 1415, term: 'Phor/o', turkish: 'Taşımak, terleme', roots: 'phor/o', definition: 'Terleme, taşıma', category: 'roots', system: 'skin', subcategory: 'skin_functions_physiology', mainCategory: 'roots' },
+    { id: 1416, term: 'Hidr/o', turkish: 'Ter', roots: 'hidr/o', definition: 'Ter salgısı', category: 'roots', system: 'skin', subcategory: 'skin_functions_physiology', mainCategory: 'roots' },
+    { id: 1417, term: 'Seborrh/o', turkish: 'Sebum akışı', roots: 'seborrh/o', definition: 'Yağ salgısı akışı', category: 'roots', system: 'skin', subcategory: 'skin_functions_physiology', mainCategory: 'roots' },
+    { id: 1418, term: 'Steat/o', turkish: 'Yağ', roots: 'steat/o', definition: 'Yağ salgısı', category: 'roots', system: 'skin', subcategory: 'skin_functions_physiology', mainCategory: 'roots' },
+    { id: 1419, term: 'Lip/o', turkish: 'Yağ', roots: 'lip/o', definition: 'Yağ dokusu', category: 'roots', system: 'skin', subcategory: 'skin_functions_physiology', mainCategory: 'roots' },
+    { id: 1420, term: 'Leuk/o', turkish: 'Beyaz', roots: 'leuk/o', definition: 'Beyaz renk', category: 'roots', system: 'skin', subcategory: 'skin_functions_physiology', mainCategory: 'roots' },
+
+    // Deri Hastalıkları ve Patolojik Süreçler - Deri Sistemi
+    { id: 1421, term: 'Erythem/o', turkish: 'Kızarıklık', roots: 'erythem/o', definition: 'Kızarıklık, eritem', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1422, term: 'Acn/o', turkish: 'Sivilce', roots: 'acn/o', definition: 'Akne, sivilce', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1423, term: 'Albin/o', turkish: 'Beyaz', roots: 'albin/o', definition: 'Albinizm, beyazlık', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1424, term: 'Alopec/o', turkish: 'Saç dökülmesi', roots: 'alopec/o', definition: 'Alopesi, kellik', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1425, term: 'Atop/o', turkish: 'Alışılmadık', roots: 'atop/o', definition: 'Atopi, alerjik durum', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1426, term: 'Chloas/o', turkish: 'Pigment', roots: 'chloas/o', definition: 'Kloazma, pigmentasyon', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1427, term: 'Cicatr/o', turkish: 'Yara izi', roots: 'cicatr/o', definition: 'Skar, yara izi', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1428, term: 'Myc/o', turkish: 'Mantar', roots: 'myc/o', definition: 'Mantar enfeksiyonu', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1429, term: 'Cerat/o', turkish: 'Sert yapı', roots: 'cerat/o', definition: 'Sert, keratinize', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1430, term: 'Xer/o', turkish: 'Kuruluk', roots: 'xer/o', definition: 'Kuru deri, kserozis', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1431, term: 'Ecchym/o', turkish: 'Ekimoz', roots: 'ecchym/o', definition: 'Morluk, ekimoz', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1432, term: 'Petech/o', turkish: 'Peteşi', roots: 'petech/o', definition: 'Nokta kanama', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1433, term: 'Tine/o', turkish: 'Dermatofit enfeksiyonu', roots: 'tine/o', definition: 'Tinea, mantar', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1434, term: 'Py/o', turkish: 'İrin', roots: 'py/o', definition: 'İrin oluşumu', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1435, term: 'Gangren/o', turkish: 'Gangren', roots: 'gangren/o', definition: 'Doku ölümü, gangren', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1436, term: 'Necr/o', turkish: 'Nekroz', roots: 'necr/o', definition: 'Doku ölümü', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1437, term: 'Kerat/o', turkish: 'Keratin', roots: 'kerat/o', definition: 'Keratin yapısı', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1438, term: 'Psor/o', turkish: 'Kaşıntılı döküntü', roots: 'psor/o', definition: 'Psoriazis, sedef', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1439, term: 'Pemphig/o', turkish: 'Bül', roots: 'pemphig/o', definition: 'Pemfigus, büllü hastalık', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1440, term: 'Pedicul/o', turkish: 'Bit (parazit)', roots: 'pedicul/o', definition: 'Bit enfestasyonu', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+    { id: 1441, term: 'Melan/o', turkish: 'Melanin', roots: 'melan/o', definition: 'Melanin pigmenti', category: 'roots', system: 'skin', subcategory: 'skin_diseases_pathology', mainCategory: 'roots' },
+
+    // Dermatolojik Tanı ve Tedavi Yöntemleri - Deri Sistemi
+    { id: 1442, term: 'Electr/o', turkish: 'Elektrik', roots: 'electr/o', definition: 'Elektrik tedavisi', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1443, term: 'Desiccat/o', turkish: 'Kurutma', roots: 'desiccat/o', definition: 'Kurutma işlemi', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1444, term: 'Erupt/o', turkish: 'Dökülme', roots: 'erupt/o', definition: 'Döküntü, erüpsiyon', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1445, term: 'Fulgur/o', turkish: 'Yakma', roots: 'fulgur/o', definition: 'Elektrokoagülasyon', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1446, term: 'Cry/o', turkish: 'Soğuk', roots: 'cry/o', definition: 'Kriyoterapi, soğuk tedavi', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1447, term: 'Abras/o', turkish: 'Kazımak', roots: 'abras/o', definition: 'Abrazyon, kazıma', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1448, term: 'Suct/o', turkish: 'Emme', roots: 'suct/o', definition: 'Emme, aspirasyon', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1449, term: 'Cis/o', turkish: 'Kesmek', roots: 'cis/o', definition: 'Kesme, eksizyon', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+    { id: 1450, term: 'Graft/o', turkish: 'Greft', roots: 'graft/o', definition: 'Deri grefti', category: 'roots', system: 'skin', subcategory: 'dermatologic_diagnosis_treatment', mainCategory: 'roots' },
+
+    // Koku ve Tat Alma Yapıları - Duyu Organları (Koku/Tat)
+    { id: 1451, term: 'Olfactor/o', turkish: 'Koku (olfaktör)', roots: 'olfactor/o', definition: 'Koku alma yapısı', category: 'roots', system: 'sensory', subcategory: 'smell_taste_structures', mainCategory: 'roots' },
+
+    // Koku ve Tat Algısı - Duyu Organları (Koku/Tat)
+    { id: 1452, term: 'Osm/o', turkish: 'Koku', roots: 'osm/o', definition: 'Koku algısı', category: 'roots', system: 'sensory', subcategory: 'smell_taste_perception', mainCategory: 'roots' },
+    { id: 1453, term: 'Eus/o', turkish: 'Tat', roots: 'eus/o', definition: 'Tat algısı', category: 'roots', system: 'sensory', subcategory: 'smell_taste_perception', mainCategory: 'roots' },
+    { id: 1454, term: 'Gus/o', turkish: 'Tat', roots: 'gus/o', definition: 'Tat alma', category: 'roots', system: 'sensory', subcategory: 'smell_taste_perception', mainCategory: 'roots' },
+
+    // Koku ve Tat Bozuklukları - Duyu Organları (Koku/Tat)
+    { id: 1455, term: 'Phantasm/o', turkish: 'Hayal (fantosmi)', roots: 'phantasm/o', definition: 'Hayali koku algısı, fantosmi', category: 'roots', system: 'sensory', subcategory: 'smell_taste_disorders', mainCategory: 'roots' },
+
+    // Endokrin Bezler ve Organlar - Endokrin Sistemi
+    { id: 1456, term: 'Adrenal/o', turkish: 'Adrenal bez', roots: 'adrenal/o', definition: 'Böbrek üstü bezi', category: 'roots', system: 'endocrine', subcategory: 'endocrine_glands_organs', mainCategory: 'roots' },
+    { id: 1457, term: 'Thyroid/o', turkish: 'Tiroid', roots: 'thyroid/o', definition: 'Tiroid bezi', category: 'roots', system: 'endocrine', subcategory: 'endocrine_glands_organs', mainCategory: 'roots' },
+    { id: 1458, term: 'Pituitar/o', turkish: 'Hipofiz', roots: 'pituitar/o', definition: 'Hipofiz bezi', category: 'roots', system: 'endocrine', subcategory: 'endocrine_glands_organs', mainCategory: 'roots' },
+    { id: 1459, term: 'Gonad/o', turkish: 'Gonad', roots: 'gonad/o', definition: 'Üreme bezleri', category: 'roots', system: 'endocrine', subcategory: 'endocrine_glands_organs', mainCategory: 'roots' },
+    { id: 1460, term: 'Aden/o', turkish: 'Bez', roots: 'aden/o', definition: 'Bez yapısı', category: 'roots', system: 'endocrine', subcategory: 'endocrine_glands_organs', mainCategory: 'roots' },
+
+    // Hormonlar ve Metabolik Kontroller - Endokrin Sistemi
+    { id: 1461, term: 'Insulin/o', turkish: 'İnsülin', roots: 'insulin/o', definition: 'İnsülin hormonu', category: 'roots', system: 'endocrine', subcategory: 'hormones_metabolic_controls', mainCategory: 'roots' },
+    { id: 1462, term: 'Calc/o', turkish: 'Kalsiyum', roots: 'calc/o', definition: 'Kalsiyum minerali', category: 'roots', system: 'endocrine', subcategory: 'hormones_metabolic_controls', mainCategory: 'roots' },
+    { id: 1463, term: 'Glyc/o', turkish: 'Glikoz', roots: 'glyc/o', definition: 'Glikoz, şeker', category: 'roots', system: 'endocrine', subcategory: 'hormones_metabolic_controls', mainCategory: 'roots' },
+    { id: 1464, term: 'Kal/i', turkish: 'Potasyum', roots: 'kal/i', definition: 'Potasyum minerali', category: 'roots', system: 'endocrine', subcategory: 'hormones_metabolic_controls', mainCategory: 'roots' },
+    { id: 1465, term: 'Natr/i', turkish: 'Sodyum', roots: 'natr/i', definition: 'Sodyum minerali', category: 'roots', system: 'endocrine', subcategory: 'hormones_metabolic_controls', mainCategory: 'roots' },
+
+    // Endokrin Bozuklukların Klinik Görünümleri - Endokrin Sistemi
+    { id: 1466, term: 'Acr/o', turkish: 'Uç, ekstremite', roots: 'acr/o', definition: 'Uç nokta, akromegali', category: 'roots', system: 'endocrine', subcategory: 'endocrine_clinical_manifestations', mainCategory: 'roots' },
+    { id: 1467, term: 'Megal/o', turkish: 'Büyük', roots: 'megal/o', definition: 'Büyüme, megali', category: 'roots', system: 'endocrine', subcategory: 'endocrine_clinical_manifestations', mainCategory: 'roots' },
+    { id: 1468, term: 'Gynec/o', turkish: 'Kadın', roots: 'gynec/o', definition: 'Kadın, jinekomasti', category: 'roots', system: 'endocrine', subcategory: 'endocrine_clinical_manifestations', mainCategory: 'roots' },
+    { id: 1469, term: 'Mast/o', turkish: 'Meme', roots: 'mast/o', definition: 'Meme dokusu', category: 'roots', system: 'endocrine', subcategory: 'endocrine_clinical_manifestations', mainCategory: 'roots' },
+    { id: 1470, term: 'Dips/o', turkish: 'Susuzluk', roots: 'dips/o', definition: 'Aşırı susuzluk, polidipsi', category: 'roots', system: 'endocrine', subcategory: 'endocrine_clinical_manifestations', mainCategory: 'roots' },
 
     // Eski terimler (geriye dönük uyumluluk için)
     { id: 35, term: 'Arthr/o', turkish: 'Eklem', roots: 'arthr/o', definition: 'Eklem anlamına gelen kök. Örnek: Arthritis (eklem iltihabı)', category: 'roots' },
