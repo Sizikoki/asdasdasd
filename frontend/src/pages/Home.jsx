@@ -521,9 +521,11 @@ export const Home = () => {
                 <span className="badge">
                   {IS_PAYMENT_ACTIVE
                     ? content.pricing.badge
-                    : (lang === 'en' ? '🚀 Launch Special — Early Access' : '🚀 Lansman Dönemi — Erken Erişim')}
+                    : (lang === 'en' ? 'Launch Special — Early Access' : 'Lansman Dönemi — Erken Erişim')}
                 </span>
-                <h3 className="text-primary text-xl font-bold">{content.pricing.planTitle}</h3>
+                {IS_PAYMENT_ACTIVE && (
+                  <h3 className="text-primary text-xl font-bold">{content.pricing.planTitle}</h3>
+                )}
                 
                 {IS_PAYMENT_ACTIVE ? (
                   <>
@@ -551,13 +553,10 @@ export const Home = () => {
                       </div>
                     </div>
 
-                    <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 sm:p-3.5 my-3 text-xs sm:text-[0.85rem] text-foreground/90 flex items-start gap-2.5 leading-relaxed">
-                      <span className="text-base flex-shrink-0">✨</span>
-                      <span>
-                        {lang === 'en'
-                          ? 'Explore core modules for free during launch. Pro membership opening soon!'
-                          : 'Lansman boyunca tüm temel modülleri ücretsiz keşfedin. Pro üyelik çok yakında aktif!'}
-                      </span>
+                    <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 sm:p-3.5 my-3 text-xs sm:text-[0.85rem] text-foreground/90 leading-relaxed">
+                      {lang === 'en'
+                        ? 'Explore core modules for free during launch. Pro membership opening soon!'
+                        : 'Lansman boyunca tüm temel modülleri ücretsiz keşfedin. Pro üyelik çok yakında aktif!'}
                     </div>
                   </>
                 )}
