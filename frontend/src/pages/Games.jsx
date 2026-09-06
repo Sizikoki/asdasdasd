@@ -27,6 +27,7 @@ const GAME_CATEGORIES = [
   { id: 'spine_joints', key: 'spineJoints', name: 'Omurga Eklemleri' },
   { id: 'head_and_neck_joints', key: 'headAndNeckJoints', name: 'Kafa ve Boyun Eklemleri' },
   { id: 'movement_terms', key: 'movementTerms', name: 'Hareket Terimleri' },
+  { id: 'anatomic_direction', key: 'anatomicDirection', name: 'Anatomik Yön Terimleri' },
 ];
 
 // Sayfa içinde (route değişmeden) render edilen Fable/Elmish oyunları
@@ -118,7 +119,7 @@ export const Games = () => {
             category: termItem.category || '',
             system: termItem.system || '',
             subcategory: termItem.subcategory || '',
-          }));
+          })).sort((a, b) => Number(a.id) - Number(b.id));
           setLiveTerms(normalized);
         }
       } catch (error) {

@@ -214,11 +214,64 @@ function assembledPreview(parts) {
   return result;
 }
 
+function assembledMeaningPreview(parts, language) {
+  if (!parts || parts.length === 0) return "";
+  return parts
+    .map((p) => {
+      const m =
+        typeof p.meaning === "string"
+          ? p.meaning
+          : (language === "en" ? (p.meaning?.en || p.meaning?.tr) : (p.meaning?.tr || p.meaning?.en));
+      return m ? m.trim() : "";
+    })
+    .filter(Boolean)
+    .join(" + ");
+}
+
+function checkSequence(selected, correct) {
+  if (!selected || !correct || selected.length !== correct.length) {
+    return { isSuccess: false, isEnglishOrder: false };
+  }
+
+  // 1. Standart tam eşleşme (Latince söz dizimi)
+  if (correct.every((p, i) => p.text.toLowerCase() === selected[i].text.toLowerCase())) {
+    return { isSuccess: true, isEnglishOrder: false };
+  }
+
+  // 2. Çok kelimeli terimlerde kelime gruplarının yer değişimi (İngilizce söz dizimi: örn. Frontal + Bone)
+  const wordMap = new Map();
+  correct.forEach((p) => {
+    let wIdx = p.wordIndex;
+    if (wIdx === undefined && typeof p.id === 'string') {
+      const match = p.id.match(/_w(\d+)_/);
+      if (match) wIdx = parseInt(match[1], 10);
+    }
+    if (wIdx === undefined) wIdx = 0;
+
+    if (!wordMap.has(wIdx)) wordMap.set(wIdx, []);
+    wordMap.get(wIdx).push(p);
+  });
+
+  const wordGroups = Array.from(wordMap.values());
+  if (wordGroups.length > 1) {
+    if (wordGroups.length === 2) {
+      const reversed = [...wordGroups[1], ...wordGroups[0]];
+      if (reversed.every((p, i) => p.text.toLowerCase() === selected[i].text.toLowerCase())) {
+        return { isSuccess: true, isEnglishOrder: true };
+      }
+    } else {
+      const reversed = [...wordGroups].reverse().flat();
+      if (reversed.every((p, i) => p.text.toLowerCase() === selected[i].text.toLowerCase())) {
+        return { isSuccess: true, isEnglishOrder: true };
+      }
+    }
+  }
+
+  return { isSuccess: false, isEnglishOrder: false };
+}
+
 function isCorrectSequence(selected, correct) {
-  return (
-    selected.length === correct.length &&
-    correct.every((p, i) => p.text === selected[i].text)
-  );
+  return checkSequence(selected, correct).isSuccess;
 }
 
 function normalizeQuestions(terms, roundSize = 10) {
@@ -299,11 +352,12 @@ function update(model, msg) {
     case "SubmitAnswer": {
       if (tag !== "Playing" || model.selectedSequence.length === 0) return model;
       const q = model.questions[model.currentIndex];
-      const isSuccess = isCorrectSequence(model.selectedSequence, q.correctSequence);
+      const checkRes = checkSequence(model.selectedSequence, q.correctSequence);
+      const isSuccess = checkRes.isSuccess;
       return {
         ...model,
         score: model.score + (isSuccess ? 1 : -1),
-        state: { tag: "AnswerChecked", isSuccess },
+        state: { tag: "AnswerChecked", isSuccess, isEnglishOrder: checkRes.isEnglishOrder },
       };
     }
     case "NextQuestion": {
@@ -330,27 +384,36 @@ function update(model, msg) {
 
 function MorphemeChip({ part, onClick, tr, language, dimmed = false }) {
   const meta = PART_META[part.partType] ?? PART_META.root;
-  const meaning =
+  const rawMeaning =
     typeof part.meaning === "string"
       ? part.meaning
       : (language === "en" ? (part.meaning?.en || part.meaning?.tr) : (part.meaning?.tr || part.meaning?.en)) ?? "";
+
+  const meaning = rawMeaning
+    ? rawMeaning.charAt(0).toLocaleUpperCase(language === "tr" ? "tr-TR" : "en-US") + rawMeaning.slice(1)
+    : "";
 
   return (
     <button
       type="button"
       onClick={onClick}
       aria-label={`${part.text} — ${meaning}`}
-      className={`group flex flex-col items-start gap-0.5 rounded-xl border px-3.5 py-2 text-left
+      className={`group flex flex-col items-start gap-1 rounded-xl border px-3.5 py-2 text-left
         transition-all duration-150 hover:scale-[1.03] active:scale-95 shadow-sm
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary
         ${meta.chip} ${dimmed ? "opacity-60" : ""}`}
     >
-      <span className="font-mono text-base font-bold tracking-tight">
-        {part.text}
-      </span>
-      <span className="flex items-center gap-1.5 text-[11px] font-medium opacity-90">
-        <span className={`h-1.5 w-1.5 rounded-full ${meta.dot}`} />
-        {tr(part.partType)} · {meaning}
+      <div className="flex items-center justify-between w-full gap-2.5">
+        <span className="font-mono text-base font-bold tracking-tight">
+          {part.text}
+        </span>
+        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-background/50 border border-current/15">
+          <span className={`h-1.5 w-1.5 rounded-full ${meta.dot}`} />
+          {tr(part.partType)}
+        </span>
+      </div>
+      <span className="text-xs font-semibold text-foreground/90 group-hover:text-foreground line-clamp-1">
+        {meaning}
       </span>
     </button>
   );
@@ -526,15 +589,23 @@ export default function MorphemeGameFable({
         <p className="mb-1 text-[11px] uppercase tracking-widest text-primary font-semibold">
           {tr("targetTerm")}
         </p>
-        <h2 className="font-serif text-3xl italic tracking-tight text-foreground">
-          {language === "en" && q.englishTerm ? q.englishTerm : q.targetLatinTerm}
-        </h2>
-        {language === "en" && q.englishTerm && q.englishTerm.toLowerCase() !== q.targetLatinTerm.toLowerCase() && (
-          <p className="text-xs font-mono text-muted-foreground mt-0.5">
-            Latin: {q.targetLatinTerm}
-          </p>
-        )}
-        <p className="mt-1 text-muted-foreground">{loc(q.definition)}</p>
+        <div className="flex flex-wrap items-center gap-3 mb-1.5">
+          <h2 className="font-serif text-3xl italic tracking-tight text-foreground">
+            {q.targetLatinTerm}
+          </h2>
+          {q.englishTerm && q.englishTerm.toLowerCase() !== q.targetLatinTerm.toLowerCase() && (
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-primary/10 border border-primary/20 text-sm font-semibold text-primary shadow-xs">
+              <span className="text-xs">🇬🇧</span>
+              <span>{q.englishTerm}</span>
+            </div>
+          )}
+        </div>
+        <p className="text-xs font-medium text-primary/80 mb-2">
+          {language === "en"
+            ? `Assemble the medical term: ${q.targetLatinTerm} (${q.englishTerm || q.targetLatinTerm})`
+            : `Aşağıdaki morfem parçalarını birleştirerek ${q.targetLatinTerm} terimini oluşturun.`}
+        </p>
+        <p className="text-muted-foreground text-sm leading-relaxed">{loc(q.definition)}</p>
       </div>
 
       <div
@@ -570,10 +641,17 @@ export default function MorphemeGameFable({
                 />
               </React.Fragment>
             ))}
-            <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4 text-muted-foreground"/>
-            <span className="font-mono text-lg font-semibold text-primary">
-              {assembledPreview(model.selectedSequence)}
-            </span>
+            <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4 text-muted-foreground flex-shrink-0"/>
+            <div className="flex flex-col">
+              <span className="font-mono text-lg font-semibold text-primary">
+                {assembledPreview(model.selectedSequence)}
+              </span>
+              {assembledMeaningPreview(model.selectedSequence, language) && (
+                <span className="text-xs text-muted-foreground font-medium">
+                  ({assembledMeaningPreview(model.selectedSequence, language)})
+                </span>
+              )}
+            </div>
           </div>
         )}
       </div>
@@ -585,7 +663,11 @@ export default function MorphemeGameFable({
         >
           <p className="flex items-center gap-2 font-semibold text-emerald-700 dark:text-emerald-300">
             <Check aria-hidden="true" className="h-5 w-5 text-emerald-500"/>
-            {tr("correctMsg")} (+1)
+            {model.state?.isEnglishOrder
+              ? (language === "en"
+                  ? "Correct! Great sequence (English word order accepted). (+1)"
+                  : "Doğru! Harika dizilim (İngilizce kelime sırası kabul edildi). (+1)")
+              : `${tr("correctMsg")} (+1)`}
           </p>
           <p className="mt-1.5 text-sm text-emerald-900/80 dark:text-emerald-200/80">
             <span className="uppercase tracking-wide text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold">

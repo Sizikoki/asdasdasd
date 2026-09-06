@@ -27,15 +27,16 @@ const CATEGORIES = [
   { id: 'spine_joints', key: 'spineJoints', name: 'Omurga Eklemleri', system: 'movement', subcategory: 'spine_joints' },
   { id: 'head_and_neck_joints', key: 'headAndNeckJoints', name: 'Kafa ve Boyun Eklemleri', system: 'movement', subcategory: 'head_and_neck_joints' },
   { id: 'movement_terms', key: 'movementTerms', name: 'Hareket Terimleri', category: 'movement_terms' },
+  { id: 'anatomic_direction', key: 'anatomicDirection', name: 'Anatomik Yön Terimleri', system: 'movement', subcategory: 'anatomic_direction' },
 ];
 
 const UPPER_EXTREMITY_GROUPS = [
-  { name: 'Scapula', ids: [83, 351, 352, 391, 392, 393, 394, 395, 396, 397, 398] },
-  { name: 'Clavicula', ids: [84, 375, 376, 377, 378, 379, 380, 381, 382] },
-  { name: 'Humerus', ids: [85, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374] },
-  { name: 'Radius', ids: [86, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314] },
-  { name: 'Ulna', ids: [87, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327] },
-  { name: 'Ossa Manus', ids: [88, 89, 90, 328, 329, 330, 331, 332] }
+  { name: 'Scapula', ids: [19, 59, 60, 91, 92, 93, 94, 95, 96, 97, 98] },
+  { name: 'Clavicula', ids: [20, 83, 84, 85, 86, 87, 88, 89, 90] },
+  { name: 'Humerus', ids: [21, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82] },
+  { name: 'Radius', ids: [22, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40] },
+  { name: 'Ulna', ids: [23, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53] },
+  { name: 'Ossa Manus', ids: [24, 25, 26, 54, 55, 56, 57, 58] }
 ];
 
 export const Study = () => {
@@ -88,7 +89,7 @@ export const Study = () => {
           category: termItem.category || '',
           system: termItem.system || '',
           subcategory: termItem.subcategory || '',
-        }));
+        })).sort((a, b) => Number(a.id) - Number(b.id));
 
         setAllTerms(normalized);
       } catch (error) {
@@ -118,8 +119,11 @@ export const Study = () => {
     ? filteredTerms.filter(
         (t) =>
           t.term.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          t.turkish.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          t.definition.toLowerCase().includes(searchQuery.toLowerCase())
+          (t.turkish && t.turkish.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (t.english && t.english.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (t.definition && t.definition.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (t.turkishDefinition && t.turkishDefinition.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (t.englishDefinition && t.englishDefinition.toLowerCase().includes(searchQuery.toLowerCase()))
       )
     : filteredTerms;
 
@@ -171,13 +175,13 @@ export const Study = () => {
             </div>
 
             {/* EN Label */}
-            {term.turkish && (
+            {(term.english || term.turkish) && (
               <div className="flex items-baseline gap-2 mb-3">
                 <span className="shrink-0 px-1.5 py-0.5 rounded bg-muted text-muted-foreground text-[9px] font-bold tracking-wider border border-border/50">
                   EN
                 </span>
                 <span className="text-xs font-medium text-muted-foreground leading-snug">
-                  {term.turkish}
+                  {term.english || term.turkish}
                 </span>
               </div>
             )}
@@ -187,7 +191,9 @@ export const Study = () => {
 
             {/* Definition */}
             <p className="text-sm text-foreground/90 leading-relaxed mb-4 line-clamp-3">
-              {term.definition}
+              {isTr
+                ? (term.turkishDefinition || term.definition)
+                : (term.englishDefinition || term.turkishDefinition || term.definition)}
             </p>
 
             {/* İnteraktif Morfem Analizi Rozetleri */}

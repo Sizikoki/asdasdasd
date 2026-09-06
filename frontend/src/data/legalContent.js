@@ -65,6 +65,7 @@ export const LEGAL_CONTENT = {
           title: '5. FİKRİ MÜLKİYET VE KULLANIM KURALLARI',
           content: [
             'Platformda yer alan morfem veritabanı, yazılım kodları, arayüz tasarımları ve algoritmalar 5846 sayılı FSEK kapsamında HealthLexMed\'e aittir.',
+            'Platformda sunulan uluslararası anatomik terminoloji ve adlandırma standartları, IFAA / FIPAT (International Federation of Associations of Anatomists) tarafından yayımlanan Terminologia Anatomica (TA2) bilimsel standartlarına dayanmaktadır.',
             'Hesap devri yapılamaz; içerikler scraper/bot yazılımlarıyla çekilemez, kopyalanamaz veya ticari amaçla satılamaz.'
           ]
         },
@@ -278,6 +279,7 @@ export const LEGAL_CONTENT = {
           title: '5. INTELLECTUAL PROPERTY AND USAGE RESTRICTIONS',
           content: [
             'The morpheme database, proprietary code, user interface designs, and algorithms belong to HealthLexMed under applicable intellectual property laws.',
+            'International anatomical terminology and anatomical classifications presented on the platform align with the Terminologia Anatomica (TA2) scientific standard published by IFAA / FIPAT (International Federation of Associations of Anatomists).',
             'Accounts may not be shared or transferred; platform content may not be scraped, copied, reverse engineered, or redistributed for commercial gain.'
           ]
         },

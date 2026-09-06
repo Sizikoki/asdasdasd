@@ -1,0 +1,5051 @@
+{
+  "timestamp": "2026-09-06T13:09:46.785Z",
+  "termsCount": 253,
+  "userProgressCount": 103,
+  "terms": [
+    {
+      "docId": "301",
+      "data": {
+        "id": 301,
+        "term": "Fovea Articularis Capitis Radii",
+        "english": "Articular Facet of Head of Radius",
+        "roots": "fovea (çukur) + articularis (eklem) + caput (baş) + radius (döner kemik)",
+        "turkishDefinition": "Radius başının eklem çukuru; ön kol kemiğinin üst ucundaki çukurluk.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "302",
+      "data": {
+        "id": 302,
+        "term": "Caput Radii",
+        "english": "Head of Radius",
+        "roots": "caput (baş) + radius (döner kemik)",
+        "turkishDefinition": "Radius başı; döner kemiğin üst ucu.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "303",
+      "data": {
+        "id": 303,
+        "term": "Collum Radii",
+        "english": "Neck of Radius",
+        "roots": "collum (boyun) + radius (döner kemik)",
+        "turkishDefinition": "Radius boynu; radius başının hemen altındaki daralmış kısım.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "304",
+      "data": {
+        "id": 304,
+        "term": "Tuberositas Radii",
+        "english": "Radial Tuberosity / Bicipital Tuberosity",
+        "roots": "tuberositas (pürtük) + radius (döner kemik)",
+        "turkishDefinition": "Radius pürtüğü; biceps tendonunun yapıştığı pürtüklü çıkıntı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "305",
+      "data": {
+        "id": 305,
+        "term": "Margo Anterior Radii",
+        "english": "Anterior Border of Radius / Anterior Margin",
+        "roots": "margo (kenar) + anterior (ön) + radius (döner kemik)",
+        "turkishDefinition": "Radius'un ön kenarı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "306",
+      "data": {
+        "id": 306,
+        "term": "Facies Anterior Radii",
+        "english": "Anterior Surface of Radius",
+        "roots": "facies (yüz) + anterior (ön) + radius (döner kemik)",
+        "turkishDefinition": "Radius'un ön yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "307",
+      "data": {
+        "id": 307,
+        "term": "Margo Interosseus Radii",
+        "english": "Interosseous Border of Radius / Interosseous Margin",
+        "roots": "margo (kenar) + interosseus (kemikler arası) + radius (döner kemik)",
+        "turkishDefinition": "Radius'un kemikler arası kenarı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "308",
+      "data": {
+        "id": 308,
+        "term": "Margo Posterior Radii",
+        "english": "Posterior Border of Radius / Posterior Margin",
+        "roots": "margo (kenar) + posterior (arka) + radius (döner kemik)",
+        "turkishDefinition": "Radius'un arka kenarı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "309",
+      "data": {
+        "id": 309,
+        "term": "Facies Posterior Radii",
+        "english": "Posterior Surface of Radius",
+        "roots": "facies (yüz) + posterior (arka) + radius (döner kemik)",
+        "turkishDefinition": "Radius'un arka yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "310",
+      "data": {
+        "id": 310,
+        "term": "Facies Lateralis Radii",
+        "english": "Lateral Surface of Radius",
+        "roots": "facies (yüz) + lateralis (yan) + radius (döner kemik)",
+        "turkishDefinition": "Radius'un dış yan yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "311",
+      "data": {
+        "id": 311,
+        "term": "Facies Articularis Carpea / Facies Articularis Carpalis",
+        "english": "Carpal Articular Surface",
+        "roots": "facies (yüz) + articularis (eklem) + carpalis (el bileği)",
+        "turkishDefinition": "Radius'un alt ucunda el bileği kemikleriyle eklemleşen yüzeyi.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "312",
+      "data": {
+        "id": 312,
+        "term": "Incisura Ulnaris",
+        "english": "Ulnar Notch",
+        "roots": "incisura (çentik) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Radius'un alt ucundaki dirsek kemiği çentiği; ulnanın eklemleştiği alan.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "313",
+      "data": {
+        "id": 313,
+        "term": "Tuberculum Dorsale Radii",
+        "english": "Dorsal Radial Tubercle / Dorsal Tubercle of Radius",
+        "roots": "tuberculum (tümsekçik) + dorsalis (arka) + radius (döner kemik)",
+        "turkishDefinition": "Radius'un arka yüzündeki dorsal tümsekçik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "314",
+      "data": {
+        "id": 314,
+        "term": "Processus Styloideus Radii",
+        "english": "Radial Styloid Process",
+        "roots": "processus (çıkıntı) + styloideus (kalem şeklinde) + radius (döner kemik)",
+        "turkishDefinition": "Radius alt ucunun dış yan tarafındaki kalem benzeri çıkıntı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "315",
+      "data": {
+        "id": 315,
+        "term": "Olecranon",
+        "english": "Olecranon",
+        "roots": "olecranon (dirsek çıkıntısı)",
+        "turkishDefinition": "Ulnanın üst ucunda bulunan dirsek çıkıntısı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "316",
+      "data": {
+        "id": 316,
+        "term": "Incisura Trochlearis",
+        "english": "Trochlear Notch",
+        "roots": "incisura (çentik) + trochlea (makara)",
+        "turkishDefinition": "Ulnanın üst ucunda humerus trochleası (makara) ile eklemleşen çentik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "317",
+      "data": {
+        "id": 317,
+        "term": "Processus Coronoideus Ulnae",
+        "english": "Coronoid Process of Ulna",
+        "roots": "processus (çıkıntı) + coronoid (taç/gaga şeklinde) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulnanın üst ucunda, ön taraftaki gaga benzeri çıkıntı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "318",
+      "data": {
+        "id": 318,
+        "term": "Incisura Radialis",
+        "english": "Radial Notch",
+        "roots": "incisura (çentik) + radius (döner kemik)",
+        "turkishDefinition": "Ulnanın üst ucunda radius başının eklemleştiği çentik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "319",
+      "data": {
+        "id": 319,
+        "term": "Crista Supinatoris / Crista Supinatoria",
+        "english": "Supinator Crest",
+        "roots": "crista (ibik/kenar) + supinator (dışa döndüren)",
+        "turkishDefinition": "Ulnadaki supinator kasın yapıştığı keskin kenar/ibik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "320",
+      "data": {
+        "id": 320,
+        "term": "Tuberositas Ulnae",
+        "english": "Tuberosity of Ulna",
+        "roots": "tuberositas (pürtük) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulnadaki pürtüklü tümsekçik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "321",
+      "data": {
+        "id": 321,
+        "term": "Facies Anterior Ulnae",
+        "english": "Anterior Surface of Ulna",
+        "roots": "facies (yüz) + anterior (ön) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulnanın ön yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "322",
+      "data": {
+        "id": 322,
+        "term": "Margo Interosseus Ulnae",
+        "english": "Interosseous Border of Ulna / Interosseous Margin of Ulna",
+        "roots": "margo (kenar) + interosseus (kemikler arası) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulnanın kemikler arası kenarı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "323",
+      "data": {
+        "id": 323,
+        "term": "Margo Anterior Ulnae",
+        "english": "Anterior Border of Ulna / Anterior Margin of Ulna",
+        "roots": "margo (kenar) + anterior (ön) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulnanın ön kenarı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "324",
+      "data": {
+        "id": 324,
+        "term": "Margo Posterior Ulnae",
+        "english": "Posterior Border of Ulna / Posterior Margin of Ulna",
+        "roots": "margo (kenar) + posterior (arka) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulnanın arka kenarı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "325",
+      "data": {
+        "id": 325,
+        "term": "Caput Ulnae",
+        "english": "Head of Ulna",
+        "roots": "caput (baş) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Dirsek kemiğinin alt ucundaki kafa kısmı (ulna başı).",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "326",
+      "data": {
+        "id": 326,
+        "term": "Circumferentia Articularis Capitis Ulnae",
+        "english": "Articular Circumference of Head of Ulna",
+        "roots": "circumferentia (çevre) + articularis (eklem) + caput (baş) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulna başındaki çevre eklem yüzeyi.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "327",
+      "data": {
+        "id": 327,
+        "term": "Processus Styloideus Ulnae",
+        "english": "Ulnar Styloid Process",
+        "roots": "processus (çıkıntı) + styloideus (kalem şeklinde) + ulna (dirsek kemiği)",
+        "turkishDefinition": "Ulnanın alt ucundaki kalem benzeri çıkıntı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "328",
+      "data": {
+        "id": 328,
+        "term": "Os Scaphoideum",
+        "english": "Scaphoid Bone",
+        "roots": "os (kemik) + scapha (kayık)",
+        "turkishDefinition": "El bileğinin kayık kemiği (proksimal sıranın en dıştaki kemiği).",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "329",
+      "data": {
+        "id": 329,
+        "term": "Os Lunatum",
+        "english": "Lunate Bone",
+        "roots": "os (kemik) + luna (ay)",
+        "turkishDefinition": "El bileğinin ay kemiği.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "330",
+      "data": {
+        "id": 330,
+        "term": "Os Triquetrum",
+        "english": "Triquetrum Bone",
+        "roots": "os (kemik) + triquetrus (üç köşeli)",
+        "turkishDefinition": "El bileğinin üç köşe kemiği.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "331",
+      "data": {
+        "id": 331,
+        "term": "Os Pisiforme",
+        "english": "Pisiform Bone",
+        "roots": "os (kemik) + pisum (bezelye)",
+        "turkishDefinition": "El bileğinin bezelye kemiği.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "332",
+      "data": {
+        "id": 332,
+        "term": "Os Hamatum",
+        "english": "Hamate Bone",
+        "roots": "os (kemik) + hamus (çengel)",
+        "turkishDefinition": "El bileğinin çengelli kemiği.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "351",
+      "data": {
+        "id": 351,
+        "term": "Fossa Infraspinata",
+        "english": "Infraspinous Fossa",
+        "roots": "fossa (çukur) + infraspinata (diken altı)",
+        "turkishDefinition": "Kürek kemiğinin arkasında, dikenin altındaki geniş çukur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "352",
+      "data": {
+        "id": 352,
+        "term": "Facies Posterior Scapulae",
+        "english": "Posterior Surface of Scapula",
+        "roots": "facies (yüz) + posterior (arka) + scapula (kürek kemiği)",
+        "turkishDefinition": "Kürek kemiğinin arka yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "353",
+      "data": {
+        "id": 353,
+        "term": "Caput Humeri",
+        "english": "Head of Humerus",
+        "roots": "caput (baş) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus başı; kol kemiğinin omuz eklemine katılan yarım küre şeklindeki üst ucu.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "354",
+      "data": {
+        "id": 354,
+        "term": "Collum Anatomicum Humeri",
+        "english": "Anatomical Neck of Humerus",
+        "roots": "collum (boyun) + anatomicum (anatomik) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus'un anatomik boynu; caput humeri'yi sınırlayan dar hat.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "355",
+      "data": {
+        "id": 355,
+        "term": "Collum Chirurgicum Humeri",
+        "english": "Surgical Neck of Humerus",
+        "roots": "collum (boyun) + chirurgicum (cerrahi) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus'un cerrahi boynu; kırıkların en sık görüldüğü üst uç altındaki daralan kısım.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "356",
+      "data": {
+        "id": 356,
+        "term": "Tuberculum Minus",
+        "english": "Lesser Tubercle / Lesser Tuberosity",
+        "roots": "tuberculum (tümsekçik) + minus (küçük)",
+        "turkishDefinition": "Humerus üst ucunda, ön tarafta bulunan küçük tümsekçik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "357",
+      "data": {
+        "id": 357,
+        "term": "Tuberculum Majus",
+        "english": "Greater Tubercle / Greater Tuberosity",
+        "roots": "tuberculum (tümsekçik) + majus (büyük)",
+        "turkishDefinition": "Humerus üst ucunda, dış tarafta bulunan büyük tümsekçik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "358",
+      "data": {
+        "id": 358,
+        "term": "Fossa Radialis",
+        "english": "Radial Fossa",
+        "roots": "fossa (çukur) + radialis (radius ile ilgili)",
+        "turkishDefinition": "Humerus ön alt ucunda, capitulum'un hemen üzerindeki küçük çukurluk.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "359",
+      "data": {
+        "id": 359,
+        "term": "Capitulum Humeri",
+        "english": "Capitulum of Humerus",
+        "roots": "capitulum (küçük baş) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus alt ucunda, radius başı ile eklemleşen küçük baş şeklindeki çıkıntı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "360",
+      "data": {
+        "id": 360,
+        "term": "Trochlea Humeri",
+        "english": "Trochlea of Humerus",
+        "roots": "trochlea (makara) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus alt ucunda, ulna ile eklemleşen makara şeklindeki eklem yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "361",
+      "data": {
+        "id": 361,
+        "term": "Facies Posterior Humeri",
+        "english": "Posterior Surface of Humerus",
+        "roots": "facies (yüz) + posterior (arka) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus'un arka yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "362",
+      "data": {
+        "id": 362,
+        "term": "Fossa Olecrani",
+        "english": "Olecranon Fossa",
+        "roots": "fossa (çukur) + olecranon (dirsek çıkıntısı)",
+        "turkishDefinition": "Humerus arka alt ucunda dirsek eklemi açıldığında olecranon'un girdiği derin çukur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "363",
+      "data": {
+        "id": 363,
+        "term": "Sulcus Intertubercularis",
+        "english": "Intertubercular Sulcus / Bicipital Groove",
+        "roots": "sulcus (oluk) + inter- (arasında) + tuberculum (tümsekçik)",
+        "turkishDefinition": "Tuberculum majus ile minus arasında uzanan oluk (biceps oluğu).",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "364",
+      "data": {
+        "id": 364,
+        "term": "Crista Tuberculi Majoris / Labium Laterale Sulci Intertubercularis",
+        "english": "Crest of Greater Tubercle / Lateral Lip of Intertubercular Sulcus",
+        "roots": "crista (ibik/kenar) + tuberculum (tümsekçik) + majus (büyük) + labium (dudak) + laterale (dış yan)",
+        "turkishDefinition": "Tuberculum majus'un aşağı doğru uzanan keskin kenarı; bicipital oluğun dış dudağı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "365",
+      "data": {
+        "id": 365,
+        "term": "Crista Tuberculi Minoris / Labium Mediale Sulci Intertubercularis",
+        "english": "Crest of Lesser Tubercle / Medial Lip of Intertubercular Sulcus",
+        "roots": "crista (ibik/kenar) + tuberculum (tümsekçik) + minus (küçük) + labium (dudak) + mediale (iç yan)",
+        "turkishDefinition": "Tuberculum minus'un aşağı doğru uzanan keskin kenarı; bicipital oluğun iç dudağı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "366",
+      "data": {
+        "id": 366,
+        "term": "Sulcus Nervi Radialis / Sulcus Radialis",
+        "english": "Radial Groove / Spiral Groove / Groove for Radial Nerve",
+        "roots": "sulcus (oluk) + nervus (sinir) + radialis (radial sinir)",
+        "turkishDefinition": "Humerus gövdesinin arkasında spiral olarak uzanan radial sinir oluğu.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "367",
+      "data": {
+        "id": 367,
+        "term": "Tuberositas Deltoidea",
+        "english": "Deltoid Tuberosity",
+        "roots": "tuberositas (pürtük) + deltoidea (deltoid kası ile ilgili)",
+        "turkishDefinition": "Humerus gövdesinin dış tarafında, deltoid kasının yapıştığı V şeklindeki pürtüklü alan.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "368",
+      "data": {
+        "id": 368,
+        "term": "Facies Anterolateralis Humeri / Facies Anterior Lateralis Humeri",
+        "english": "Anterolateral Surface of Humerus",
+        "roots": "facies (yüz) + anterior (ön) + lateralis (yan) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus'un ön-dış yan yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "369",
+      "data": {
+        "id": 369,
+        "term": "Facies Anteromedialis Humeri / Facies Anterior Medialis Humeri",
+        "english": "Anteromedial Surface of Humerus",
+        "roots": "facies (yüz) + anterior (ön) + medialis (iç yan) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus'un ön-iç yan yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "370",
+      "data": {
+        "id": 370,
+        "term": "Crista Supracondylaris Medialis / Crista Supraepicondylaris Medialis",
+        "english": "Medial Supracondylar Ridge / Medial Supraepicondylar Ridge",
+        "roots": "crista (kenar/ibik) + supra- (üst) + condylus (lokma) / epicondylus (lokma üstü) + medialis (iç yan)",
+        "turkishDefinition": "Humerus alt ucunda, epicondylus medialis'in yukarısına uzanan iç yan kenar.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "371",
+      "data": {
+        "id": 371,
+        "term": "Crista Supracondylaris Lateralis / Crista Supraepicondylaris Lateralis",
+        "english": "Lateral Supracondylar Ridge / Lateral Supraepicondylar Ridge",
+        "roots": "crista (kenar/ibik) + supra- (üst) + condylus (lokma) / epicondylus (lokma üstü) + lateralis (dış yan)",
+        "turkishDefinition": "Humerus alt ucunda, epicondylus lateralis'in yukarısına uzanan dış yan kenar.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "372",
+      "data": {
+        "id": 372,
+        "term": "Epicondylus Lateralis Humeri",
+        "english": "Lateral Epicondyle of Humerus",
+        "roots": "epicondylus (lokma üstü) + lateralis (dış yan) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus alt ucunun dış yan tarafındaki çıkıntı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "373",
+      "data": {
+        "id": 373,
+        "term": "Epicondylus Medialis Humeri",
+        "english": "Medial Epicondyle of Humerus",
+        "roots": "epicondylus (lokma üstü) + medialis (iç yan) + humerus (kol kemiği)",
+        "turkishDefinition": "Humerus alt ucunun iç yan tarafındaki belirgin çıkıntı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "374",
+      "data": {
+        "id": 374,
+        "term": "Fossa Coronoidea",
+        "english": "Coronoid Fossa",
+        "roots": "fossa (çukur) + coronoidea (gaga/taç şeklinde)",
+        "turkishDefinition": "Humerus ön alt ucunda, dirsek büküldüğünde ulnanın processus coronoideus'unun girdiği çukur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "375",
+      "data": {
+        "id": 375,
+        "term": "Extremitas Acromialis",
+        "english": "Acromial End",
+        "roots": "extremitas (uç) + acromialis (akromiyona ait)",
+        "turkishDefinition": "Köprücük kemiğinin kürek kemiği omuz çıkıntısı (akromiyon) ile eklemleşen yassı dış ucu.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "376",
+      "data": {
+        "id": 376,
+        "term": "Facies Articularis Acromialis",
+        "english": "Acromial Facet",
+        "roots": "facies (yüz) + articularis (eklem) + acromialis (akromiyon)",
+        "turkishDefinition": "Clavicula'nın akromiyal ucunda bulunan eklem yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "377",
+      "data": {
+        "id": 377,
+        "term": "Linea Trapezoidea",
+        "english": "Trapezoid Line",
+        "roots": "linea (çizgi) + trapezoidea (yamuk şeklinde)",
+        "turkishDefinition": "Clavicula'nın alt yüzünde trapezoid bağın yapıştığı eğik çizgi.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "378",
+      "data": {
+        "id": 378,
+        "term": "Tuberculum Conoideum",
+        "english": "Conoid Tubercle",
+        "roots": "tuberculum (tümsekçik) + conoideum (koni şeklinde)",
+        "turkishDefinition": "Clavicula'nın alt yüzünde konoid bağın yapıştığı küçük konik tümsekçik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "379",
+      "data": {
+        "id": 379,
+        "term": "Sulcus Musculi Subclavii",
+        "english": "Groove for Subclavius Muscle",
+        "roots": "sulcus (oluk) + musculus (kas) + subclavius (köprücük kemiği altı)",
+        "turkishDefinition": "Clavicula'nın alt yüzünde subclavius kasının uzandığı oluk.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "380",
+      "data": {
+        "id": 380,
+        "term": "Impressio Ligamenti Costoclavicularis",
+        "english": "Impression for Costoclavicular Ligament",
+        "roots": "impressio (iz) + ligamentum (bağ) + costoclavicularis (kaburga-köprücük)",
+        "turkishDefinition": "Clavicula'nın alt yüzünde, sternal uca yakın kostoklavikular bağın tutunduğu pürtüklü iz.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "381",
+      "data": {
+        "id": 381,
+        "term": "Extremitas Sternalis",
+        "english": "Sternal End",
+        "roots": "extremitas (uç) + sternalis (sternum ile ilgili)",
+        "turkishDefinition": "Köprücük kemiğinin sternum (göğüs kemiği) ile eklemleşen kalınlaşmış iç ucu.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "382",
+      "data": {
+        "id": 382,
+        "term": "Facies Articularis Sternalis",
+        "english": "Sternal Articular Surface",
+        "roots": "facies (yüz) + articularis (eklem) + sternalis (sternum)",
+        "turkishDefinition": "Clavicula'nın sternal ucunda bulunan eklem yüzü.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "391",
+      "data": {
+        "id": 391,
+        "term": "Tuberculum Supraglenoidale",
+        "english": "Supraglenoid Tubercle",
+        "roots": "tuberculum (tümsekçik) + supra (üst) + glenoid (eklem çukuru)",
+        "turkishDefinition": "Kürek kemiğindeki glenoid çukurun üst kenarında bulunan, biceps kasının uzun tendonunun tutunduğu tümsekçik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "392",
+      "data": {
+        "id": 392,
+        "term": "Fossa Glenoidea",
+        "english": "Glenoid Fossa",
+        "roots": "fossa (çukur) + glenoid (eklem çukuru)",
+        "turkishDefinition": "Kürek kemiğinin dış köşesinde yer alan ve humerus başı ile omuz eklemini oluşturan sığ eklem çukuru.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "393",
+      "data": {
+        "id": 393,
+        "term": "Collum Scapulae",
+        "english": "Neck of Scapula",
+        "roots": "collum (boyun) + scapula (kürek kemiği)",
+        "turkishDefinition": "Scapula başı (glenoid bölge) ile kürek kemiğinin gövdesi arasındaki daralmış boyun kısmı.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "394",
+      "data": {
+        "id": 394,
+        "term": "Tuberculum Infraglenoideum",
+        "english": "Infraglenoid Tubercle",
+        "roots": "tuberculum (tümsekçik) + infra (alt) + glenoid (eklem çukuru)",
+        "turkishDefinition": "Kürek kemiğindeki glenoid çukurun alt kenarında bulunan, triceps kasının uzun başının tutunduğu tümsekçik.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "395",
+      "data": {
+        "id": 395,
+        "term": "Margo Lateralis Scapulae",
+        "english": "Lateral Border of Scapula",
+        "roots": "margo (kenar) + lateralis (yan) + scapula (kürek kemiği)",
+        "turkishDefinition": "Kürek kemiğinin dış yan kenarı; koltuk altına bakan kalın kenar.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "396",
+      "data": {
+        "id": 396,
+        "term": "Fossa Subscapularis",
+        "english": "Subscapular Fossa",
+        "roots": "fossa (çukur) + subscapularis (kürek kemiği altı)",
+        "turkishDefinition": "Kürek kemiğinin kaburgalara bakan ön yüzeyindeki geniş ve sığ çukurluk; subscapularis kası buraya yerleşir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "397",
+      "data": {
+        "id": 397,
+        "term": "Margo Medialis Scapulae",
+        "english": "Medial Border of Scapula",
+        "roots": "margo (kenar) + medialis (iç yan) + scapula (kürek kemiği)",
+        "turkishDefinition": "Kürek kemiğinin omurgaya bakan iç yan kenarı; daha ince ve uzundur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "398",
+      "data": {
+        "id": 398,
+        "term": "Angulus Inferior Scapulae",
+        "english": "Inferior Angle of Scapula",
+        "roots": "angulus (açı) + inferior (alt) + scapula (kürek kemiği)",
+        "turkishDefinition": "Kürek kemiğinin iç yan ve dış yan kenarlarının birleşmesiyle oluşan en alt köşesi.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "65",
+      "data": {
+        "id": 65,
+        "term": "Os Frontale",
+        "english": "Frontal Bone",
+        "roots": "os (kemik) + frons (alın)",
+        "turkishDefinition": "Beyni çevreleyen ve koruyan, kafatasının üst kısmını oluşturan kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "skull_bones",
+        "englishDefinition": "Forms the forehead and anterior cranial roof, articulating posteriorly with the parietal bones at the coronal suture."
+      }
+    },
+    {
+      "docId": "66",
+      "data": {
+        "id": 66,
+        "term": "Os Parietale",
+        "english": "Parietal Bone",
+        "roots": "os (kemik) + paries (duvar)",
+        "turkishDefinition": "Kafatasının üst dış duvarını ve tavanını oluşturan büyük, kavisli bir kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "skull_bones",
+        "englishDefinition": "A paired bone forming the lateral walls and roof of the cranium, joined to its mate at the sagittal suture."
+      }
+    },
+    {
+      "docId": "67",
+      "data": {
+        "id": 67,
+        "term": "Os Temporale",
+        "english": "Temporal Bone",
+        "roots": "os (kemik) + tempus (şakak)",
+        "turkishDefinition": "Kafatasının alt yan duvarlarına katkıda bulunur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "skull_bones",
+        "englishDefinition": "Forms part of the lateral skull base and houses the structures of hearing and balance within the ear."
+      }
+    },
+    {
+      "docId": "68",
+      "data": {
+        "id": 68,
+        "term": "Os Occipitale",
+        "english": "Occipital Bone",
+        "roots": "os (kemik) + occiput (ense)",
+        "turkishDefinition": "Kafatasının arka duvarının ve tabanının büyük bir bölümünü oluşturan kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "skull_bones",
+        "englishDefinition": "Forms the posterior skull and base, containing the foramen magnum through which the spinal cord passes."
+      }
+    },
+    {
+      "docId": "69",
+      "data": {
+        "id": 69,
+        "term": "Os Sphenoideum",
+        "english": "Sphenoid Bone",
+        "roots": "os (kemik) + sphen (kama)",
+        "turkishDefinition": "Beyni çevreleyen ve koruyan kafatasının üst kısmını oluşturan kemiklerden biridir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "skull_bones",
+        "englishDefinition": "A wedge-shaped bone forming the central skull base, articulating with nearly all other cranial bones."
+      }
+    },
+    {
+      "docId": "70",
+      "data": {
+        "id": 70,
+        "term": "Os Ethmoideum",
+        "english": "Ethmoid Bone",
+        "roots": "os (kemik) + ethmos (elek)",
+        "turkishDefinition": "Kafatasının üst kısmında yer alır ve beyni çevreleyip korur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "skull_bones",
+        "englishDefinition": "A light, sieve-like bone forming part of the anterior skull base and nasal cavity roof, with perforations for olfactory nerves."
+      }
+    },
+    {
+      "docId": "71",
+      "data": {
+        "id": 71,
+        "term": "Os Nasale",
+        "english": "Nasal Bone",
+        "roots": "os (kemik) + nasus (burun)",
+        "turkishDefinition": "Üst yüzün ortasında, Maxilla ön çıkıntıları arasında yan yana yer alan küçük dikdörtgen şekilli kemikler olup birlikte burun sırtını oluştururlar.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "72",
+      "data": {
+        "id": 72,
+        "term": "Os Lacrimalia",
+        "english": "Lacrimal Bone",
+        "roots": "os (kemik) + lacrima (gözyaşı)",
+        "turkishDefinition": "Medial Orbital duvarların ön kısmını oluşturan çiftli kraniofasiyal kemiklerdir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "73",
+      "data": {
+        "id": 73,
+        "term": "Os Zygomaticum",
+        "english": "Zygomatic Bone",
+        "roots": "os (kemik) + zygoma (yanak)",
+        "turkishDefinition": "Yanağın çıkıntısını oluşturan önemli bir yüz kemiğidir. Şekli kabaca dikdörtgen şeklindedir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "74",
+      "data": {
+        "id": 74,
+        "term": "Maxilla",
+        "english": "Maxilla",
+        "roots": "maxilla (üst çene)",
+        "turkishDefinition": "Yüzün orta üçte birini oluşturan, orta hatta birleşen bir çift simetrik kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "75",
+      "data": {
+        "id": 75,
+        "term": "Os Palatinum",
+        "english": "Palatine Bone",
+        "roots": "os (kemik) + palatum (damak)",
+        "turkishDefinition": "Orta hatta birleşen çift L şeklinde kemiklerdir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "76",
+      "data": {
+        "id": 76,
+        "term": "Processus Maxillaris Conchae Nasalis Inferioris",
+        "english": "Maxillary Process of Inferior Nasal Concha",
+        "roots": "processus (çıkıntı) + maxilla + concha (kabuk)",
+        "turkishDefinition": "Inferior Nasal Concha'nın lateral yüzünden çıkan, Maxilla ile eklemleşen kemik çıkıntısıdır.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "77",
+      "data": {
+        "id": 77,
+        "term": "Vomer",
+        "english": "Vomer",
+        "roots": "vomer (saban demiri)",
+        "turkishDefinition": "Eşlenmemiş yüz kemiklerinden biridir ve kemik nasal septumun posteroinferior bölümünü oluşturur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "78",
+      "data": {
+        "id": 78,
+        "term": "Mandibula",
+        "english": "Mandible",
+        "roots": "mandibula (alt çene)",
+        "turkishDefinition": "Alt çenenin tek orta hat kemiğidir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "face_bones"
+      }
+    },
+    {
+      "docId": "79",
+      "data": {
+        "id": 79,
+        "term": "Columna Vertebralis",
+        "english": "Vertebral Column",
+        "roots": "columna (sütun) + vertebra (omur)",
+        "turkishDefinition": "Omur adı verilen ve Intervertebral Disklerle birbirinden ayrılan 33 kemikten oluşur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "trunk_bones"
+      }
+    },
+    {
+      "docId": "80",
+      "data": {
+        "id": 80,
+        "term": "Sternum",
+        "english": "Sternum",
+        "roots": "sternum (göğüs kemiği)",
+        "turkishDefinition": "Clavicula ve Kaburgalarla eklemlenen ön orta hat göğüs duvarı kemik plakasıdır.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "trunk_bones"
+      }
+    },
+    {
+      "docId": "81",
+      "data": {
+        "id": 81,
+        "term": "Costae",
+        "english": "Ribs",
+        "roots": "costa (kaburga)",
+        "turkishDefinition": "Göğüs organlarını koruyan göğüs kafesinin ana yapısını oluşturur, ancak asıl işlevi solunuma yardımcı olmaktır.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "trunk_bones"
+      }
+    },
+    {
+      "docId": "82",
+      "data": {
+        "id": 82,
+        "term": "Vertebra",
+        "english": "Vertebra",
+        "roots": "vertebra (omur)",
+        "turkishDefinition": "Omur, Omurga'nın temel segmental birimidir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "trunk_bones"
+      }
+    },
+    {
+      "docId": "83",
+      "data": {
+        "id": 83,
+        "term": "Scapula / Os Scapulare",
+        "english": "Scapula / Scapular Bone",
+        "roots": "scapula (kürek kemiği)",
+        "turkishDefinition": "Kabaca üçgen şeklinde bir göğüs kemeri kemiğidir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "84",
+      "data": {
+        "id": 84,
+        "term": "Clavicula",
+        "english": "Clavicle",
+        "roots": "clavicula (köprücük kemiği)",
+        "turkishDefinition": "Göğüs kemerinin aksial iskelete bağlayan tek kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "85",
+      "data": {
+        "id": 85,
+        "term": "Humerus / Os Humeri",
+        "english": "Humerus / Humeral Bone",
+        "roots": "humerus (kol kemiği)",
+        "turkishDefinition": "Üst kol bölgesinde yer alan uzun bir kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "86",
+      "data": {
+        "id": 86,
+        "term": "Radius / Os Radiale",
+        "english": "Radius / Radial Bone",
+        "roots": "radius (tekerlek çubuğu)",
+        "turkishDefinition": "Ön kolda bulunan ve başparmak tarafındaki kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "87",
+      "data": {
+        "id": 87,
+        "term": "Ulna / Os Ulnae",
+        "english": "Ulna / Ulnar Bone",
+        "roots": "ulna (dirsek kemiği)",
+        "turkishDefinition": "Ön kolda bulunan ve serçe parmak tarafında bulunan kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "88",
+      "data": {
+        "id": 88,
+        "term": "Ossa Carpi",
+        "english": "Carpal Bones",
+        "roots": "ossa (kemikler) + carpus (el bileği)",
+        "turkishDefinition": "El bileğini oluşturan 8 kısa kemikten meydana gelir ve ön kol ile el arasındaki eklemleşmeyi sağlar.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "89",
+      "data": {
+        "id": 89,
+        "term": "Ossa Metacarpi",
+        "english": "Metacarpal Bones",
+        "roots": "ossa (kemikler) + metacarpus (el ayası)",
+        "turkishDefinition": "El iskeletinde Ossa Carpi ile Phalanges Proximales arasında yer alan 5 uzun kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "90",
+      "data": {
+        "id": 90,
+        "term": "Phalanx Manus",
+        "english": "Phalanx of Hand",
+        "roots": "phalanx (parmak kemiği) + manus (el)",
+        "turkishDefinition": "Phalanges Digitorum Manus, parmakların kemikleridir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "upper_extremity_bones"
+      }
+    },
+    {
+      "docId": "91",
+      "data": {
+        "id": 91,
+        "term": "Os Coxae",
+        "english": "Hip Bone / Coxal Bone",
+        "roots": "os (kemik) + coxa (kalça)",
+        "turkishDefinition": "Os coxae, ilium, ischium ve pubis'in birleşmesiyle oluşan kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "92",
+      "data": {
+        "id": 92,
+        "term": "Femur",
+        "english": "Thigh",
+        "roots": "femur (uyluk kemiği)",
+        "turkishDefinition": "İnsan vücudundaki en uzun, en hacimli ve en güçlü kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "93",
+      "data": {
+        "id": 93,
+        "term": "Patella",
+        "english": "Patella / Knee Bone",
+        "roots": "patella (diz kapağı)",
+        "turkishDefinition": "İnsan vücudundaki en büyük Sesamoid kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "94",
+      "data": {
+        "id": 94,
+        "term": "Tibia",
+        "english": "Tibia / Shin Bone",
+        "roots": "tibia (kaval kemiği)",
+        "turkishDefinition": "Bacağın en büyük kemiğidir; Art. Genus ve Art. Talocruralis'in oluşumuna katılır.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "95",
+      "data": {
+        "id": 95,
+        "term": "Fibula",
+        "english": "Fibula",
+        "roots": "fibula (ince baldır kemiği)",
+        "turkishDefinition": "Bacağın iki kemiğinden daha küçük olanıdır.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "96",
+      "data": {
+        "id": 96,
+        "term": "Ossa Tarsi",
+        "english": "Tarsal Bones",
+        "roots": "ossa (kemikler) + tarsus (ayak bileği)",
+        "turkishDefinition": "Ayakta Ossa Metatarsalia ve Phalanges Pedis dışında kalan yedi kemiktir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "97",
+      "data": {
+        "id": 97,
+        "term": "Ossa Metatarsi",
+        "english": "Metatarsal Bones",
+        "roots": "ossa (kemikler) + metatarsus (ayak ayası)",
+        "turkishDefinition": "Ayakta medialden laterale doğru I'den V'e numaralandırılan 5 uzun kemikten oluşur.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "98",
+      "data": {
+        "id": 98,
+        "term": "Phalanges Pedis / Ossa Digitorum Pedis",
+        "english": "Phalanges of Foot / Phalangeal Bones of Foot",
+        "roots": "phalanx (parmak kemiği) + pes (ayak)",
+        "turkishDefinition": "Ossa Metatarsalia'nın Distal'inde yer alan ve ayak parmaklarını oluşturan uzun kemiklerdir.",
+        "category": "anatomy",
+        "system": "movement",
+        "subcategory": "lower_extremity_bones"
+      }
+    },
+    {
+      "docId": "QTE0GBAx8pl3RBRD1yrJ",
+      "data": {
+        "term": "Sternocostal Articulation",
+        "English": "Sternocostal Joint",
+        "turkishDefinition": "Sternum ile kaburga kıkırdakları arasında oluşan eklem yapısıdır. ",
+        "roots": [
+          "Sterno",
+          "costal"
+        ]
+      }
+    },
+    {
+      "docId": "abductio",
+      "data": {
+        "system": "movement",
+        "english": "Abduction",
+        "term": "Abductio",
+        "id": 1045,
+        "roots": "ab- (uzaklaştırmak, -den uzak) + ducere (götürmek, çekmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Vücut orta hattından uzaklaştırma hareketi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Vücut orta hattından uzaklaştırma hareketi"
+      }
+    },
+    {
+      "docId": "acetabulum",
+      "data": {
+        "system": "movement",
+        "id": 521,
+        "roots": "acetabulum (sirke kabı - şekil benzetmesi)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Asetabulum; os coxae üzerinde os ilium, os ischii ve os pubis'in birleşiminden oluşan derin, yarım küre şeklindeki eklem çukuru. Femur başını karşılar.",
+        "english": "Acetabulum",
+        "term": "Acetabulum",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Asetabulum"
+      }
+    },
+    {
+      "docId": "adductio",
+      "data": {
+        "system": "movement",
+        "english": "Adduction",
+        "term": "Adductio",
+        "id": 1046,
+        "roots": "ad- (yaklaştırmak, -e doğru) + ducere (götürmek, çekmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Vücut orta hattına yakınlaştırma hareketi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Vücut orta hattına yakınlaştırma hareketi"
+      }
+    },
+    {
+      "docId": "annulus_fibrosus",
+      "data": {
+        "system": "movement",
+        "english": "Annulus Fibrosus",
+        "term": "Annulus Fibrosus",
+        "id": 548,
+        "roots": "annulus (halka) + fibrosus (lifli)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Anulus fibrosus; intervertebral diskin dış kısmını oluşturan konsantrik kollajen lif tabakaları. Nucleus pulposus'u çevreler ve diskin bütünlüğünü korur.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Anulus fibrosus"
+      }
+    },
+    {
+      "docId": "anterior",
+      "data": {
+        "term": "Anterior",
+        "english": "Anterior / Front",
+        "turkishDefinition": "Ön taraf, vücudun önünde bulunan.",
+        "system": "movement",
+        "id": 1021,
+        "roots": "ante (önce/ön) + ior (karşılaştırma eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Ön taraf, vücudun önünde bulunan"
+      }
+    },
+    {
+      "docId": "apicalis",
+      "data": {
+        "term": "Apicalis",
+        "english": "Apical",
+        "turkishDefinition": "Tepe noktasına (apex) ait, uçta/tepede bulunan.",
+        "system": "movement",
+        "id": 1032,
+        "roots": "apex (tepe/uç) + icalis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Tepe noktasına (apex) ait, uçta/tepede bulunan"
+      }
+    },
+    {
+      "docId": "articulatio_acromioclavicularis",
+      "data": {
+        "system": "movement",
+        "id": 501,
+        "roots": "articulatio (eklem) + acromion (akromion) + clavicula (köprücük kemiği)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "clavicula'nın akromiyal ucu ile scapula'nın acromion'u arasındaki düzlem tipi sinovyal eklem.",
+        "english": "Acromioclavicular Joint",
+        "term": "Articulatio Acromioclavicularis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "clavicula'nın akromiyal ucu ile scapula'nın acromion'u arasındaki düzlem tipi sinovyal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_atlantoaxialis",
+      "data": {
+        "system": "movement",
+        "english": "Atlanto-axial Joint",
+        "term": "Articulatio Atlantoaxialis",
+        "id": 555,
+        "roots": "articulatio (eklem) + atlas (1. servikal vertebra) + axis (2. servikal vertebra)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Atlantoaksiyal eklem; atlas (C1) ile axis (C2) arasındaki eklem kompleksi. Median ve lateral parçalardan oluşur; başın yanlara dönme hareketinin (hayır anlamı) yaklaşık yarısını sağlar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Atlantoaksiyal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_atlantooccipitalis",
+      "data": {
+        "system": "movement",
+        "english": "Atlanto-occipital Joint",
+        "term": "Articulatio Atlantooccipitalis",
+        "id": 554,
+        "roots": "articulatio (eklem) + atlas (1. servikal vertebra) + occiput (art kafa)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Atlantooksipital eklem; atlas (C1) ile os occipitale'nin condylus occipitalis'leri arasındaki elipsoid tipi sinovyal eklem. Başın fleksiyon-ekstansiyonunu (baş sallama hareketi) sağlar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Atlantooksipital eklem"
+      }
+    },
+    {
+      "docId": "articulatio_calcaneocuboidea",
+      "data": {
+        "system": "movement",
+        "id": 538,
+        "roots": "articulatio (eklem) + calcaneus (topuk kemiği) + cuboideum (küp şeklinde kemik)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Kalkaneoküboid eklem; calcaneus ile os cuboideum arasındaki sinovyal eklem. Talokalkaneonaviküler eklemle birlikte transvers tarsal eklem hattını (Chopart eklemi) oluşturur.",
+        "english": "Calcaneocuboid Joint",
+        "term": "Articulatio Calcaneocuboidea",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Kalkaneoküboid eklem"
+      }
+    },
+    {
+      "docId": "articulatio_carpometacarpalis_pollicis",
+      "data": {
+        "system": "movement",
+        "id": 511,
+        "roots": "articulatio (eklem) + carpus + metacarpus + pollex (başparmak)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "os trapezium ile 1. metakarp tabanı arasındaki eyer tipi sinovyal eklem.",
+        "english": "Carpometacarpal Joint of Thumb",
+        "term": "Articulatio Carpometacarpalis Pollicis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "os trapezium ile 1"
+      }
+    },
+    {
+      "docId": "articulatio_coxae",
+      "data": {
+        "system": "movement",
+        "id": 520,
+        "roots": "articulatio (eklem) + coxa (kalça)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Kalça eklemi; femur başı ile os coxae'nin acetabulum'u arasında oluşan top-yuva tipi sinovyal eklem. Vücuttaki en stabil eklemlerden biridir.",
+        "english": "Hip Joint",
+        "term": "Articulatio Coxae",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Kalça eklemi"
+      }
+    },
+    {
+      "docId": "articulatio_cubiti",
+      "data": {
+        "system": "movement",
+        "id": 503,
+        "roots": "articulatio (eklem) + cubitus (dirsek)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "Dirsek eklemi; humerus, radius ve ulna arasında oluşan bileşik menteşe tipi sinovyal eklem. Articulatio humeroulnaris, humeroradialis ve radioulnaris proximalis'i kapsar.",
+        "english": "Elbow Joint",
+        "term": "Articulatio Cubiti",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "Dirsek eklemi"
+      }
+    },
+    {
+      "docId": "articulatio_femoropatellaris",
+      "data": {
+        "system": "movement",
+        "id": 526,
+        "roots": "articulatio (eklem) + femur + patella (diz kapağı)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Femoropatellar eklem; patella'nın arka yüzü ile femur'un facies patellaris'i arasındaki eklem bölümü. Diz ekstansiyonu sırasında patella'nın kayma hareketini sağlar.",
+        "english": "Femoropatellar Joint",
+        "term": "Articulatio Femoropatellaris",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Femoropatellar eklem"
+      }
+    },
+    {
+      "docId": "articulatio_femorotibialis",
+      "data": {
+        "system": "movement",
+        "id": 525,
+        "roots": "articulatio (eklem) + femur + tibia (kaval kemiği)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Femorotibiyal eklem; diz ekleminin femur ile tibia kondilleri arasındaki ana eklem bölümü. Diz fleksiyon ve ekstansiyonunun asıl gerçekleştiği yerdir.",
+        "english": "Femorotibial Joint",
+        "term": "Articulatio Femorotibialis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Femorotibiyal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_genus",
+      "data": {
+        "system": "movement",
+        "id": 524,
+        "roots": "articulatio (eklem) + genu (diz)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Diz eklemi; femur, tibia ve patella arasında oluşan vücudun en büyük ve en karmaşık sinovyal eklemi. Menteşe ve rotasyon hareketlerini birleştirir.",
+        "english": "Knee Joint",
+        "term": "Articulatio Genus",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Diz eklemi"
+      }
+    },
+    {
+      "docId": "articulatio_humeri",
+      "data": {
+        "system": "movement",
+        "id": 500,
+        "roots": "articulatio (eklem) + humeri (humerusa ait)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "Omuz eklemi; humerus başı ile scapula'nın cavitas glenoidalis'i arasında oluşan top-yuva tipi sinovyal eklem.",
+        "english": "Shoulder Joint",
+        "term": "Articulatio Humeri",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "Omuz eklemi"
+      }
+    },
+    {
+      "docId": "articulatio_humeroradialis",
+      "data": {
+        "system": "movement",
+        "id": 505,
+        "roots": "articulatio (eklem) + humerus + radius",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "humerus'un capitulum'u ile radius'un fovea articularis'i arasındaki top-yuva tipi eklem.",
+        "english": "Humeroradial Joint",
+        "term": "Articulatio Humeroradialis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "humerus'un capitulum'u ile radius'un fovea articularis'i arasındaki top-yuva tipi eklem"
+      }
+    },
+    {
+      "docId": "articulatio_humeroulnaris",
+      "data": {
+        "system": "movement",
+        "id": 504,
+        "roots": "articulatio (eklem) + humerus + ulna",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "humerus'un trochlea'sı ile ulna'nın incisura trochlearis'i arasındaki menteşe tipi eklem.",
+        "english": "Humeroulnar Joint",
+        "term": "Articulatio Humeroulnaris",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "humerus'un trochlea'sı ile ulna'nın incisura trochlearis'i arasındaki menteşe tipi eklem"
+      }
+    },
+    {
+      "docId": "articulatio_mediocarpalis",
+      "data": {
+        "system": "movement",
+        "id": 509,
+        "roots": "articulatio (eklem) + medius (orta) + carpus (el bileği)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "proksimal karpal sıra ile distal karpal sıra arasındaki bileşik sinovyal eklem.",
+        "english": "Midcarpal Joint",
+        "term": "Articulatio Mediocarpalis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "proksimal karpal sıra ile distal karpal sıra arasındaki bileşik sinovyal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_radiocarpalis",
+      "data": {
+        "system": "movement",
+        "id": 508,
+        "roots": "articulatio (eklem) + radius + carpus (el bileği)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "El bileği eklemi; radius'un distal yüzeyi ile os scaphoideum, os lunatum ve os triquetrum arasındaki ellipsoid tipi sinovyal eklem.",
+        "english": "Radiocarpal Joint",
+        "term": "Articulatio Radiocarpalis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "El bileği eklemi"
+      }
+    },
+    {
+      "docId": "articulatio_radioulnaris_distalis",
+      "data": {
+        "system": "movement",
+        "id": 507,
+        "roots": "articulatio (eklem) + radius + ulna + distalis (uzak)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "ulna başı ile radius'un incisura ulnaris'i arasındaki pivot tipi sinovyal eklem.",
+        "english": "Distal Radioulnar Joint",
+        "term": "Articulatio Radioulnaris Distalis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "ulna başı ile radius'un incisura ulnaris'i arasındaki pivot tipi sinovyal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_radioulnaris_proximalis",
+      "data": {
+        "system": "movement",
+        "id": 506,
+        "roots": "articulatio (eklem) + radius + ulna + proximalis (yakın)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "radius başının çevresi ile ulna'nın incisura radialis'i arasındaki pivot tipi sinovyal eklem.",
+        "english": "Proximal Radioulnar Joint",
+        "term": "Articulatio Radioulnaris Proximalis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "radius başının çevresi ile ulna'nın incisura radialis'i arasındaki pivot tipi sinovyal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_sacrococcygea",
+      "data": {
+        "system": "movement",
+        "english": "Sacrococcygeal Joint",
+        "term": "Articulatio Sacrococcygea",
+        "id": 560,
+        "roots": "articulatio (eklem) + sacrum (kuyruk sokumu üstü kemik) + coccyx (kuyruk sokumu kemiği)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Sakrokoksigeal eklem; os sacrum'un alt ucu ile os coccygis arasındaki sekonder kıkırdak eklem. Otururken hafif hareket serbestisi sağlar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Sakrokoksigeal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_sacroiliaca",
+      "data": {
+        "system": "movement",
+        "english": "Sacroiliac Joint",
+        "term": "Articulatio Sacroiliaca",
+        "id": 558,
+        "roots": "articulatio (eklem) + sacrum (kuyruk sokumu üstü kemik) + ilium (kalça kemiği üst kısmı)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Sakroiliak eklem; os sacrum ile os ilium arasındaki güçlü, sınırlı hareketli sinovyal eklem. Gövde ağırlığını pelvise aktarır; klinik olarak sık ağrı kaynağıdır.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Sakroiliak eklem"
+      }
+    },
+    {
+      "docId": "articulatio_sternoclavicularis",
+      "data": {
+        "system": "movement",
+        "id": 502,
+        "roots": "articulatio (eklem) + sternum (göğüs kemiği) + clavicula (köprücük kemiği)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "clavicula'nın sternal ucu ile sternum'un manubriumu arasındaki eyer tipi sinovyal eklem.",
+        "english": "Sternoclavicular Joint",
+        "term": "Articulatio Sternoclavicularis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "clavicula'nın sternal ucu ile sternum'un manubriumu arasındaki eyer tipi sinovyal eklem"
+      }
+    },
+    {
+      "docId": "articulatio_subtalaris",
+      "data": {
+        "system": "movement",
+        "id": 536,
+        "roots": "articulatio (eklem) + sub (altında) + talus (aşık kemiği)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Subtalar eklem; talus ile calcaneus arasındaki sinovyal eklem. Ayağın inversiyon ve eversiyon hareketlerinin büyük kısmını sağlar.",
+        "english": "Subtalar Joint",
+        "term": "Articulatio Subtalaris",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Subtalar eklem"
+      }
+    },
+    {
+      "docId": "articulatio_talocalcaneonavicularis",
+      "data": {
+        "system": "movement",
+        "id": 537,
+        "roots": "articulatio (eklem) + talus + calcaneus (topuk kemiği) + naviculare (naviküler kemiğe ait)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Talokalkaneonaviküler eklem; talus, calcaneus ve os naviculare arasındaki bileşik sinovyal eklem. Subtalar eklemle birlikte inversiyon-eversiyon hareketine katkı sağlar.",
+        "english": "Talocalcaneonavicular Joint",
+        "term": "Articulatio Talocalcaneonavicularis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Talokalkaneonaviküler eklem"
+      }
+    },
+    {
+      "docId": "articulatio_talocruralis",
+      "data": {
+        "system": "movement",
+        "id": 535,
+        "roots": "articulatio (eklem) + talus (aşık kemiği) + crus (bacak)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Ayak bileği eklemi; tibia ve fibula'nın distal uçları ile talus arasındaki menteşe tipi sinovyal eklem. Dorsifleksiyon ve plantar fleksiyonu sağlar.",
+        "english": "Talocrural Joint (Ankle Joint)",
+        "term": "Articulatio Talocruralis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Ayak bileği eklemi"
+      }
+    },
+    {
+      "docId": "articulatio_temporomandibularis",
+      "data": {
+        "system": "movement",
+        "english": "Temporomandibular Joint (TMJ)",
+        "term": "Articulatio Temporomandibularis",
+        "id": 563,
+        "roots": "articulatio (eklem) + temporalis (şakak kemiğine ait) + mandibula (alt çene)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Temporomandibular eklem; os temporale'nin fossa mandibularis'i ile mandibula'nın caput mandibulae'si arasındaki bileşik sinovyal eklem. Çene açma-kapama, öne-arkaya kayma ve yanal hareketleri sağlar.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Temporomandibular eklem"
+      }
+    },
+    {
+      "docId": "articulatio_tibiofibularis",
+      "data": {
+        "system": "movement",
+        "id": 534,
+        "roots": "articulatio (eklem) + tibia (kaval kemiği) + fibula (kamış kemiği)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Tibiofibular eklem; tibia'nın lateral kondili ile fibula başı arasındaki düzlem tipi sinovyal eklem. Ayak bileği hareketleri sırasında fibula'nın küçük rotasyonel hareketlerine izin verir.",
+        "english": "Tibiofibular Joint (Proximal)",
+        "term": "Articulatio Tibiofibularis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Tibiofibular eklem"
+      }
+    },
+    {
+      "docId": "articulatio_zygapophysialis",
+      "data": {
+        "system": "movement",
+        "english": "Zygapophyseal Joint (Facet Joint)",
+        "term": "Articulatio Zygapophysialis",
+        "id": 545,
+        "roots": "articulatio (eklem) + zygon (bağlantı) + physis (çıkıntı)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Zigapofizyal eklem (faset eklem); komşu vertebraların processus articularis'leri arasındaki düzlem tipi sinovyal eklem. Omurganın hareket yönünü ve derecesini belirler.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Zigapofizyal eklem (faset eklem)"
+      }
+    },
+    {
+      "docId": "articulationes_carpometacarpales",
+      "data": {
+        "system": "movement",
+        "id": 510,
+        "roots": "articulatio (eklem) + carpus (el bileği) + metacarpus (el tarağı)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "distal karpal kemikler ile 5 metakarp kemiğinin tabanları arasındaki eklemler.",
+        "english": "Carpometacarpal Joints",
+        "term": "Articulationes Carpometacarpales",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "distal karpal kemikler ile 5 metakarp kemiğinin tabanları arasındaki eklemler"
+      }
+    },
+    {
+      "docId": "articulationes_costovertebrales",
+      "data": {
+        "system": "movement",
+        "english": "Costovertebral Joints",
+        "term": "Articulationes Costovertebrales",
+        "id": 574,
+        "roots": "articulatio (eklem) + costa (kaburga) + vertebra (omur)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Kostovertebral eklemler; kaburgaların başı ile torasik vertebra korpusları arasındaki sinovyal eklemler. Solunum sırasında kaburgaların hareketine izin verir.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Kostovertebral eklemler"
+      }
+    },
+    {
+      "docId": "articulationes_interphalangeae_manus",
+      "data": {
+        "system": "movement",
+        "id": 513,
+        "roots": "articulatio (eklem) + inter (arasında) + phalanx (parmak kemiği) + manus (el)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "Elin interfalangeal eklemleri; parmak falankslari arasındaki menteşe tipi sinovyal eklemler.",
+        "english": "İnterphalangeal Joints of Hand",
+        "term": "Articulationes İnterphalangeae Manus",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "Elin interfalangeal eklemleri"
+      }
+    },
+    {
+      "docId": "articulationes_interphalangeales_pedis",
+      "data": {
+        "system": "movement",
+        "id": 541,
+        "roots": "articulatio (eklem) + inter (arasında) + phalanx (parmak kemiği) + pes (ayak)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Ayağın interfalangeal eklemleri; ayak parmağı falanksları arasındaki menteşe tipi sinovyal eklemler. Proksimal (PIP) ve distal (DIP) interfalangeal eklemleri kapsar.",
+        "english": "İnterphalangeal Joints of the Foot",
+        "term": "Articulationes İnterphalangeales Pedis",
+        "createdAt": {
+          "_seconds": 1784396858,
+          "_nanoseconds": 6000000
+        }
+      }
+    },
+    {
+      "docId": "articulationes_i̇nterphalangeales_pedis",
+      "data": {
+        "system": "movement",
+        "english": "İnterphalangeal Joints of the Foot",
+        "term": "Articulationes İnterphalangeales Pedis",
+        "id": 541,
+        "roots": "articulatio (eklem) + inter (arasında) + phalanx (parmak kemiği) + pes (ayak)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Ayağın interfalangeal eklemleri; ayak parmağı falanksları arasındaki menteşe tipi sinovyal eklemler. Proksimal (PIP) ve distal (DIP) interfalangeal eklemleri kapsar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Ayağın interfalangeal eklemleri"
+      }
+    },
+    {
+      "docId": "articulationes_metacarpophalangeae",
+      "data": {
+        "system": "movement",
+        "id": 512,
+        "roots": "articulatio (eklem) + metacarpus (el tarağı) + phalanx (parmak kemiği)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "metakarp başları ile proksimal falanksların tabanları arasındaki kondiloid tip sinovyal eklemler.",
+        "english": "Metacarpophalangeal Joints",
+        "term": "Articulationes Metacarpophalangeae",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "metakarp başları ile proksimal falanksların tabanları arasındaki kondiloid tip sinovyal eklemler"
+      }
+    },
+    {
+      "docId": "articulationes_metatarsophalangeales",
+      "data": {
+        "system": "movement",
+        "id": 540,
+        "roots": "articulatio (eklem) + metatarsus (ayak tarağı) + phalanx (parmak kemiği)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Metatarsofalangeal eklemler; metatars başları ile proksimal falanksların tabanları arasındaki kondiloid tip sinovyal eklemler. Yürüme sırasında itiş fazında kritik rol oynar.",
+        "english": "Metatarsophalangeal Joints (MTP Joints)",
+        "term": "Articulationes Metatarsophalangeales",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Metatarsofalangeal eklemler"
+      }
+    },
+    {
+      "docId": "articulationes_sternocostales",
+      "data": {
+        "system": "movement",
+        "english": "Sternocostal Joints",
+        "term": "Articulationes Sternocostales",
+        "id": 575,
+        "roots": "articulatio (eklem) + sternum (göğüs kemiği) + costa (kaburga)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Sternokostal eklemler; kaburga kıkırdaklarının (cartilago costalis) sternum ile birleştiği eklemler. 1. kosta kıkırdağı sternumla sinkondroz, diğerleri genelde sinovyal eklem oluşturur.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Sternokostal eklemler"
+      }
+    },
+    {
+      "docId": "articulationes_tarsometatarsales",
+      "data": {
+        "system": "movement",
+        "id": 539,
+        "roots": "articulatio (eklem) + tarsus (ayak bileği-tarsal bölge) + metatarsus (ayak tarağı)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Tarsometatarsal eklemler; distal tarsal kemikler (cuneiforme ve cuboideum) ile 5 metatars kemiğinin tabanları arasındaki eklemler. Klinik olarak 'Lisfranc eklemi' olarak da bilinir.",
+        "english": "Tarsometatarsal Joints (Lisfranc Joint)",
+        "term": "Articulationes Tarsometatarsales",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Tarsometatarsal eklemler"
+      }
+    },
+    {
+      "docId": "axialis",
+      "data": {
+        "term": "Axialis",
+        "english": "Axial",
+        "system": "movement",
+        "id": 1017,
+        "roots": "axis (eksen) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Merkez eksen boyunca olan; vücudu veya organları enlemesine keserek üst ve alt bölümlere ayıran eksenel düzlem.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Merkez eksen boyunca olan"
+      }
+    },
+    {
+      "docId": "basalis",
+      "data": {
+        "term": "Basalis",
+        "english": "Basal",
+        "turkishDefinition": "Taban kısmına ait, tabanda bulunan.",
+        "system": "movement",
+        "id": 1033,
+        "roots": "basis (taban/taban kısmı) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Taban kısmına ait, tabanda bulunan"
+      }
+    },
+    {
+      "docId": "bursa_synovialis",
+      "data": {
+        "system": "movement",
+        "id": 519,
+        "roots": "bursa (kese, torba) + synovialis (sinoviyal)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "tendon veya kasların kemik üzerinden geçtiği yerlerde sürtünmeyi azaltan sinovyal sıvı içeren küçük kese.",
+        "english": "Synovial Bursa",
+        "term": "Bursa Synovialis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "tendon veya kasların kemik üzerinden geçtiği yerlerde sürtünmeyi azaltan sinovyal sıvı içeren küçük kese"
+      }
+    },
+    {
+      "docId": "canalis_vertebralis",
+      "data": {
+        "system": "movement",
+        "english": "Vertebral Canal (Spinal Canal)",
+        "term": "Canalis Vertebralis",
+        "id": 561,
+        "roots": "canalis (kanal) + vertebralis (omura ait)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Vertebral kanal (omurilik kanalı); üst üste dizilen vertebraların foramen vertebrale'lerinin oluşturduğu, medulla spinalis'i içine alan uzun kanal.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Vertebral kanal (omurilik kanalı)"
+      }
+    },
+    {
+      "docId": "capsula_articularis",
+      "data": {
+        "system": "movement",
+        "id": 516,
+        "roots": "capsula (kapsül, kılıf) + articularis (ekleme ait)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "Eklem kapsülü; sinovyal eklemi çevreleyen fibröz kılıf. Dış tabakası fibröz membran, iç tabakası sinovyal membrandan oluşur.",
+        "english": "Articular Capsule",
+        "term": "Capsula Articularis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "Eklem kapsülü"
+      }
+    },
+    {
+      "docId": "caput_mandibulae",
+      "data": {
+        "system": "movement",
+        "english": "Head of Mandible (Mandibular Condyle)",
+        "term": "Caput Mandibulae",
+        "id": 566,
+        "roots": "caput (baş) + mandibula (alt çene)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Mandibula başı (kondili); mandibula'nın processus condylaris'inin üst ucunda yer alan, temporomandibular eklemi oluşturan yuvarlak eklem yüzeyi.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Mandibula başı (kondili)"
+      }
+    },
+    {
+      "docId": "caudalis",
+      "data": {
+        "term": "Caudalis",
+        "english": "Caudal",
+        "system": "movement",
+        "id": 1031,
+        "roots": "cauda (kuyruk) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Kuyruk tarafına ait.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Kuyruk tarafına ait"
+      }
+    },
+    {
+      "docId": "cavitas_glenoidalis",
+      "data": {
+        "system": "movement",
+        "id": 514,
+        "roots": "cavitas (çukur, boşluk) + glenoid (yuva şeklinde)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "scapula'nın lateralinde yer alan sığ eklem yüzeyi. Humerus başını karşılar ve labrum glenoidale ile derinleştirilir.",
+        "english": "Glenoid Cavity",
+        "term": "Cavitas Glenoidalis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "scapula'nın lateralinde yer alan sığ eklem yüzeyi"
+      }
+    },
+    {
+      "docId": "centralis",
+      "data": {
+        "term": "Centralis",
+        "english": "Central",
+        "turkishDefinition": "Merkezi, merkezde yer alan.",
+        "system": "movement",
+        "id": 1041,
+        "roots": "centrum (merkez) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Merkezi, merkezde yer alan"
+      }
+    },
+    {
+      "docId": "circumductio",
+      "data": {
+        "system": "movement",
+        "english": "Circumduction",
+        "term": "Circumductio",
+        "id": 1049,
+        "roots": "circum- (etrafında, dairesel) + ducere (götürmek, çekmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Bir uzvun flexion, extension, abduction ve adduction kombinasyonuyla yaptığı dairesel dönme hareketi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Bir uzvun flexion, extension, abduction ve adduction kombinasyonuyla yaptığı dairesel dönme hareketi"
+      }
+    },
+    {
+      "docId": "columna_vertebralis",
+      "data": {
+        "system": "movement",
+        "english": "Vertebral Column (Spine)",
+        "term": "Columna Vertebralis",
+        "id": 544,
+        "roots": "columna (sütun) + vertebralis (omura ait)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Omurga; 33 vertebradan oluşan, gövdenin ana eksenini oluşturan kemik yapı. Cervical, thoracic, lumbal, sakral ve koksigeal bölümlere ayrılır.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Omurga"
+      }
+    },
+    {
+      "docId": "coronalis",
+      "data": {
+        "term": "Coronalis",
+        "english": "Coronal",
+        "system": "movement",
+        "id": 1013,
+        "roots": "corona (taç) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Vücudun tam ortasından geçerek ön (ventral) ve arka (dorsal) parçalara ayıran kesit düzlemi.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Vücudun tam ortasından geçerek ön (ventral) ve arka (dorsal) parçalara ayıran kesit düzlemi"
+      }
+    },
+    {
+      "docId": "cranialis",
+      "data": {
+        "term": "Cranialis",
+        "english": "Cranial",
+        "turkishDefinition": "Baş tarafına ait, başa daha yakın olan.",
+        "system": "movement",
+        "id": 1009,
+        "roots": "cranium (kafatası) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "skull_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Baş tarafına ait, başa daha yakın olan"
+      }
+    },
+    {
+      "docId": "dens_axis",
+      "data": {
+        "system": "movement",
+        "english": "Dens (Odontoid Process) of Axis",
+        "term": "Dens Axis",
+        "id": 556,
+        "roots": "dens (diş) + axis (2. servikal vertebra)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Axis'in dens'i (odontoid çıkıntısı); axis vertebrasının üst yüzünden yukarı doğru uzanan, atlas'ın içinden geçerek atlantoaksiyal eklemin pivot ekseni görevi gören çıkıntı.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Axis'in dens'i (odontoid çıkıntısı)"
+      }
+    },
+    {
+      "docId": "depressio",
+      "data": {
+        "system": "movement",
+        "english": "Depression",
+        "term": "Depressio",
+        "id": 1059,
+        "roots": "de- (aşağı) + premere (bastırmak)",
+        "subcategory": "motus",
+        "turkishDefinition": "Yukarı kaldırılmış bir yapının dikey eksende aşağıya doğru indirilmesi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Yukarı kaldırılmış bir yapının dikey eksende aşağıya doğru indirilmesi"
+      }
+    },
+    {
+      "docId": "dexter",
+      "data": {
+        "term": "Dexter",
+        "english": "Right",
+        "turkishDefinition": "Sağ taraf, sağda olan yapı.",
+        "system": "movement",
+        "id": 1019,
+        "roots": "dexter (sağ taraf)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Sağ taraf, sağda olan yapı"
+      }
+    },
+    {
+      "docId": "discus_articularis",
+      "data": {
+        "system": "movement",
+        "id": 518,
+        "roots": "discus (disk, yuvarlak levha) + articularis (ekleme ait)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "bazı eklemlerde iki eklem yüzeyi arasında yer alan fibrokartilaj yapı.",
+        "english": "Articular Disc",
+        "term": "Discus Articularis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "bazı eklemlerde iki eklem yüzeyi arasında yer alan fibrokartilaj yapı"
+      }
+    },
+    {
+      "docId": "discus_articularis_temporomandibularis",
+      "data": {
+        "system": "movement",
+        "english": "Articular Disc of Temporomandibular Joint",
+        "term": "Discus Articularis Temporomandibularis",
+        "id": 564,
+        "roots": "discus (disk) + articularis (ekleme ait) + temporomandibularis (temporomandibulara ait)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Temporomandibular eklem diski; eklem boşluğunu üst ve alt olmak üzere ikiye ayıran fibrokartilaj disk. Eklem yüzeylerinin uyumunu sağlar ve yükü dağıtır.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Temporomandibular eklem diski"
+      }
+    },
+    {
+      "docId": "discus_intervertebralis",
+      "data": {
+        "system": "movement",
+        "english": "İntervertebral Disc",
+        "term": "Discus İntervertebralis",
+        "id": 546,
+        "roots": "discus (disk) + inter (arasında) + vertebra (omur)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "İntervertebral disk; komşu vertebra korpuslarını birbirine bağlayan fibrokartilaj yapı. Dış kısmı annulus fibrosus, iç kısmı nucleus pulposus'tan oluşur.",
+        "createdAt": {
+          "_seconds": 1784396858,
+          "_nanoseconds": 189000000
+        }
+      }
+    },
+    {
+      "docId": "discus_i̇ntervertebralis",
+      "data": {
+        "system": "movement",
+        "english": "İntervertebral Disc",
+        "term": "Discus İntervertebralis",
+        "id": 546,
+        "roots": "discus (disk) + inter (arasında) + vertebra (omur)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "İntervertebral disk; komşu vertebra korpuslarını birbirine bağlayan fibrokartilaj yapı. Dış kısmı annulus fibrosus, iç kısmı nucleus pulposus'tan oluşur.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "İntervertebral disk"
+      }
+    },
+    {
+      "docId": "distalis",
+      "data": {
+        "term": "Distalis",
+        "english": "Distal",
+        "turkishDefinition": "Gövdeden veya başlangıç noktasından en uzak olan uç kısım.",
+        "system": "movement",
+        "id": 1040,
+        "roots": "distare (uzakta durmak) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Gövdeden veya başlangıç noktasından en uzak olan uç kısım"
+      }
+    },
+    {
+      "docId": "dorsalis",
+      "data": {
+        "term": "Dorsalis",
+        "english": "Dorsal",
+        "turkishDefinition": "Sırt tarafında olan, arkada yer alan.",
+        "system": "movement",
+        "id": 1024,
+        "roots": "dorsum (sırt) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Sırt tarafında olan, arkada yer alan"
+      }
+    },
+    {
+      "docId": "dorsiflexio",
+      "data": {
+        "system": "movement",
+        "english": "Dorsiflexion",
+        "term": "Dorsiflexio",
+        "id": 1057,
+        "roots": "dorsum (sırt, ayak sırtı) + flectere (bükmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Ayak bileğinde, ayak ucunun yukarıya doğru çekilmesi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Ayak bileğinde, ayak ucunun yukarıya doğru çekilmesi"
+      }
+    },
+    {
+      "docId": "elevatio",
+      "data": {
+        "system": "movement",
+        "english": "Elevation",
+        "term": "Elevatio",
+        "id": 1058,
+        "roots": "e- (dışarı, yukarı) + levare (kaldırmak, hafifletmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Omuz veya Mandibula gibi bir yapının yukarı doğru yükselme hareketi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Omuz veya Mandibula gibi bir yapının yukarı doğru yükselme hareketi"
+      }
+    },
+    {
+      "docId": "eversio",
+      "data": {
+        "system": "movement",
+        "english": "Eversion",
+        "term": "Eversio",
+        "id": 1060,
+        "roots": "ex- (dışarı, dışa doğru) + vertere (döndürmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Ayak tabanının, vücut orta hattından uzaklaşarak dışa dönmesi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Ayak tabanının, vücut orta hattından uzaklaşarak dışa dönmesi"
+      }
+    },
+    {
+      "docId": "extensio",
+      "data": {
+        "system": "movement",
+        "english": "Extension",
+        "term": "Extensio",
+        "id": 1051,
+        "roots": "ex- (dışarı, dışa doğru) + tendere (germek, uzatmak)",
+        "subcategory": "motus",
+        "turkishDefinition": "Eklem açısını büyüterek vücut bölümlerini birbirinden uzaklaştırma hareketi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Eklem açısını büyüterek vücut bölümlerini"
+      }
+    },
+    {
+      "docId": "extensorius",
+      "data": {
+        "term": "Extensorius",
+        "english": "Extensor",
+        "system": "movement",
+        "id": 1044,
+        "roots": "extendere (germek) + orius (sıfat eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Eklem açısını büyüterek germe (ekstansiyon) hareketini yaptıran kas veya bu hareketin gerçekleştiği eklem yüzeyi.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Eklem açısını büyüterek germe (ekstansiyon) hareketini yaptıran kas veya bu hareketin gerçekleştiği eklem yüzeyi"
+      }
+    },
+    {
+      "docId": "externus",
+      "data": {
+        "term": "Externus",
+        "english": "External",
+        "turkishDefinition": "Dış, bir yapının dışarısında olan.",
+        "system": "movement",
+        "id": 1034,
+        "roots": "externus (dış/dışarıda olan)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Dış, bir yapının dışarısında olan"
+      }
+    },
+    {
+      "docId": "fibularis",
+      "data": {
+        "term": "Fibularis",
+        "english": "Fibular",
+        "system": "movement",
+        "id": 1005,
+        "roots": "fibula (kamış kemiği) + aris (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_bones",
+        "turkishDefinition": "Bacakta fibula kemiği tarafında olan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Bacakta fibula kemiği tarafında olan"
+      }
+    },
+    {
+      "docId": "flexio",
+      "data": {
+        "system": "movement",
+        "english": "Flexion",
+        "term": "Flexio",
+        "id": 1050,
+        "roots": "flectere (bükmek, eğmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Eklem açısını küçülterek vücut bölümlerini birbirine yaklaştıran hareket.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Eklem açısını küçülterek vücut bölümlerini birbirine yaklaştıran hareket"
+      }
+    },
+    {
+      "docId": "flexorius",
+      "data": {
+        "term": "Flexorius",
+        "english": "Flexor",
+        "system": "movement",
+        "id": 1043,
+        "roots": "flectere (bükmek) + orius (sıfat eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Eklem açısını küçülterek bükülme (fleksiyon) hareketini yaptıran kas veya bu hareketin gerçekleştiği eklem yüzeyi.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Eklem açısını küçülterek bükülme (fleksiyon) hareketini yaptıran kas veya bu hareketin gerçekleştiği eklem yüzeyi"
+      }
+    },
+    {
+      "docId": "fonticulus_anterior",
+      "data": {
+        "system": "movement",
+        "english": "Anterior Fontanelle",
+        "term": "Fonticulus Anterior",
+        "id": 572,
+        "roots": "fonticulus (küçük pınar, kaynak) + anterior (ön)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Ön bıngıldak; yenidoğanda sutura coronalis ile sutura sagittalis'in kesiştiği noktada, kemikleşmenin henüz tamamlanmadığı en büyük yumuşak bölge. Genellikle 18-24 ayda kapanır.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Ön bıngıldak"
+      }
+    },
+    {
+      "docId": "fonticulus_posterior",
+      "data": {
+        "system": "movement",
+        "english": "Posterior Fontanelle",
+        "term": "Fonticulus Posterior",
+        "id": 573,
+        "roots": "fonticulus (küçük pınar, kaynak) + posterior (arka)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Arka bıngıldak; yenidoğanda sutura sagittalis ile sutura lambdoidea'nın kesiştiği noktadaki daha küçük yumuşak bölge. Genellikle 2-3 ayda kapanır.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Arka bıngıldak"
+      }
+    },
+    {
+      "docId": "foramen_intervertebrale",
+      "data": {
+        "system": "movement",
+        "english": "İntervertebral Foramen",
+        "term": "Foramen İntervertebrale",
+        "id": 562,
+        "roots": "foramen (delik, açıklık) + inter (arasında) + vertebra (omur)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "İntervertebral foramen; komşu vertebraların pedikülleri arasında oluşan açıklık. Spinal sinirlerin canalis vertebralis'ten çıktığı yerdir; daralması radikülopatiye yol açabilir.",
+        "createdAt": {
+          "_seconds": 1784396858,
+          "_nanoseconds": 189000000
+        }
+      }
+    },
+    {
+      "docId": "foramen_i̇ntervertebrale",
+      "data": {
+        "system": "movement",
+        "english": "İntervertebral Foramen",
+        "term": "Foramen İntervertebrale",
+        "id": 562,
+        "roots": "foramen (delik, açıklık) + inter (arasında) + vertebra (omur)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "İntervertebral foramen; komşu vertebraların pedikülleri arasında oluşan açıklık. Spinal sinirlerin canalis vertebralis'ten çıktığı yerdir; daralması radikülopatiye yol açabilir.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "İntervertebral foramen"
+      }
+    },
+    {
+      "docId": "fossa_mandibularis",
+      "data": {
+        "system": "movement",
+        "english": "Mandibular Fossa",
+        "term": "Fossa Mandibularis",
+        "id": 565,
+        "roots": "fossa (çukur) + mandibularis (alt çeneye ait)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Mandibular çukur; os temporale üzerinde yer alan, mandibula'nın caput mandibulae'sini (kondil başı) karşılayan derin çukur.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Mandibular çukur"
+      }
+    },
+    {
+      "docId": "frontalis",
+      "data": {
+        "term": "Frontalis",
+        "english": "Frontal",
+        "system": "movement",
+        "id": 1007,
+        "roots": "frons (alın) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "skull_bones",
+        "turkishDefinition": "Alın bölgesine ait, başın ön tarafında yer alan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Alın bölgesine ait, başın ön tarafında yer alan"
+      }
+    },
+    {
+      "docId": "hFqUADtiDUpK6MFJ9k0c",
+      "data": {
+        "term": "Sternocostal Articulation",
+        "english": "Sternocostal Joint",
+        "turkishDefinition": "Sternum ile kaburga kıkırdakları arasında oluşan eklem yapısıdır.",
+        "roots": [
+          "sterno",
+          "costal"
+        ]
+      }
+    },
+    {
+      "docId": "horizontalis",
+      "data": {
+        "term": "Horizontalis",
+        "english": "Horizontal",
+        "turkishDefinition": "Enlemesine, yere paralel olan yatay düzlem.",
+        "system": "movement",
+        "id": 1011,
+        "roots": "horizon (ufuk) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Enlemesine, yere paralel olan yatay düzlem"
+      }
+    },
+    {
+      "docId": "inferior",
+      "data": {
+        "term": "Inferior",
+        "english": "Inferior / Lower",
+        "turkishDefinition": "Alt taraf, aşağıda bulunan.",
+        "system": "movement",
+        "id": 1026,
+        "roots": "infer (alt/aşağı) + ior (karşılaştırma eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Alt taraf, aşağıda bulunan"
+      }
+    },
+    {
+      "docId": "intermedius",
+      "data": {
+        "term": "Intermedius",
+        "english": "Intermediate",
+        "system": "movement",
+        "id": 1029,
+        "roots": "inter (arasında) + medius (orta)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "İki yapının tam ortasında bulunan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "İki yapının tam ortasında bulunan"
+      }
+    },
+    {
+      "docId": "internus",
+      "data": {
+        "term": "Internus",
+        "english": "Internal",
+        "turkishDefinition": "İç, bir yapının içerisinde olan.",
+        "system": "movement",
+        "id": 1035,
+        "roots": "internus (iç/içeride olan)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "İç, bir yapının içerisinde olan"
+      }
+    },
+    {
+      "docId": "inversio",
+      "data": {
+        "system": "movement",
+        "english": "Inversion",
+        "term": "Inversio",
+        "id": 1061,
+        "roots": "in- (içeri, içe doğru) + vertere (döndürmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Ayak tabanının, vücut orta hattına bakacak şekilde içe dönmesi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Ayak tabanının, vücut orta hattına bakacak şekilde içe dönmesi"
+      }
+    },
+    {
+      "docId": "labrum_acetabulare",
+      "data": {
+        "system": "movement",
+        "id": 522,
+        "roots": "labrum (dudak, kenar) + acetabulare (asetabuluma ait)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Asetabular dudak; acetabulum kenarını çevreleyen fibrokartilaj halka. Eklem yüzeyini derinleştirerek kalça ekleminin stabilitesini ve negatif basıncını artırır.",
+        "english": "Acetabular Labrum",
+        "term": "Labrum Acetabulare",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Asetabular dudak"
+      }
+    },
+    {
+      "docId": "labrum_glenoidale",
+      "data": {
+        "system": "movement",
+        "id": 515,
+        "roots": "labrum (dudak, kenar) + glenoidale (glenoide ait)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "cavitas glenoidalis çevresini çevreleyen fibrokartilaj halka.",
+        "english": "Glenoid Labrum",
+        "term": "Labrum Glenoidale",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "cavitas glenoidalis çevresini çevreleyen fibrokartilaj halka"
+      }
+    },
+    {
+      "docId": "lateralis",
+      "data": {
+        "term": "Lateralis",
+        "english": "Lateral",
+        "turkishDefinition": "Dış yan, vücut orta hattından uzak olan.",
+        "system": "movement",
+        "id": 1028,
+        "roots": "latus (yan/taraf) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Dış yan, vücut orta hattından uzak olan"
+      }
+    },
+    {
+      "docId": "ligamentum_capitis_femoris",
+      "data": {
+        "system": "movement",
+        "id": 523,
+        "roots": "ligamentum (bağ) + caput (baş) + femur (uyluk kemiği)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Femur başı bağı; femur başındaki fovea capitis'ten acetabulum tabanına uzanan intraartiküler bağ. İçinden femur başına giden bir arter (a. capitis femoris) geçer.",
+        "english": "Ligament of Head of Femur",
+        "term": "Ligamentum Capitis Femoris",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Femur başı bağı"
+      }
+    },
+    {
+      "docId": "ligamentum_collaterale_fibulare",
+      "data": {
+        "system": "movement",
+        "id": 532,
+        "roots": "ligamentum (bağ) + collateralis (yan) + fibulare (fibulaya ait)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Fibular kollateral bağ (lateral kollateral bağ); femur'un lateral epikondilinden fibula başına uzanan, dizin dış tarafını destekleyen ekstraartiküler bağ. Varus streslerine karşı korur.",
+        "english": "Fibular Collateral Ligament (Lateral Collateral Ligament, LCL)",
+        "term": "Ligamentum Collaterale Fibulare",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Fibular kollateral bağ (lateral kollateral bağ)"
+      }
+    },
+    {
+      "docId": "ligamentum_collaterale_tibiale",
+      "data": {
+        "system": "movement",
+        "id": 531,
+        "roots": "ligamentum (bağ) + collateralis (yan) + tibiale (tibiaya ait)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Tibial kollateral bağ (medial kollateral bağ); femur'un medial epikondilinden tibia'ya uzanan, dizin iç tarafını destekleyen ekstraartiküler bağ. Valgus streslerine karşı korur.",
+        "english": "Tibial Collateral Ligament (Medial Collateral Ligament, MCL)",
+        "term": "Ligamentum Collaterale Tibiale",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Tibial kollateral bağ (medial kollateral bağ)"
+      }
+    },
+    {
+      "docId": "ligamentum_cruciatum_anterius",
+      "data": {
+        "system": "movement",
+        "id": 529,
+        "roots": "ligamentum (bağ) + cruciatus (çapraz şeklinde) + anterius (ön)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Ön çapraz bağ; tibia'nın ön interkondiler alanından femur'un lateral kondiline uzanan intraartiküler bağ. Tibia'nın öne doğru kaymasını sınırlar, diz stabilitesinde kritik rol oynar.",
+        "english": "Anterior Cruciate Ligament (ACL)",
+        "term": "Ligamentum Cruciatum Anterius",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Ön çapraz bağ"
+      }
+    },
+    {
+      "docId": "ligamentum_cruciatum_posterius",
+      "data": {
+        "system": "movement",
+        "id": 530,
+        "roots": "ligamentum (bağ) + cruciatus (çapraz şeklinde) + posterius (arka)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Arka çapraz bağ; tibia'nın arka interkondiler alanından femur'un medial kondiline uzanan intraartiküler bağ. Tibia'nın arkaya doğru kaymasını sınırlar.",
+        "english": "Posterior Cruciate Ligament (PCL)",
+        "term": "Ligamentum Cruciatum Posterius",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Arka çapraz bağ"
+      }
+    },
+    {
+      "docId": "ligamentum_flavum",
+      "data": {
+        "system": "movement",
+        "english": "Ligamentum Flavum (Yellow Ligament)",
+        "term": "Ligamentum Flavum",
+        "id": 551,
+        "roots": "ligamentum (bağ) + flavus (sarı)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Ligamentum flavum (sarı bağ); komşu vertebraların lamina'ları arasında uzanan, yüksek elastin içeriği nedeniyle sarı renkte görünen bağ. Omurganın fleksiyondan ekstansiyona dönüşünde yardımcı olur.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Ligamentum flavum (sarı bağ)"
+      }
+    },
+    {
+      "docId": "ligamentum_inguinale",
+      "data": {
+        "system": "movement",
+        "id": 542,
+        "roots": "ligamentum (bağ) + inguen (kasık)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "İnguinal bağ (kasık bağı); spina iliaca anterior superior'dan tuberculum pubicum'a uzanan, karın duvarı ile uyluk arasındaki sınırı oluşturan bağ.",
+        "english": "İnguinal Ligament",
+        "term": "Ligamentum İnguinale",
+        "createdAt": {
+          "_seconds": 1784396858,
+          "_nanoseconds": 6000000
+        }
+      }
+    },
+    {
+      "docId": "ligamentum_interspinale",
+      "data": {
+        "system": "movement",
+        "english": "İnterspinous Ligament",
+        "term": "Ligamentum İnterspinale",
+        "id": 552,
+        "roots": "ligamentum (bağ) + inter (arasında) + spina (diken, çıkıntı)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "İnterspinöz bağ; komşu vertebraların processus spinosus'ları arasında uzanan ince bağ. Aşırı fleksiyon sırasında gerilerek stabilite sağlar.",
+        "createdAt": {
+          "_seconds": 1784396858,
+          "_nanoseconds": 189000000
+        }
+      }
+    },
+    {
+      "docId": "ligamentum_i̇nguinale",
+      "data": {
+        "system": "movement",
+        "english": "İnguinal Ligament",
+        "term": "Ligamentum İnguinale",
+        "id": 542,
+        "roots": "ligamentum (bağ) + inguen (kasık)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "İnguinal bağ (kasık bağı); spina iliaca anterior superior'dan tuberculum pubicum'a uzanan, karın duvarı ile uyluk arasındaki sınırı oluşturan bağ.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "İnguinal bağ (kasık bağı)"
+      }
+    },
+    {
+      "docId": "ligamentum_i̇nterspinale",
+      "data": {
+        "system": "movement",
+        "english": "İnterspinous Ligament",
+        "term": "Ligamentum İnterspinale",
+        "id": 552,
+        "roots": "ligamentum (bağ) + inter (arasında) + spina (diken, çıkıntı)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "İnterspinöz bağ; komşu vertebraların processus spinosus'ları arasında uzanan ince bağ. Aşırı fleksiyon sırasında gerilerek stabilite sağlar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "İnterspinöz bağ"
+      }
+    },
+    {
+      "docId": "ligamentum_longitudinale_anterius",
+      "data": {
+        "system": "movement",
+        "english": "Anterior Longitudinal Ligament",
+        "term": "Ligamentum Longitudinale Anterius",
+        "id": 549,
+        "roots": "ligamentum (bağ) + longitudinalis (boylamsal) + anterius (ön)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Ön longitudinal bağ; vertebra korpuslarının ön yüzü boyunca kafa tabanından sakruma kadar uzanan güçlü bağ. Omurganın aşırı ekstansiyonunu sınırlar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Ön longitudinal bağ"
+      }
+    },
+    {
+      "docId": "ligamentum_longitudinale_posterius",
+      "data": {
+        "system": "movement",
+        "english": "Posterior Longitudinal Ligament",
+        "term": "Ligamentum Longitudinale Posterius",
+        "id": 550,
+        "roots": "ligamentum (bağ) + longitudinalis (boylamsal) + posterius (arka)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Arka longitudinal bağ; vertebra korpuslarının arka yüzü boyunca, canalis vertebralis içinde uzanan bağ. Omurganın aşırı fleksiyonunu ve disk herniasyonunu sınırlamaya yardımcı olur.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Arka longitudinal bağ"
+      }
+    },
+    {
+      "docId": "ligamentum_patellae",
+      "data": {
+        "system": "movement",
+        "id": 533,
+        "roots": "ligamentum (bağ) + patella (diz kapağı)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Patellar bağ; patella'nın alt ucundan tibia'nın tuberositas tibiae'sine uzanan, quadriceps femoris tendonunun devamı niteliğindeki güçlü bağ.",
+        "english": "Patellar Ligament",
+        "term": "Ligamentum Patellae",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Patellar bağ"
+      }
+    },
+    {
+      "docId": "ligamentum_supraspinale",
+      "data": {
+        "system": "movement",
+        "english": "Supraspinous Ligament",
+        "term": "Ligamentum Supraspinale",
+        "id": 553,
+        "roots": "ligamentum (bağ) + supra (üstünde) + spina (diken, çıkıntı)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Supraspinöz bağ; vertebraların processus spinosus uçları boyunca C7'den sakruma kadar uzanan yüzeysel bağ. Aşırı fleksiyona karşı direnç gösterir.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Supraspinöz bağ"
+      }
+    },
+    {
+      "docId": "ligamentum_temporomandibulare",
+      "data": {
+        "system": "movement",
+        "english": "Temporomandibular Ligament (Lateral Ligament)",
+        "term": "Ligamentum Temporomandibulare",
+        "id": 567,
+        "roots": "ligamentum (bağ) + temporomandibularis (temporomandibulara ait)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Temporomandibular bağ (lateral bağ); eklem kapsülünün lateral yüzünü güçlendiren bağ. Mandibula'nın aşırı geriye ve aşağıya hareketini sınırlar.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Temporomandibular bağ (lateral bağ)"
+      }
+    },
+    {
+      "docId": "ligamentum_transversum_atlantis",
+      "data": {
+        "system": "movement",
+        "english": "Transverse Ligament of Atlas",
+        "term": "Ligamentum Transversum Atlantis",
+        "id": 557,
+        "roots": "ligamentum (bağ) + transversus (enine) + atlas (1. servikal vertebra)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Atlasın transvers bağı; atlas'ın iç yüzünde yer alan, dens axis'i arkadan destekleyerek yerinde tutan güçlü bağ. Bütünlüğü bozulursa medulla spinalis hasarı riski oluşur.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Atlasın transvers bağı"
+      }
+    },
+    {
+      "docId": "longitudinalis",
+      "data": {
+        "term": "Longitudinalis",
+        "english": "Longitudinal",
+        "turkishDefinition": "Vücut veya organ boyunca uzanan, boylamsal düzlem.",
+        "system": "movement",
+        "id": 1016,
+        "roots": "longitudo (boylam) + inalis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Vücut veya organ boyunca uzanan, boylamsal düzlem"
+      }
+    },
+    {
+      "docId": "luminalis",
+      "data": {
+        "term": "Luminalis",
+        "english": "Luminal",
+        "turkishDefinition": "Organ veya damar boşluğuna (lümen) bakan yüzey.",
+        "system": "movement",
+        "id": 1036,
+        "roots": "lumen (boşluk/ışık) + inalis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Organ veya damar boşluğuna (lümen) bakan yüzey"
+      }
+    },
+    {
+      "docId": "medialis",
+      "data": {
+        "term": "Medialis",
+        "english": "Medial",
+        "turkishDefinition": "İç yan, vücut orta hattına daha yakın olan.",
+        "system": "movement",
+        "id": 1027,
+        "roots": "medius (orta) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "İç yan, vücut orta hattına daha yakın olan"
+      }
+    },
+    {
+      "docId": "medianus",
+      "data": {
+        "term": "Medianus",
+        "english": "Median",
+        "turkishDefinition": "Vücudu tam ortadan sağ ve sol eşit iki yarıma bölen dik düzlem.",
+        "system": "movement",
+        "id": 1012,
+        "roots": "medius (orta) + anus (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Vücudu tam ortadan sağ ve sol eşit iki yarıma bölen dik düzlem"
+      }
+    },
+    {
+      "docId": "medius",
+      "data": {
+        "term": "Medius",
+        "english": "Middle",
+        "turkishDefinition": "Orta, ortadaki.",
+        "system": "movement",
+        "id": 1030,
+        "roots": "medius (orta/ortadaki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Orta, ortadaki"
+      }
+    },
+    {
+      "docId": "membrana_interossea_cruris",
+      "data": {
+        "system": "movement",
+        "id": 543,
+        "roots": "membrana (zar) + interosseus (kemikler arası) + crus (bacak)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Bacağın interosseöz membranı; tibia ve fibula gövdeleri arasında uzanan, iki kemiği birbirine bağlayan fibröz zar. Kas yapışma yüzeyi olarak da görev yapar.",
+        "english": "İnterosseous Membrane of Leg",
+        "term": "Membrana İnterossea Cruris",
+        "createdAt": {
+          "_seconds": 1784396858,
+          "_nanoseconds": 6000000
+        }
+      }
+    },
+    {
+      "docId": "membrana_i̇nterossea_cruris",
+      "data": {
+        "system": "movement",
+        "english": "İnterosseous Membrane of Leg",
+        "term": "Membrana İnterossea Cruris",
+        "id": 543,
+        "roots": "membrana (zar) + interosseus (kemikler arası) + crus (bacak)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Bacağın interosseöz membranı; tibia ve fibula gövdeleri arasında uzanan, iki kemiği birbirine bağlayan fibröz zar. Kas yapışma yüzeyi olarak da görev yapar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Bacağın interosseöz membranı"
+      }
+    },
+    {
+      "docId": "membrana_synovialis",
+      "data": {
+        "system": "movement",
+        "id": 517,
+        "roots": "membrana (zar, tabaka) + synovialis (sinoviyal, yumurta akı benzeri)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_joints",
+        "turkishDefinition": "eklem kapsülünün iç tabakası. Sinovyal sıvı üretir, eklem kıkırdağını besler ve sürtünmeyi azaltır.",
+        "english": "Synovial Membrane",
+        "term": "Membrana Synovialis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 594000000
+        },
+        "turkishShort": "eklem kapsülünün iç tabakası"
+      }
+    },
+    {
+      "docId": "meniscus_lateralis",
+      "data": {
+        "system": "movement",
+        "id": 528,
+        "roots": "meniscus (hilal şeklinde yapı) + lateralis (dış, yan)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Lateral menisküs; tibia'nın lateral kondili üzerinde yer alan, medial menisküse göre daha yuvarlak ve hareketli fibrokartilaj yapı.",
+        "english": "Lateral Meniscus",
+        "term": "Meniscus Lateralis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Lateral menisküs"
+      }
+    },
+    {
+      "docId": "meniscus_medialis",
+      "data": {
+        "system": "movement",
+        "id": 527,
+        "roots": "meniscus (hilal şeklinde yapı) + medialis (iç, orta hatta yakın)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_joints",
+        "turkishDefinition": "Medial menisküs; tibia'nın medial kondili üzerinde yer alan C şeklinde fibrokartilaj yapı. Yük dağılımını sağlar, lateral menisküse göre daha az hareketli ve yaralanmaya daha yatkındır.",
+        "english": "Medial Meniscus",
+        "term": "Meniscus Medialis",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 773000000
+        },
+        "turkishShort": "Medial menisküs"
+      }
+    },
+    {
+      "docId": "nucleus_pulposus",
+      "data": {
+        "system": "movement",
+        "english": "Nucleus Pulposus",
+        "term": "Nucleus Pulposus",
+        "id": 547,
+        "roots": "nucleus (çekirdek) + pulposus (etli, yumuşak)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Nükleus pulpozus; intervertebral diskin jel benzeri iç kısmı. Yüksek su içeriğiyle yük dağılımını ve şok emilimini sağlar; yaşla birlikte su kaybederek dejenerasyona uğrar.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Nükleus pulpozus"
+      }
+    },
+    {
+      "docId": "occipitalis",
+      "data": {
+        "term": "Occipitalis",
+        "english": "Occipital",
+        "system": "movement",
+        "id": 1008,
+        "roots": "occiput (başın arkası) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "skull_bones",
+        "turkishDefinition": "Başın arkası tarafında yer alan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Başın arkası tarafında yer alan"
+      }
+    },
+    {
+      "docId": "oppositio",
+      "data": {
+        "system": "movement",
+        "english": "Opposition",
+        "term": "Oppositio",
+        "id": 1054,
+        "roots": "ob- (karşı, karşısına) + ponere (koymak, yerleştirmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Başparmağın, avuç içini çaprazlayarak diğer parmak uçlarına yaklaşma hareketi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Başparmağın, avuç içini çaprazlayarak diğer parmak uçlarına yaklaşma hareketi"
+      }
+    },
+    {
+      "docId": "palmaris",
+      "data": {
+        "term": "Palmaris",
+        "english": "Palmar",
+        "system": "movement",
+        "id": 1003,
+        "roots": "palma (el ayası) + aris (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_bones",
+        "turkishDefinition": "Avuç içine ait olan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Avuç içine ait olan"
+      }
+    },
+    {
+      "docId": "periphericus",
+      "data": {
+        "term": "Periphericus",
+        "english": "Peripheral",
+        "turkishDefinition": "Çevresel, merkeze uzak olan çevre yapılar.",
+        "system": "movement",
+        "id": 1042,
+        "roots": "peripheria (çevre/çeper) + icus (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Çevresel, merkeze uzak olan çevre yapılar"
+      }
+    },
+    {
+      "docId": "plantaris",
+      "data": {
+        "term": "Plantaris",
+        "english": "Plantar",
+        "system": "movement",
+        "id": 1006,
+        "roots": "planta (ayak tabanı) + aris (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_bones",
+        "turkishDefinition": "Ayak tabanına ait olan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Ayak tabanına ait olan"
+      }
+    },
+    {
+      "docId": "plantiflexio",
+      "data": {
+        "system": "movement",
+        "english": "Plantar Flexion",
+        "term": "Plantiflexio",
+        "id": 1056,
+        "roots": "planta (ayak tabanı) + flectere (bükmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Ayak bileğinde, ayak ucunun tabana doğru aşağı doğru bükülmesi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Ayak bileğinde, ayak ucunun tabana"
+      }
+    },
+    {
+      "docId": "posterior",
+      "data": {
+        "term": "Posterior",
+        "english": "Posterior / Back",
+        "turkishDefinition": "Arka taraf, vücudun arkasında bulunan.",
+        "system": "movement",
+        "id": 1022,
+        "roots": "post (sonra/arka) + erior (karşılaştırma eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Arka taraf, vücudun arkasında bulunan"
+      }
+    },
+    {
+      "docId": "profundus",
+      "data": {
+        "term": "Profundus",
+        "english": "Deep",
+        "turkishDefinition": "Derin, yüzeyden uzakta derinde yer alan.",
+        "system": "movement",
+        "id": 1038,
+        "roots": "profundus (derin/derinde yer alan)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Derin, yüzeyden uzakta derinde yer alan"
+      }
+    },
+    {
+      "docId": "pronatio",
+      "data": {
+        "system": "movement",
+        "english": "Pronation",
+        "term": "Pronatio",
+        "id": 1052,
+        "roots": "pronare (öne doğru eğmek, yüzüstü çevirmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Ön kolun dönmesiyle avuç içinin arkaya / aşağıya bakması ; ayak tabanının dışa dönmesi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Ön kolun dönmesiyle avuç içinin arkaya / aşağıya bakması"
+      }
+    },
+    {
+      "docId": "protractio",
+      "data": {
+        "system": "movement",
+        "english": "Protraction",
+        "term": "Protractio",
+        "id": 1062,
+        "roots": "pro- (öne doğru, ileri) + trahere (çekmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Omuz kuşağı veya Mandibula'nın yatay düzlemde öne doğru kayma hareketi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Omuz kuşağı veya Mandibula'nın yatay düzlemde öne doğru kayma hareketi"
+      }
+    },
+    {
+      "docId": "proximalis",
+      "data": {
+        "term": "Proximalis",
+        "english": "Proximal",
+        "turkishDefinition": "Gövdeye veya merkeze en yakın olan başlangıç kısmı.",
+        "system": "movement",
+        "id": 1039,
+        "roots": "proximus (en yakın) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Gövdeye veya merkeze en yakın olan başlangıç kısmı"
+      }
+    },
+    {
+      "docId": "radialis",
+      "data": {
+        "term": "Radialis",
+        "english": "Radial",
+        "turkishDefinition": "Ön kolda radius kemiği tarafında (başparmak yönünde) olan.",
+        "system": "movement",
+        "id": 1001,
+        "roots": "radius (döner kemik) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Ön kolda radius kemiği tarafında (başparmak yönünde) olan"
+      }
+    },
+    {
+      "docId": "repositio",
+      "data": {
+        "system": "movement",
+        "english": "Reposition",
+        "term": "Repositio",
+        "id": 1055,
+        "roots": "re- (tekrar, geri) + ponere (koymak, yerleştirmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Opozisyon halindeki başparmağın anatomik başlangıç konumuna geri dönmesi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Opozisyon halindeki başparmağın anatomik başlangıç"
+      }
+    },
+    {
+      "docId": "retractio",
+      "data": {
+        "system": "movement",
+        "english": "Retraction",
+        "term": "Retractio",
+        "id": 1063,
+        "roots": "re- (geri, arkaya) + trahere (çekmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Öne çekilmiş omuz kuşağı veya Mandibula'nın arkaya doğru çekilmesi.",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Öne çekilmiş omuz kuşağı veya Mandibula'nın arkaya doğru çekilmesi"
+      }
+    },
+    {
+      "docId": "rostralis",
+      "data": {
+        "term": "Rostralis",
+        "english": "Rostral",
+        "system": "movement",
+        "id": 1010,
+        "roots": "rostrum (gaga/burun) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "skull_bones",
+        "turkishDefinition": "Gaga veya burun tarafına yakın olan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Gaga veya burun tarafına yakın olan"
+      }
+    },
+    {
+      "docId": "rotatio_lateralis",
+      "data": {
+        "system": "movement",
+        "english": "Lateral Rotation",
+        "term": "Rotatio Lateralis",
+        "id": 1047,
+        "roots": "rotare (döndürmek) + latus / lateralis (yan, dış taraf)",
+        "subcategory": "motus",
+        "turkishDefinition": "Bir uzvun kendi uzun ekseni etrafında dışa doğru dönme hareketi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Bir uzvun kendi uzun ekseni"
+      }
+    },
+    {
+      "docId": "rotatio_medialis",
+      "data": {
+        "system": "movement",
+        "english": "Medial Rotation",
+        "term": "Rotatio Medialis",
+        "id": 1048,
+        "roots": "rotare (döndürmek) + medius / medialis (orta, iç taraf)",
+        "subcategory": "motus",
+        "turkishDefinition": "Bir uzvun kendi uzun ekseni etrafında içe doğru dönme hareketi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Bir uzvun kendi uzun ekseni"
+      }
+    },
+    {
+      "docId": "sagittalis",
+      "data": {
+        "term": "Sagittalis",
+        "english": "Sagittal",
+        "system": "movement",
+        "id": 1014,
+        "roots": "sagitta (ok) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Vücudu veya organları boylamasına (önden arkaya doğru) keserek sağ ve sol asimetrik parçalara bölen dikey düzlem.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Vücudu veya organları boylamasına (önden arkaya doğru) keserek sağ ve sol asimetrik parçalara bölen dikey düzlem"
+      }
+    },
+    {
+      "docId": "sinister",
+      "data": {
+        "term": "Sinister",
+        "english": "Left",
+        "turkishDefinition": "Sol taraf, solda olan yapı.",
+        "system": "movement",
+        "id": 1020,
+        "roots": "sinister (sol taraf)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Sol taraf, solda olan yapı"
+      }
+    },
+    {
+      "docId": "superficialis",
+      "data": {
+        "term": "Superficialis",
+        "english": "Superficial",
+        "turkishDefinition": "Yüzeysel, deri yüzeyine yakın olan.",
+        "system": "movement",
+        "id": 1037,
+        "roots": "superficies (yüzey) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Yüzeysel, deri yüzeyine yakın olan"
+      }
+    },
+    {
+      "docId": "superior",
+      "data": {
+        "term": "Superior",
+        "english": "Superior / Upper",
+        "turkishDefinition": "Üst taraf, yukarıda bulunan.",
+        "system": "movement",
+        "id": 1025,
+        "roots": "super (üst/yukarı) + ior (karşılaştırma eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Üst taraf, yukarıda bulunan"
+      }
+    },
+    {
+      "docId": "supinatio",
+      "data": {
+        "system": "movement",
+        "english": "Supination",
+        "term": "Supinatio",
+        "id": 1053,
+        "roots": "supinare (arkaüstü/sırtüstü çevirmek)",
+        "subcategory": "motus",
+        "turkishDefinition": "Ön kolun dönmesiyle avuç içinin öne / yukarı bakması ; ayak tabanının içe dönmesi",
+        "category": "movement_terms",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 438000000
+        },
+        "turkishShort": "Ön kolun dönmesiyle avuç içinin öne / yukarı bakması"
+      }
+    },
+    {
+      "docId": "sutura_coronalis",
+      "data": {
+        "system": "movement",
+        "english": "Coronal Suture",
+        "term": "Sutura Coronalis",
+        "id": 568,
+        "roots": "sutura (dikiş, sütur) + coronalis (taç şeklinde, önden geçen)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Koronal sütur; os frontale ile iki os parietale arasında, kafatasının önden geçen sabit fibröz eklemi.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Koronal sütur"
+      }
+    },
+    {
+      "docId": "sutura_lambdoidea",
+      "data": {
+        "system": "movement",
+        "english": "Lambdoid Suture",
+        "term": "Sutura Lambdoidea",
+        "id": 570,
+        "roots": "sutura (dikiş, sütur) + lambda (Yunan alfabesinde λ harfi)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Lambdoid sütur; iki os parietale ile os occipitale arasında, kafatasının arkasında yer alan ve Yunan harfi lambda'ya benzeyen sabit fibröz eklem.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Lambdoid sütur"
+      }
+    },
+    {
+      "docId": "sutura_sagittalis",
+      "data": {
+        "system": "movement",
+        "english": "Sagittal Suture",
+        "term": "Sutura Sagittalis",
+        "id": 569,
+        "roots": "sutura (dikiş, sütur) + sagittalis (ok yönünde, ön-arka doğrultuda)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Sagittal sütur; iki os parietale arasında, kafatasının tepesinde ön-arka doğrultuda uzanan sabit fibröz eklem.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Sagittal sütur"
+      }
+    },
+    {
+      "docId": "sutura_squamosa",
+      "data": {
+        "system": "movement",
+        "english": "Squamous Suture",
+        "term": "Sutura Squamosa",
+        "id": 571,
+        "roots": "sutura (dikiş, sütur) + squamosus (pullu, ince tabaka şeklinde)",
+        "category": "anatomy",
+        "subcategory": "head_and_neck_joints",
+        "turkishDefinition": "Squamöz sütur; os temporale'nin pars squamosa'sı ile os parietale arasında, kafatasının yan tarafında yer alan pullu (üst üste binen) tipte fibröz eklem.",
+        "createdAt": {
+          "_seconds": 1784405132,
+          "_nanoseconds": 130000000
+        },
+        "turkishShort": "Squamöz sütur"
+      }
+    },
+    {
+      "docId": "symphysis_pubica",
+      "data": {
+        "system": "movement",
+        "english": "Pubic Symphysis",
+        "term": "Symphysis Pubica",
+        "id": 559,
+        "roots": "symphysis (birleşme, kaynaşma) + pubica (pubise ait)",
+        "category": "anatomy",
+        "subcategory": "spine_joints",
+        "turkishDefinition": "Pubik simfiz; iki os pubis arasında, fibrokartilaj bir disk aracılığıyla oluşan sekonder kıkırdak eklem. Pelvis stabilitesini sağlar, gebelikte hafifçe gevşer.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 953000000
+        },
+        "turkishShort": "Pubik simfiz"
+      }
+    },
+    {
+      "docId": "tibialis",
+      "data": {
+        "term": "Tibialis",
+        "english": "Tibial",
+        "system": "movement",
+        "id": 1004,
+        "roots": "tibia (kaval kemiği) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "lower_extremity_bones",
+        "turkishDefinition": "Bacakta tibia kemiği tarafında olan.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Bacakta tibia kemiği tarafında olan"
+      }
+    },
+    {
+      "docId": "transversus",
+      "data": {
+        "term": "Transversus",
+        "english": "Transverse",
+        "system": "movement",
+        "id": 1015,
+        "roots": "trans (karşı tarafa) + vertere (dönmek)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Vücudu veya herhangi bir organı enlemesine keserek üst (superior) ve alt (inferior) parçalara ayıran yatay düzlem.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Vücudu veya herhangi bir organı enlemesine keserek üst (superior) ve alt (inferior) parçalara ayıran yatay düzlem"
+      }
+    },
+    {
+      "docId": "ulnaris",
+      "data": {
+        "term": "Ulnaris",
+        "english": "Ulnar",
+        "turkishDefinition": "Ön kolda ulna kemiği tarafında (serçe parmak yönünde) olan.",
+        "system": "movement",
+        "id": 1002,
+        "roots": "ulna (dirsek kemiği) + aris (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "upper_extremity_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Ön kolda ulna kemiği tarafında (serçe parmak yönünde) olan"
+      }
+    },
+    {
+      "docId": "ventralis",
+      "data": {
+        "term": "Ventralis",
+        "english": "Ventral",
+        "turkishDefinition": "Karın tarafında olan, önde yer alan.",
+        "system": "movement",
+        "id": 1023,
+        "roots": "venter (karın) + alis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Karın tarafında olan, önde yer alan"
+      }
+    },
+    {
+      "docId": "verticalis",
+      "data": {
+        "term": "Verticalis",
+        "english": "Vertical",
+        "system": "movement",
+        "id": 1018,
+        "roots": "vertex (tepe/zirve) + icalis (aitlik eki)",
+        "category": "anatomy",
+        "subcategory": "trunk_bones",
+        "turkishDefinition": "Yere dik konumda olan; yukarıdan aşağıya doğru düşey eksende uzanan dikey hat veya düzlem.",
+        "createdAt": {
+          "_seconds": 1784405131,
+          "_nanoseconds": 228000000
+        },
+        "turkishShort": "Yere dik konumda olan"
+      }
+    }
+  ],
+  "userProgress": [
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1002",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1002,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:51.514Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1003",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1003,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:56.234Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1005",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1005,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:35.591Z",
+        "reviewCount": 3
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1006",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1006,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:31:11.604Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1015",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1015,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:40.293Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1016",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1016,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:35.098Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1017",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1017,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:33.071Z",
+        "reviewCount": 4
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1020",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1020,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:31:01.767Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1021",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1021,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:30.742Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1022",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1022,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:36.554Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1024",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1024,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:32.610Z",
+        "reviewCount": 3
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1028",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1028,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:34.687Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1030",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1030,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:35.749Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1032",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1032,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:41.618Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1033",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1033,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:34.091Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1037",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1037,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:39.515Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1040",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1040,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:30:44.029Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1043",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1043,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:33.184Z",
+        "reviewCount": 3
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1045",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1045,
+        "status": "learned",
+        "lastReviewed": "2026-07-02T23:21:02.965Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1049",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1049,
+        "status": "learned",
+        "lastReviewed": "2026-07-02T23:21:01.459Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1051",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1051,
+        "status": "learned",
+        "lastReviewed": "2026-06-28T22:13:59.710Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1053",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1053,
+        "status": "learned",
+        "lastReviewed": "2026-07-02T23:21:09.773Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1058",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1058,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:53.885Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1059",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1059,
+        "status": "learned",
+        "lastReviewed": "2026-07-02T23:21:02.461Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1060",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1060,
+        "status": "learned",
+        "lastReviewed": "2026-07-02T23:21:05.206Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1062",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1062,
+        "status": "learned",
+        "lastReviewed": "2026-07-02T23:21:08.186Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_1063",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 1063,
+        "status": "learned",
+        "lastReviewed": "2026-07-02T23:21:09.205Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_301",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 301,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:31:41.676Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_304",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 304,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:31.305Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_305",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 305,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:21:06.114Z",
+        "reviewCount": 3
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_306",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 306,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:33.773Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_307",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 307,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:55.550Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_308",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 308,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:20:48.400Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_310",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 310,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:31.375Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_311",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 311,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T17:29:41.799Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_314",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 314,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:58.163Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_315",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 315,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:58.472Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_316",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 316,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:43:03.025Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_317",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 317,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:31:42.462Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_319",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 319,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:19:58.328Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_320",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 320,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:20:42.261Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_321",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 321,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:58.569Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_325",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 325,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:52.484Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_326",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 326,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:20:40.109Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_327",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 327,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:30.412Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_328",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 328,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:43:02.656Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_329",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 329,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:56.592Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_331",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 331,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T17:29:45.855Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_351",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 351,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T19:08:40.623Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_352",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 352,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:42.198Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_353",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 353,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:19:57.146Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_354",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 354,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T19:08:37.798Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_355",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 355,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:59.255Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_356",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 356,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:38.810Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_357",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 357,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:35.961Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_358",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 358,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:58.954Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_360",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 360,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:19:54.243Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_361",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 361,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:31:39.966Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_362",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 362,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:34.921Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_363",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 363,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:58.149Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_366",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 366,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:58.923Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_368",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 368,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T19:08:29.023Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_370",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 370,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:19:52.262Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_371",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 371,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:43:03.889Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_372",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 372,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:43.425Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_373",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 373,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:31:41.274Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_374",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 374,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T17:29:37.644Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_375",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 375,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:53.164Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_378",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 378,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:28.120Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_379",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 379,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T19:08:40.339Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_380",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 380,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:44.492Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_382",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 382,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:57.837Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_392",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 392,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:51.637Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_395",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 395,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T19:08:35.747Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_396",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 396,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:20:25.898Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_502",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 502,
+        "status": "learned",
+        "lastReviewed": "2026-07-07T06:52:04.154Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_507",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 507,
+        "status": "learned",
+        "lastReviewed": "2026-07-07T06:52:05.097Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_508",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 508,
+        "status": "learned",
+        "lastReviewed": "2026-07-07T06:52:03.575Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_509",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 509,
+        "status": "learned",
+        "lastReviewed": "2026-07-07T06:52:05.721Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_510",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 510,
+        "status": "learned",
+        "lastReviewed": "2026-07-07T06:52:04.608Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_65",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 65,
+        "status": "learned",
+        "lastReviewed": "2026-07-07T06:53:16.814Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_71",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 71,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:43:06.205Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_73",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 73,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:19:56.053Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_75",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 75,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:19:51.914Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_76",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 76,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:39.521Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_78",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 78,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:21:19.223Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_79",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 79,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:28.217Z",
+        "reviewCount": 5
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_80",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 80,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:40.312Z",
+        "reviewCount": 3
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_82",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 82,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:59:29.043Z",
+        "reviewCount": 4
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_84",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 84,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:20:44.783Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_85",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 85,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T17:29:31.544Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_86",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 86,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:31.060Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_87",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 87,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:42:30.382Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_88",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 88,
+        "status": "learned",
+        "lastReviewed": "2026-06-26T09:19:55.267Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_90",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 90,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T13:49:55.910Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_93",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 93,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:33.431Z",
+        "reviewCount": 2
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_95",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 95,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:06.365Z",
+        "reviewCount": 3
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_96",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 96,
+        "status": "learned",
+        "lastReviewed": "2026-06-15T19:08:33.220Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_98",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 98,
+        "status": "learned",
+        "lastReviewed": "2026-06-29T14:00:08.852Z",
+        "reviewCount": 3
+      }
+    },
+    {
+      "docId": "3dEZw1jzXffc7gfdHdlvtgfFQH52_999",
+      "data": {
+        "userId": "3dEZw1jzXffc7gfdHdlvtgfFQH52",
+        "termId": 999,
+        "status": "learned",
+        "lastReviewed": "2026-06-16T09:09:24.157Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "5iAs3TbOaPYqgBMNX4bqd3VvCV43_85",
+      "data": {
+        "userId": "5iAs3TbOaPYqgBMNX4bqd3VvCV43",
+        "termId": 85,
+        "status": "learned",
+        "lastReviewed": "2026-07-06T11:20:52.544Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "st0IdkIVrROAU3yUxtSgcgzlAAl1_65",
+      "data": {
+        "userId": "st0IdkIVrROAU3yUxtSgcgzlAAl1",
+        "termId": 65,
+        "status": "learned",
+        "lastReviewed": "2026-07-01T12:47:16.822Z",
+        "reviewCount": 1
+      }
+    },
+    {
+      "docId": "st0IdkIVrROAU3yUxtSgcgzlAAl1_66",
+      "data": {
+        "userId": "st0IdkIVrROAU3yUxtSgcgzlAAl1",
+        "termId": 66,
+        "status": "learned",
+        "lastReviewed": "2026-07-01T12:47:28.491Z",
+        "reviewCount": 1
+      }
+    }
+  ]
+}

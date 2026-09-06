@@ -77,7 +77,7 @@ export const MatchGame = () => {
 
       // Target match card: English term in EN mode, Turkish description in TR mode
       const meaningContent = isEn
-        ? (term.english || term.turkish || term.turkishShort || term.turkishDefinition)
+        ? (term.english || term.turkish || term.englishDefinition || term.turkishShort || term.turkishDefinition)
         : (term.turkishShort || term.turkishDefinition || term.definition);
 
       gameCards.push({
@@ -132,6 +132,7 @@ export const MatchGame = () => {
           term: t.term,
           turkish: t.turkish || '',
           english: t.english || t.turkish || '',
+          englishDefinition: t.englishDefinition || t.english || '',
           turkishShort: t.turkishShort || '',
           turkishDefinition: t.turkishDefinition || t.definition || '',
           category: t.category || '',
@@ -148,6 +149,7 @@ export const MatchGame = () => {
           term: t.term,
           turkish: t.turkish || '',
           english: t.english || t.turkish || '',
+          englishDefinition: t.englishDefinition || t.english || '',
           turkishShort: t.turkishShort || '',
           turkishDefinition: t.definition || '',
           category: t.category || '',

@@ -257,7 +257,9 @@ export const MorphemeDetail = () => {
                         {term.turkish || term.english}
                       </div>
                       <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                        {term.turkishDefinition || term.definition}
+                        {currentLanguage === 'en'
+                          ? (term.englishDefinition || term.turkishDefinition || term.definition)
+                          : (term.turkishDefinition || term.definition)}
                       </p>
                       {term.roots && (
                         <div className="mt-2 pt-2 border-t border-border/50 text-[11px] font-mono text-muted-foreground">

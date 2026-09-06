@@ -343,6 +343,7 @@ export function getTermMorphemes(term) {
         text: p.text,
         meaning: p.meaning,
         partType: p.partType,
+        wordIndex: wordIdx,
       });
     });
   });
@@ -376,7 +377,7 @@ export function adaptTermsToMorphemeQuestions(terms, roundSize = 10) {
       const englishTerm = term.english || (term.turkish && term.turkish !== term.term ? term.turkish : targetLatinTerm);
       const definition = {
         tr: term.turkishShort || term.turkishDefinition || term.definition || term.turkish || '',
-        en: term.englishDefinition || (term.turkish && term.turkish !== targetLatinTerm ? term.turkish : term.english || targetLatinTerm),
+        en: term.englishDefinition || term.english || (term.turkish && term.turkish !== targetLatinTerm ? term.turkish : targetLatinTerm),
       };
 
       candidateQuestions.push({
@@ -406,7 +407,7 @@ export function adaptTermsToMorphemeQuestions(terms, roundSize = 10) {
             englishTerm,
             definition: {
               tr: term.turkishShort || term.turkishDefinition || term.definition || '',
-              en: term.englishDefinition || (term.turkish && term.turkish !== primaryTerm ? term.turkish : term.english || primaryTerm),
+              en: term.englishDefinition || term.english || (term.turkish && term.turkish !== primaryTerm ? term.turkish : primaryTerm),
             },
             correctSequence: sequence,
             distractors: [],

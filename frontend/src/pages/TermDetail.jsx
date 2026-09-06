@@ -77,7 +77,12 @@ export const TermDetail = () => {
   }
 
   const enTranslation = term.turkish || term.english || '';
-  const definitionText = term.turkishDefinition || term.definition || '';
+  const primaryDefinition = isTr
+    ? (term.turkishDefinition || term.definition || '')
+    : (term.englishDefinition || term.turkishDefinition || term.definition || '');
+  const secondaryDefinition = isTr
+    ? (term.englishDefinition || '')
+    : (term.turkishDefinition || term.definition || '');
 
   return (
     <div className="min-h-screen bg-background py-10 px-4 sm:px-6 lg:px-8">
@@ -88,7 +93,7 @@ export const TermDetail = () => {
           "@type": "AnatomicalStructure",
           "name": term.term,
           "alternateName": enTranslation,
-          "description": definitionText,
+          "description": primaryDefinition,
           "url": `https://healthlexmed.com/study/${getTermSlug(term.term)}`
         })
       }} />
@@ -235,14 +240,29 @@ export const TermDetail = () => {
           )}
 
           {/* Klinik ve Anatomik Açıklama */}
-          {definitionText && (
-            <div className="mt-6 p-5 rounded-xl bg-card border border-border/80">
-              <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
-                {isTr ? 'Anatomik Tanım & Fonksiyonel Açıklama' : 'Anatomical Definition & Function'}
+          {primaryDefinition && (
+            <div className="mt-6 p-5 rounded-xl bg-card border border-border/80 space-y-4">
+              <div>
+                <div className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
+                  <span>{isTr ? '🇹🇷' : '🇬🇧'}</span>
+                  <span>{isTr ? 'Anatomik Tanım & Fonksiyonel Açıklama' : 'Anatomical Definition & Function'}</span>
+                </div>
+                <p className="text-sm sm:text-base text-foreground leading-relaxed font-sans">
+                  {primaryDefinition}
+                </p>
               </div>
-              <p className="text-sm sm:text-base text-foreground leading-relaxed font-sans">
-                {definitionText}
-              </p>
+
+              {secondaryDefinition && secondaryDefinition !== primaryDefinition && (
+                <div className="pt-3.5 border-t border-border/50">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">
+                    <span>{isTr ? '🇬🇧' : '🇹🇷'}</span>
+                    <span>{isTr ? 'İngilizce Tanım (English Definition)' : 'Turkish Definition & Context'}</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-sans">
+                    {secondaryDefinition}
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -299,7 +319,9 @@ export const TermDetail = () => {
                           {rel.turkish || rel.english}
                         </div>
                         <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
-                          {rel.turkishDefinition || rel.definition}
+                          {isTr
+                            ? (rel.turkishDefinition || rel.definition)
+                            : (rel.englishDefinition || rel.turkishDefinition || rel.definition)}
                         </p>
                       </CardContent>
                     </Card>

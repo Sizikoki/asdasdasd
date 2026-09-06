@@ -134,9 +134,11 @@ export function findRelatedTermsForMorpheme(morpheme) {
     const termLower = (t.term || '').toLowerCase();
     const rootsLower = (t.roots || '').toLowerCase();
     const defLower = (t.turkishDefinition || t.definition || '').toLowerCase();
+    const engDefLower = (t.englishDefinition || '').toLowerCase();
+    const engLower = (t.english || '').toLowerCase();
 
     return variants.some(v =>
-      termLower.includes(v) || rootsLower.includes(v) || defLower.includes(v)
+      termLower.includes(v) || rootsLower.includes(v) || defLower.includes(v) || engDefLower.includes(v) || engLower.includes(v)
     );
   }).slice(0, 10);
 }

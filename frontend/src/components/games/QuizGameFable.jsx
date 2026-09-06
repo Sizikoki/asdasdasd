@@ -106,14 +106,18 @@ function adaptTermsToQuizQuestions(terms, { language = 'tr', roundSize = ROUND_S
       direction,
       targetTerm: target.term,
       questionText:
-        direction === QUIZ_DIRECTIONS.TERM_TO_MEANING ? target.term : target.__meaning,
+        direction === QUIZ_DIRECTIONS.TERM_TO_MEANING
+          ? target.term
+          : (language === 'en' && target.englishDefinition ? target.englishDefinition : target.__meaning),
       options: shuffle([
         { id: `q${qIndex}-t${target.id}`, text: answerText, isCorrect: true },
         ...distractors,
       ]),
-      explanation: target.roots
-        ? `${target.term} · ${target.roots}`
-        : `${target.term} — ${target.__meaning}`,
+      explanation: language === 'en' && target.englishDefinition
+        ? `${target.term} (${target.english || target.turkish}) — ${target.englishDefinition}`
+        : (target.roots
+            ? `${target.term} · ${target.roots}`
+            : `${target.term} — ${target.__meaning}`),
     };
   });
 
