@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { getStats, getUser, saveUser, getStreak, getQuizScores, getProgress, getMatchScores, getMorphemeScores, logout } from '@/utils/storage';
+import { getStats, getUser, saveUser, getStreak, getQuizScores, getProgress, getMatchScores, getMorphemeScores, logout, clearAllUserData } from '@/utils/storage';
 import { signOut, updateProfile, sendPasswordResetEmail } from 'firebase/auth';
-import { doc, deleteDoc } from 'firebase/firestore';
-import { auth, db } from '@/firebase/config';
+import { auth } from '@/firebase/config';
 import { toast } from 'sonner';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -153,16 +152,10 @@ export const Profile = () => {
     if (confirmation) {
       try {
         const currentUser = auth.currentUser;
-        const uid = currentUser?.uid || user?.uid;
+        const userObj = user || { uid: currentUser?.uid, email: currentUser?.email };
 
-        // 1. Firestore'daki kullanıcı ilerleme belgesini doğrudan UID ile sil
-        if (uid) {
-          try {
-            await deleteDoc(doc(db, 'user_progress', uid));
-          } catch (dbErr) {
-            console.warn('[Firestore] user_progress silinirken hata:', dbErr);
-          }
-        }
+        // 1. Firestore ve LocalStorage'daki tüm kullanıcı ilerleme ve skor verilerini kalıcı olarak temizle
+        await clearAllUserData(currentUser || userObj);
 
         // 2. Firebase Auth kullanıcısını kalıcı olarak sil
         if (currentUser) {

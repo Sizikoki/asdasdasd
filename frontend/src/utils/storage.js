@@ -1,7 +1,7 @@
 // Browser localStorage utilities for user progress tracking
 // All user-specific data is namespaced by user email to ensure data isolation
 import { db } from '@/firebase/config';
-import { doc, setDoc, deleteDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, setDoc, deleteDoc, collection, query, where, getDocs, writeBatch } from 'firebase/firestore';
 
 const STORAGE_KEYS = {
   USER: 'medterm_user',
@@ -88,6 +88,59 @@ export const logout = () => {
   }
   
   localStorage.removeItem(STORAGE_KEYS.USER);
+};
+
+// Permanently delete all user progress and scores from Firestore and LocalStorage
+export const clearAllUserData = async (currentUser) => {
+  const user = currentUser || getUser();
+  const uid = user?.uid;
+  const email = user?.email;
+
+  // 1. Delete all user_progress documents in Firestore for both UID and Email identifiers
+  const identifiers = Array.from(new Set([uid, email].filter(Boolean)));
+  for (const identifier of identifiers) {
+    try {
+      const progressRef = collection(db, 'user_progress');
+      const q = query(progressRef, where('userId', '==', identifier));
+      const snapshot = await getDocs(q);
+
+      if (!snapshot.empty) {
+        let batch = writeBatch(db);
+        let opCount = 0;
+        for (const docSnap of snapshot.docs) {
+          batch.delete(docSnap.ref);
+          opCount++;
+          if (opCount % 400 === 0) {
+            await batch.commit();
+            batch = writeBatch(db);
+          }
+        }
+        await batch.commit();
+        console.log(`[Firestore] Deleted ${snapshot.size} user_progress documents for identifier: ${identifier}`);
+      }
+    } catch (err) {
+      console.error('[Firestore] Error deleting user progress for:', identifier, err);
+    }
+  }
+
+  // 2. Clear all user namespaced keys from localStorage
+  if (email) {
+    Object.values(STORAGE_KEYS).forEach((baseKey) => {
+      localStorage.removeItem(`${baseKey}_${email}`);
+    });
+  }
+  if (uid) {
+    Object.values(STORAGE_KEYS).forEach((baseKey) => {
+      localStorage.removeItem(`${baseKey}_${uid}`);
+    });
+  }
+  localStorage.removeItem(STORAGE_KEYS.USER);
+  localStorage.removeItem('user_preferences');
+
+  // Also remove guest keys if any
+  Object.values(STORAGE_KEYS).forEach((baseKey) => {
+    localStorage.removeItem(`${baseKey}_guest`);
+  });
 };
 
 // Progress tracking
