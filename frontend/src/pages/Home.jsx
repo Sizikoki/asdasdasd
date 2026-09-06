@@ -530,7 +530,7 @@ export const Home = () => {
                 {IS_PAYMENT_ACTIVE ? (
                   <>
                     <div className="price">
-                      {annualPrice || (isPriceLoading ? '...' : (lang === 'en' ? '$20' : '499 TL'))}
+                      {annualPrice || (isPriceLoading ? '...' : (lang === 'en' ? '$40' : '499 TL'))}
                     </div>
                     <div className="once">{content.pricing.period}</div>
                   </>
@@ -542,7 +542,7 @@ export const Home = () => {
                           {lang === 'en' ? 'Free ($0)' : 'Ücretsiz (0 ₺)'}
                         </span>
                         <span className="text-muted-foreground line-through text-base sm:text-lg font-medium">
-                          {lang === 'en' ? '$20 / year' : (annualPrice || '499 TL / yıl')}
+                          {lang === 'en' ? '$40 / year' : (annualPrice || '499 TL / yıl')}
                         </span>
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
                           {lang === 'en' ? '🎁 100% Free Access' : '🎁 Erken Erişim Hediyesi'}
