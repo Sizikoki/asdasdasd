@@ -518,12 +518,50 @@ export const Home = () => {
 
             <div className="single-tier-wrap">
               <div className="tier hot single-tier">
-                <span className="badge">{content.pricing.badge}</span>
+                <span className="badge">
+                  {IS_PAYMENT_ACTIVE
+                    ? content.pricing.badge
+                    : (lang === 'en' ? '🚀 Launch Special — Early Access' : '🚀 Lansman Dönemi — Erken Erişim')}
+                </span>
                 <h3 className="text-primary text-xl font-bold">{content.pricing.planTitle}</h3>
-                <div className="price">
-                  {annualPrice || (isPriceLoading ? '...' : (lang === 'en' ? '$20' : '499 TL'))}
-                </div>
-                <div className="once">{content.pricing.period}</div>
+                
+                {IS_PAYMENT_ACTIVE ? (
+                  <>
+                    <div className="price">
+                      {annualPrice || (isPriceLoading ? '...' : (lang === 'en' ? '$20' : '499 TL'))}
+                    </div>
+                    <div className="once">{content.pricing.period}</div>
+                  </>
+                ) : (
+                  <>
+                    <div className="my-3">
+                      <div className="flex items-baseline gap-2.5 flex-wrap">
+                        <span className="font-['Space_Grotesk'] font-extrabold text-3xl sm:text-4xl text-primary tracking-tight">
+                          {lang === 'en' ? 'Free (0$)' : 'Ücretsiz (0 ₺)'}
+                        </span>
+                        <span className="text-muted-foreground line-through text-base sm:text-lg font-medium">
+                          {annualPrice || (lang === 'en' ? '$20 / yr' : '499 TL / yıl')}
+                        </span>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                          {lang === 'en' ? '🎁 100% Free Access' : '🎁 Erken Erişim Hediyesi'}
+                        </span>
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        {lang === 'en' ? 'Temporary launch promotion' : 'Lansmana özel geçici süreyle'}
+                      </div>
+                    </div>
+
+                    <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 sm:p-3.5 my-3 text-xs sm:text-[0.85rem] text-foreground/90 flex items-start gap-2.5 leading-relaxed">
+                      <span className="text-base flex-shrink-0">✨</span>
+                      <span>
+                        {lang === 'en'
+                          ? 'Explore core modules for free during launch. Pro membership opening soon!'
+                          : 'Lansman boyunca tüm temel modülleri ücretsiz keşfedin. Pro üyelik çok yakında aktif!'}
+                      </span>
+                    </div>
+                  </>
+                )}
+
                 <ul>
                   {content.pricing.features(totalMorphemes).map((feat, idx) => (
                     <li key={idx} className={feat.active ? '' : 'opacity-40'}>
@@ -540,18 +578,27 @@ export const Home = () => {
                   <button
                     type="button"
                     onClick={IS_PAYMENT_ACTIVE ? handlePaddleCheckout : () => navigate('/study')}
-                    className="site-btn-primary w-full text-center py-3.5 text-base font-bold shadow-lg hover:shadow-primary/25 transition-all"
+                    className="site-btn-primary w-full text-center py-3.5 text-base font-bold shadow-lg hover:shadow-primary/25 transition-all flex items-center justify-center gap-2"
                   >
-                    {IS_PAYMENT_ACTIVE
-                      ? content.pricing.btnText
-                      : (lang === 'en' ? 'Explore Dictionary' : 'Sözlüğü Keşfet')}
+                    <span>
+                      {IS_PAYMENT_ACTIVE
+                        ? content.pricing.btnText
+                        : (lang === 'en' ? 'Join Early Access (Explore Free)' : 'Erken Erişime Katıl (Ücretsiz Keşfet)')}
+                    </span>
+                    <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
             </div>
 
             <div className="after-price">
-              <p className="flow-line">{content.pricing.flowLine}</p>
+              <p className="flow-line">
+                {IS_PAYMENT_ACTIVE
+                  ? content.pricing.flowLine
+                  : (lang === 'en'
+                    ? '🚀 No credit card required. Start exploring thousands of Latin medical terms instantly.'
+                    : '🚀 Kredi kartı gerekmez. Binlerce Latince tıp terimini ve oyunları hemen ücretsiz deneyimleyin.')}
+              </p>
               <p className="expensive-line">{content.pricing.guaranteeLine}</p>
             </div>
           </div>
