@@ -282,31 +282,31 @@ export const MatchGame = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mb-4">
-            <Card className="p-4">
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-primary" />
-                <div>
-                  <div className="text-xs text-muted-foreground">{t('time')}</div>
-                  <div className="text-xl font-bold">{formatTime(elapsedTime)}</div>
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4">
+            <Card className="p-2 sm:p-4">
+              <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
+                <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-xs text-muted-foreground truncate">{t('time')}</div>
+                  <div className="text-sm sm:text-xl font-bold">{formatTime(elapsedTime)}</div>
                 </div>
               </div>
             </Card>
-            <Card className="p-4">
-              <div className="flex items-center gap-2">
-                <Trophy className="w-5 h-5 text-secondary" />
-                <div>
-                  <div className="text-xs text-muted-foreground">{t('moves')}</div>
-                  <div className="text-xl font-bold">{moves}</div>
+            <Card className="p-2 sm:p-4">
+              <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
+                <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-secondary shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-xs text-muted-foreground truncate">{t('moves')}</div>
+                  <div className="text-sm sm:text-xl font-bold">{moves}</div>
                 </div>
               </div>
             </Card>
-            <Card className="p-4">
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 text-accent">✓</div>
-                <div>
-                  <div className="text-xs text-muted-foreground">{t('matched')}</div>
-                  <div className="text-xl font-bold">{matched.length}/{cards.length / 2}</div>
+            <Card className="p-2 sm:p-4">
+              <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
+                <div className="w-4 h-4 sm:w-5 sm:h-5 text-accent font-bold flex items-center justify-center shrink-0">✓</div>
+                <div className="min-w-0">
+                  <div className="text-[10px] sm:text-xs text-muted-foreground truncate">{t('matched')}</div>
+                  <div className="text-sm sm:text-xl font-bold">{matched.length}/{cards.length / 2}</div>
                 </div>
               </div>
             </Card>
@@ -316,7 +316,7 @@ export const MatchGame = () => {
         </div>
 
         {/* Game Board */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
           {cards.map((card) => {
             const isSelected = selected.find(s => s.id === card.id);
             const isMatched = matched.includes(card.pairId);
@@ -334,24 +334,24 @@ export const MatchGame = () => {
               <Card
                 key={card.id}
                 onClick={() => handleCardClick(card)}
-                className={`h-32 cursor-pointer transition-all transform hover:scale-105 ${isMatched
-                  ? 'bg-green-50 border-green-500 border-2 opacity-50 cursor-not-allowed'
+                className={`min-h-[110px] sm:h-32 cursor-pointer transition-all transform hover:scale-[1.03] active:scale-95 flex flex-col justify-center select-none overflow-hidden ${isMatched
+                  ? 'bg-green-500/10 border-green-500/50 border-2 opacity-50 cursor-not-allowed'
                   : isSelected
                     ? isWrongMatch
-                      ? 'bg-red-50 border-red-500 border-2'
+                      ? 'bg-red-500/10 border-red-500 border-2'
                       : isCorrectMatch
-                        ? 'bg-green-50 border-green-500 border-2 shadow-lg scale-105'
-                        : 'bg-primary/10 border-primary shadow-lg scale-105'
-                    : 'hover:shadow-lg'
+                        ? 'bg-green-500/15 border-green-500 border-2 shadow-lg scale-[1.02]'
+                        : 'bg-primary/10 border-primary border-2 shadow-lg scale-[1.02]'
+                    : 'hover:shadow-md border-border/80'
                   }`}
               >
-                <CardContent className="h-full flex items-center justify-center p-3">
-                  <div className={`text-center ${card.type === 'term' ? 'font-bold' : 'text-secondary'
+                <CardContent className="h-full flex items-center justify-center p-2.5 sm:p-3">
+                  <div className={`text-center w-full ${card.type === 'term' ? 'font-bold font-serif' : 'text-primary font-medium'
                     }`}>
-                    <div className="text-xs text-muted-foreground mb-1">
-                      {card.type === 'term' ? '🌐' : (currentLanguage === 'en' ? '🇬🇧' : '🇹🇷')}
+                    <div className="text-[10px] sm:text-xs text-muted-foreground mb-1">
+                      {card.type === 'term' ? '🏛️ Latin' : (currentLanguage === 'en' ? '🇬🇧 English' : '🇹🇷 Türkçe')}
                     </div>
-                    <div className="text-sm sm:text-base leading-tight">
+                    <div className="text-xs sm:text-sm md:text-base leading-snug break-words hyphens-auto px-1 line-clamp-4">
                       {card.content}
                     </div>
                   </div>

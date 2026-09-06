@@ -132,9 +132,17 @@ export const Study = () => {
     const newStatus = !progress.learned;
     saveProgress(termId, newStatus);
     if (!isLoggedIn()) {
-      toast.info(newStatus ? 'Terim öğrenildi! (Misafir Modu: İlerlemeniz bu cihazda saklanır)' : 'Öğrenildi işareti kaldırıldı');
+      toast.info(
+        newStatus
+          ? (isTr ? 'Terim öğrenildi! (Misafir Modu: İlerlemeniz bu cihazda saklanır)' : 'Term learned! (Guest Mode: Progress saved locally)')
+          : (isTr ? 'Öğrenildi işareti kaldırıldı' : 'Unmarked as learned')
+      );
     } else {
-      toast.success(newStatus ? 'Terim öğrenildi olarak işaretlendi!' : 'Öğrenildi işareti kaldırıldı');
+      toast.success(
+        newStatus
+          ? (isTr ? 'Terim öğrenildi olarak işaretlendi!' : 'Term marked as learned!')
+          : (isTr ? 'Öğrenildi işareti kaldırıldı' : 'Unmarked as learned')
+      );
     }
     setRefreshTrigger(prev => prev + 1);
   };
@@ -283,7 +291,7 @@ export const Study = () => {
               <button
                 onClick={() => setSidebarOpen(false)}
                 className="p-1 rounded-lg hover:bg-muted transition-colors"
-                aria-label="Menüyü kapat"
+                aria-label={isTr ? "Menüyü kapat" : "Close menu"}
               >
                 <X className="w-5 h-5" />
               </button>
@@ -341,7 +349,7 @@ export const Study = () => {
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="inline-flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors border border-border text-xs font-semibold text-foreground"
-              aria-label="Kategorileri Göster/Gizle"
+              aria-label={isTr ? "Kategorileri Göster/Gizle" : "Toggle categories"}
             >
               <Menu className="w-4 h-4" />
               <span className="hidden sm:inline">{t('categories', 'Kategoriler')}</span>

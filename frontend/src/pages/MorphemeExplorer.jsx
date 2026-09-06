@@ -235,19 +235,19 @@ export const MorphemeExplorer = () => {
       case 'prefix':
         return (
           <Badge className="bg-blue-500/15 text-blue-700 dark:text-blue-400 border border-blue-500/30 hover:bg-blue-500/20 font-medium">
-            Ön Ek (Prefix)
+            {isTr ? 'Ön Ek (Prefix)' : 'Prefix'}
           </Badge>
         );
       case 'root':
         return (
           <Badge className="bg-violet-500/15 text-violet-700 dark:text-violet-300 border border-violet-500/30 hover:bg-violet-500/20 font-medium">
-            Kök (Root)
+            {isTr ? 'Kök (Root)' : 'Root'}
           </Badge>
         );
       case 'suffix':
         return (
           <Badge className="bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 font-medium">
-            Son Ek (Suffix)
+            {isTr ? 'Son Ek (Suffix)' : 'Suffix'}
           </Badge>
         );
       default:
@@ -430,7 +430,7 @@ export const MorphemeExplorer = () => {
                               </div>
                               {item.category && CATEGORY_NAMES[item.category] && (
                                 <p className="text-[0.75rem] font-medium text-muted-foreground">
-                                  {CATEGORY_NAMES[item.category].tr}
+                                  {CATEGORY_NAMES[item.category]?.[currentLanguage] || CATEGORY_NAMES[item.category]?.tr}
                                 </p>
                               )}
                             </div>

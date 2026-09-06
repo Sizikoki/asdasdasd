@@ -306,22 +306,22 @@ export const Dashboard = () => {
                   {t('termOfTheDay')}
                 </div>
                 <div 
-                  className={`flip-card w-[260px] h-[170px] cursor-pointer my-[14px] ${totdFlipped ? 'flipped' : ''}`}
+                  className={`flip-card w-full max-w-[280px] h-[180px] cursor-pointer my-[14px] ${totdFlipped ? 'flipped' : ''}`}
                   onClick={() => setTotdFlipped(!totdFlipped)}
                 >
                   <div className="flip-inner relative w-full h-full duration-500 transform-style-3d">
                     {/* Front Face */}
-                    <div className="flip-face absolute inset-0 rounded-[12px] border border-[var(--line)] flex flex-col items-center justify-center p-[18px] bg-[var(--paper)] backface-hidden">
+                    <div className="flip-face absolute inset-0 rounded-[12px] border border-[var(--line)] flex flex-col items-center justify-center p-[16px] bg-[var(--paper)] backface-hidden overflow-hidden">
                       <div className="lbl font-mono text-[0.68rem] tracking-[0.1em] text-[var(--teal)] uppercase mb-[8px]">
                         {t('latinTerm')}
                       </div>
-                      <div className="term font-mono text-[1.5rem] font-bold text-[var(--ink)]">
+                      <div className="term font-mono text-[1.2rem] sm:text-[1.4rem] font-bold text-[var(--ink)] text-center break-words px-1 max-w-full leading-snug">
                         {formatMedicalTerm(todayTerm.term)}
                       </div>
                     </div>
                     {/* Back Face */}
-                    <div className="flip-face flip-back absolute inset-0 rounded-[12px] flex flex-col items-center justify-center p-[18px] bg-[var(--teal-deep)] text-white rotate-y-180 backface-hidden">
-                      <p className="text-[0.9rem] leading-[1.5] text-[#E0ECFD] m-0">
+                    <div className="flip-face flip-back absolute inset-0 rounded-[12px] flex flex-col items-center justify-center p-[16px] bg-[var(--teal-deep)] text-white rotate-y-180 backface-hidden overflow-hidden">
+                      <p className="text-[0.82rem] sm:text-[0.88rem] leading-[1.45] text-[#E0ECFD] m-0 overflow-y-auto max-h-full px-1 text-center break-words">
                         {todayTerm.meaning}
                       </p>
                     </div>

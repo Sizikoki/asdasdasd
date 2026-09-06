@@ -56,7 +56,7 @@ export const Profile = () => {
   // Username casing formatter
   // ----------------------------------------------------
   const formatName = (name) => {
-    if (!name) return 'Kullanıcı';
+    if (!name) return currentLanguage === 'en' ? 'User' : 'Kullanıcı';
     return name
       .split(' ')
       .map(word => {

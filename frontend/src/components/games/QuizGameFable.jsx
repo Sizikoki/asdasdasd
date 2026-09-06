@@ -484,18 +484,18 @@ export default function QuizGameFable({ terms, language = 'tr', onBack, t, categ
               className="animate-[hlxFadeUp_0.3s_ease-out]"
             >
               {/* Soru kartı */}
-              <div className="rounded-2xl border border-border bg-muted/40 px-5 py-6 sm:py-8 text-center mb-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+              <div className="rounded-2xl border border-border bg-muted/40 px-4 py-5 sm:px-6 sm:py-8 text-center mb-5 overflow-hidden">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2.5 sm:mb-3">
                   {currentQuestion.direction === QUIZ_DIRECTIONS.TERM_TO_MEANING
                     ? tx('quizPromptTerm', L.promptTermToMeaning)
                     : tx('quizPromptMeaning', L.promptMeaningToTerm)}
                 </p>
                 {currentQuestion.direction === QUIZ_DIRECTIONS.TERM_TO_MEANING ? (
-                  <h2 className="font-serif italic text-2xl sm:text-3xl font-bold text-foreground break-words">
+                  <h2 className="font-serif italic text-xl sm:text-2xl md:text-3xl font-bold text-foreground break-words hyphens-auto">
                     {toTitleCase(currentQuestion.questionText)}
                   </h2>
                 ) : (
-                  <h2 className="text-lg sm:text-xl font-semibold leading-relaxed text-foreground">
+                  <h2 className="text-base sm:text-xl font-semibold leading-relaxed text-foreground break-words">
                     {currentQuestion.questionText}
                   </h2>
                 )}

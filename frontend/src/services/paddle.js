@@ -53,7 +53,8 @@ export const getPaddle = async () => {
           // Ödeme Başarılı Bildirimi ve /welcome sayfasına yönlendirme
           if (event?.name === 'checkout.completed') {
             console.log('[Paddle] Checkout completed successfully!', event.data);
-            toast.success('Ödemeniz başarıyla tamamlandı! Hoş geldiniz 🎉', {
+            const isEn = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en';
+            toast.success(isEn ? 'Payment successful! Welcome to HealthLexMed Pro 🎉' : 'Ödemeniz başarıyla tamamlandı! Hoş geldiniz 🎉', {
               duration: 5000
             });
 
@@ -67,7 +68,8 @@ export const getPaddle = async () => {
           // Ödeme Başarısız Bildirimi
           if (event?.name === 'checkout.payment.failed') {
             console.warn('[Paddle] Payment failed:', event.data);
-            toast.error('Ödeme işlemi tamamlanamadı. Lütfen kart bilgilerinizi kontrol edip tekrar deneyin.', {
+            const isEn = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en';
+            toast.error(isEn ? 'Payment could not be completed. Please check your card details and try again.' : 'Ödeme işlemi tamamlanamadı. Lütfen kart bilgilerinizi kontrol edip tekrar deneyin.', {
               duration: 6000
             });
           }
@@ -75,7 +77,8 @@ export const getPaddle = async () => {
           // Genel Hata Bildirimi
           if (event?.name === 'checkout.error') {
             console.error('[Paddle] Checkout error:', event.data);
-            toast.error('Ödeme sırasında bir hata oluştu. Lütfen tekrar deneyiniz.');
+            const isEn = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en';
+            toast.error(isEn ? 'An error occurred during checkout. Please try again.' : 'Ödeme sırasında bir hata oluştu. Lütfen tekrar deneyiniz.');
           }
 
           // Pencere Kapatıldığında
@@ -213,14 +216,14 @@ export const openPaddleCheckout = async ({
   theme = 'light'
 } = {}) => {
   try {
+    const currentLang = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en' ? 'en' : 'tr';
     const paddle = await getPaddle();
     if (!paddle) {
-      toast.error('Ödeme sistemi başlatılamadı. Lütfen internet bağlantınızı kontrol edin.');
+      toast.error(currentLang === 'en' ? 'Payment system could not be initialized. Please check your connection.' : 'Ödeme sistemi başlatılamadı. Lütfen internet bağlantınızı kontrol edin.');
       return;
     }
 
     const activePriceId = priceId || PADDLE_PRICE_ID;
-    const currentLang = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en' ? 'en' : 'tr';
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
     const resolvedSuccessUrl = successUrl || (origin ? `${origin}/welcome` : '/welcome');
 
@@ -251,7 +254,8 @@ export const openPaddleCheckout = async ({
     paddle.Checkout.open(checkoutOptions);
   } catch (error) {
     console.error('[Paddle] Error opening checkout:', error);
-    toast.error('Ödeme penceresi açılırken bir hata oluştu.');
+    const isEn = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en';
+    toast.error(isEn ? 'An error occurred while opening checkout.' : 'Ödeme penceresi açılırken bir hata oluştu.');
   }
 };
 

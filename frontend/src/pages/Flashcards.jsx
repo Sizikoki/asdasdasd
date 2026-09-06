@@ -200,7 +200,7 @@ export const Flashcards = () => {
         {/* Flashcard */}
         <div className="perspective-1000 mb-8">
           <Card
-            className={`relative h-80 cursor-pointer transition-all duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''
+            className={`relative h-[390px] sm:h-[350px] cursor-pointer transition-all duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''
               }`}
             onClick={handleFlip}
             style={{
@@ -210,38 +210,38 @@ export const Flashcards = () => {
           >
             {/* Front */}
             <div
-              className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-8 bg-gradient-to-br from-primary/5 to-secondary/5"
+              className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-5 sm:p-8 bg-gradient-to-br from-primary/5 to-secondary/5 overflow-hidden"
               style={{ backfaceVisibility: 'hidden' }}
             >
-              <div className="text-sm font-medium text-muted-foreground mb-4">
+              <div className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-widest mb-3 sm:mb-4">
                 {t('term', 'Terim')}
               </div>
-              <div className="text-3xl sm:text-4xl font-bold text-center mb-6">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 sm:mb-6 break-words px-2 max-w-full hyphens-auto font-serif">
                 {formatMedicalTerm(currentTerm.term)}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-xs sm:text-sm text-muted-foreground">
                 {t('clickToFlip', 'Kartı çevirmek için tıkla')}
               </div>
             </div>
 
             {/* Back */}
             <div
-              className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-secondary/5 to-accent/5 overflow-y-auto"
+              className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-secondary/5 to-accent/5 overflow-y-auto overscroll-contain"
               style={{
                 backfaceVisibility: 'hidden',
                 transform: 'rotateY(180deg)'
               }}
             >
-              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">
+              <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-1.5">
                 {currentLanguage === 'en' ? t('englishDefinitionLabel', 'Definition / English Meaning') : t('turkishDefinitionLabel', 'Türkçe Tanım')}
               </div>
               {currentLanguage === 'en' && (currentTerm.english || currentTerm.turkish) && currentTerm.englishDefinition && (
-                <div className="text-lg sm:text-xl font-bold text-primary text-center mb-1.5">
+                <div className="text-base sm:text-lg font-bold text-primary text-center mb-1 break-words">
                   {currentTerm.english || currentTerm.turkish}
                 </div>
               )}
-              <div className={`text-center text-foreground max-w-md px-2 leading-relaxed mb-4 ${
-                currentLanguage === 'en' && currentTerm.englishDefinition ? 'text-sm sm:text-base font-medium' : 'text-xl sm:text-2xl font-bold'
+              <div className={`text-center text-foreground max-w-md px-1 sm:px-2 leading-relaxed mb-3 break-words ${
+                currentLanguage === 'en' && currentTerm.englishDefinition ? 'text-xs sm:text-sm font-medium' : 'text-lg sm:text-xl font-bold'
               }`}>
                 {currentLanguage === 'en'
                   ? (currentTerm.englishDefinition || currentTerm.english || currentTerm.turkish || currentTerm.turkishDefinition || currentTerm.definition)
@@ -250,8 +250,8 @@ export const Flashcards = () => {
 
               {/* Morfem Analizi */}
               {currentTerm && getTermMorphemes(currentTerm).length > 0 && (
-                <div className="mt-2 pt-3 border-t border-border/50 max-w-md w-full text-center">
-                  <div className="mb-2 text-[11px] font-bold text-foreground/90 tracking-wide uppercase">
+                <div className="mt-1 pt-2 sm:mt-2 sm:pt-3 border-t border-border/50 max-w-md w-full text-center">
+                  <div className="mb-1.5 text-[10px] sm:text-[11px] font-bold text-foreground/90 tracking-wide uppercase">
                     {t('morphemeStructure', 'Morfem Yapısı')}
                   </div>
                   <div className="flex flex-wrap items-center justify-center gap-1.5">
@@ -264,10 +264,10 @@ export const Flashcards = () => {
                           {idx > 0 && (
                             <span className="text-[10px] text-muted-foreground/70 font-bold select-none">+</span>
                           )}
-                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg border border-border/70 bg-muted/60 text-xs font-mono font-medium shadow-xs">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg border border-border/70 bg-muted/60 text-[11px] sm:text-xs font-mono font-medium shadow-xs break-words">
                             <span className="font-semibold text-foreground">{part.text}</span>
                             {meaningText && (
-                              <span className="text-[10.5px] font-sans font-normal text-muted-foreground">
+                              <span className="text-[10px] sm:text-[10.5px] font-sans font-normal text-muted-foreground">
                                 ({meaningText})
                               </span>
                             )}
