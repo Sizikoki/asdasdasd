@@ -77,6 +77,7 @@ export const translations = {
     tip3Desc: "Quiz sonuçlarını ve eşleştirme sürelerini takip ederek gelişimini gör.",
 
     // Oyun İçi Ortak Çeviriler
+    error: "Hata",
     backToGames: "Oyunlara Dön",
     loadingCards: "Kartlar Yükleniyor...",
     fetchingTerms: "Kelimeler veritabanından çekiliyor...",
@@ -314,7 +315,7 @@ export const translations = {
 
     // GuestLimitModal
     guestLimitTitle: "3 Günlük Ücretsiz Deneme Süreniz Sona Erdi! 🎯",
-    guestLimitDesc: "Tüm paket içeriklerini ve oyunları keşfetmeniz için sunulan 3 günlük ücretsiz deneme süreniz tamamlandı. Öğrenmeye devam etmek ve ilerlemenizi tüm cihazlarınızda kaydetmek için lütfen ücretsiz kayıt olun.",
+    guestLimitDesc: "Tüm platform içeriklerini ve oyunları keşfetmeniz için sunulan 3 günlük ücretsiz deneme süreniz tamamlandı. Öğrenmeye devam etmek ve ilerlemenizi tüm cihazlarınızda kaydetmek için lütfen ücretsiz kayıt olun.",
     guestLimitCardTitle: "Ücretsiz Üye Olun & Öğrenmeye Devam Edin!",
     guestLimitCardDesc: "Kayıt olarak tüm kelime kartlarına ve oyunlara sınırsız erişebilir, ilerlemenizi senkronize edebilirsiniz.",
     signUpUnlimited: "Ücretsiz Üye Ol (Öğrenmeye Devam Et)",
@@ -423,6 +424,7 @@ export const translations = {
     tip3Desc: "Track your quiz results and matching times to see your progress.",
 
     // Oyun İçi Ortak Çeviriler
+    error: "Error",
     backToGames: "Back to Games",
     loadingCards: "Loading Cards...",
     fetchingTerms: "Fetching terms from database...",
@@ -660,7 +662,7 @@ export const translations = {
 
     // GuestLimitModal
     guestLimitTitle: "Your 3-Day Free Trial Has Ended! 🎯",
-    guestLimitDesc: "Your 3-day free trial to explore all package contents has ended. Please sign up free to continue learning and save your progress across all your devices.",
+    guestLimitDesc: "Your 3-day free trial to explore all platform contents and games has ended. Please sign up free to continue learning and save your progress across all your devices.",
     guestLimitCardTitle: "Sign Up Free & Continue Learning!",
     guestLimitCardDesc: "By signing up, you can continue practicing terms, playing games, and syncing your progress across all your devices.",
     signUpUnlimited: "Sign Up Free (Continue Learning)",

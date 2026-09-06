@@ -598,6 +598,17 @@
   align-items: stretch;
 }
 
+.landing-page .single-tier-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.landing-page .single-tier {
+  padding: 38px 32px;
+  border-radius: 1.5rem;
+}
+
 .landing-page .tier {
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border));

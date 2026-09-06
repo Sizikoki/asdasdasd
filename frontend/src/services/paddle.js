@@ -3,19 +3,33 @@ import { toast } from 'sonner';
 import { auth } from '@/firebase/config';
 import { getUser } from '@/utils/storage';
 
-// Environment variable configurations
-const PADDLE_TOKEN = process.env.REACT_APP_PADDLE_CLIENT_TOKEN || 'live_66372dae24be5820f1b9b1ea264';
-const PADDLE_ENV = (process.env.REACT_APP_PADDLE_ENV || 'production').toLowerCase().trim();
+// Environment variable configurations (Safe client-side tokens & price ID only)
+const PADDLE_TOKEN =
+  process.env.REACT_APP_PADDLE_CLIENT_TOKEN ||
+  process.env.PADDLE_CLIENT_TOKEN ||
+  'live_66372dae24be5820f1b9b1ea264';
 
-export const PADDLE_PRICE_BASIC = process.env.REACT_APP_PADDLE_PRICE_BASIC || process.env.REACT_APP_PADDLE_PRICE_ID_BASIC || 'pri_01m1hbbh54214d9yk28739s128';
-export const PADDLE_PRICE_PRO = process.env.REACT_APP_PADDLE_PRICE_PRO || process.env.REACT_APP_PADDLE_PRICE_ID_PRO || process.env.REACT_APP_PADDLE_PRICE_ID || 'pri_01m1hbkgmff67g3mght6w6bj2q';
-export const PADDLE_DEFAULT_PRICE_ID = PADDLE_PRICE_PRO;
+const PADDLE_ENV = (
+  process.env.REACT_APP_PADDLE_ENV ||
+  process.env.PADDLE_ENV ||
+  'production'
+).toLowerCase().trim();
+
+// Single Plan: Annual Pro Membership (Yıllık Plan)
+export const PADDLE_PRICE_ID =
+  process.env.REACT_APP_PADDLE_PRICE_ID ||
+  process.env.PADDLE_PRICE_ID ||
+  process.env.REACT_APP_PADDLE_PRICE_PRO ||
+  'pri_01m1hbkgmff67g3mght6w6bj2q';
+
+// Backward compatibility alias
+export const PADDLE_PRICE_PRO = PADDLE_PRICE_ID;
+export const PADDLE_DEFAULT_PRICE_ID = PADDLE_PRICE_ID;
 
 let paddleInstancePromise = null;
 
 /**
- * Initializes and returns the Paddle.js instance.
- * Reuses the singleton instance if already initialized.
+ * Initializes and returns the singleton Paddle.js instance.
  */
 export const getPaddle = async () => {
   if (paddleInstancePromise) {
@@ -25,10 +39,9 @@ export const getPaddle = async () => {
   paddleInstancePromise = (async () => {
     try {
       if (!PADDLE_TOKEN) {
-        console.warn('[Paddle] REACT_APP_PADDLE_CLIENT_TOKEN is not defined in .env.');
+        console.warn('[Paddle] PADDLE_CLIENT_TOKEN is not defined in .env.');
       }
 
-      // Initialize Paddle with environment & client token
       const paddle = await initializePaddle({
         environment: (PADDLE_ENV === 'production' || PADDLE_TOKEN.startsWith('live_')) ? 'production' : 'sandbox',
         token: PADDLE_TOKEN,
@@ -37,12 +50,18 @@ export const getPaddle = async () => {
             console.log('[Paddle Event]', event?.name, event);
           }
 
-          // Ödeme Başarılı Bildirimi
+          // Ödeme Başarılı Bildirimi ve /welcome sayfasına yönlendirme
           if (event?.name === 'checkout.completed') {
             console.log('[Paddle] Checkout completed successfully!', event.data);
-            toast.success('Ödemeniz başarıyla tamamlandı! Tüm içeriklerin kilidi açıldı 🎉', {
-              duration: 6000
+            toast.success('Ödemeniz başarıyla tamamlandı! Hoş geldiniz 🎉', {
+              duration: 5000
             });
+
+            if (typeof window !== 'undefined') {
+              setTimeout(() => {
+                window.location.href = '/welcome';
+              }, 600);
+            }
           }
 
           // Ödeme Başarısız Bildirimi
@@ -86,11 +105,53 @@ export const getPaddle = async () => {
 };
 
 /**
- * Fetches localized prices for a list of price IDs using Paddle.PricePreview
- * @param {string[]} priceIds - Array of price IDs (e.g. ['pri_123', 'pri_456'])
- * @returns {Promise<Object>} Map of priceId -> { formattedTotal, currencyCode, lineItem }
+ * Fetches localized price preview for the single Annual Pro Membership
+ * using Paddle.PricePreview without any frontend rounding or math.
+ * 
+ * @param {string} [priceId=PADDLE_PRICE_ID]
+ * @returns {Promise<{ formattedTotal: string, currencyCode: string, productName: string } | null>}
  */
-export const getPricePreviews = async (priceIds = []) => {
+export const getAnnualPricePreview = async (priceId = PADDLE_PRICE_ID) => {
+  try {
+    const paddle = await getPaddle();
+    if (!paddle || typeof paddle.PricePreview !== 'function') {
+      return null;
+    }
+
+    const response = await paddle.PricePreview({
+      items: [
+        {
+          priceId,
+          quantity: 1
+        }
+      ]
+    });
+
+    const lineItem = response?.data?.details?.lineItems?.[0];
+    if (!lineItem) {
+      return null;
+    }
+
+    // Direct formatted totals from Paddle (NO frontend rounding/math)
+    const formattedTotal = lineItem.formattedTotals?.total || lineItem.formattedTotals?.subtotal || '';
+
+    return {
+      priceId,
+      formattedTotal,
+      currencyCode: lineItem.price?.unitPrice?.currencyCode || response?.data?.currencyCode || '',
+      rawTotal: lineItem.totals?.total,
+      productName: lineItem.product?.name || 'Annual Pro Membership'
+    };
+  } catch (error) {
+    console.warn('[Paddle] Error fetching annual price preview:', error);
+    return null;
+  }
+};
+
+/**
+ * Multi-item Price Preview helper for backward compatibility
+ */
+export const getPricePreviews = async (priceIds = [PADDLE_PRICE_ID]) => {
   const validIds = priceIds.filter((id) => Boolean(id && typeof id === 'string'));
   if (validIds.length === 0) return {};
 
@@ -111,15 +172,13 @@ export const getPricePreviews = async (priceIds = []) => {
     const lineItems = response?.data?.details?.lineItems || [];
 
     lineItems.forEach((item) => {
-      const priceId = item?.price?.id;
-      if (priceId) {
-        priceMap[priceId] = {
-          priceId,
-          formattedTotal: item.formattedTotals?.total || '',
-          formattedUnitTotal: item.formattedUnitTotals?.total || '',
+      const pId = item?.price?.id;
+      if (pId) {
+        priceMap[pId] = {
+          priceId: pId,
+          formattedTotal: item.formattedTotals?.total || item.formattedTotals?.subtotal || '',
           currencyCode: item.price?.unitPrice?.currencyCode || response?.data?.currencyCode || '',
           rawTotal: item.totals?.total,
-          productId: item.product?.id,
           productName: item.product?.name
         };
       }
@@ -133,28 +192,25 @@ export const getPricePreviews = async (priceIds = []) => {
 };
 
 /**
- * Opens the Paddle Checkout overlay for the given items and user.
- * Prefills the signed-in customer's email to skip the contact screen.
+ * Opens the Paddle Checkout overlay for the single Annual Pro Membership.
+ * - Overlay display mode (settings.displayMode: 'overlay')
+ * - One-page variant (settings.variant: 'one-page')
+ * - Prefills current signed-in Firebase user email
+ * - Redirects to /welcome on success
  * 
- * @param {Object} options
- * @param {string} [options.priceId] - Single price ID to checkout
- * @param {Array} [options.items] - Array of { priceId, quantity }
- * @param {string} [options.customerEmail] - Signed-in user's email address
- * @param {Object} [options.customData] - Additional metadata to associate with transaction
- * @param {string} [options.successUrl] - Optional redirect URL (omitted by default so Paddle keeps success screen in popup)
- * @param {string} [options.displayMode] - 'overlay' or 'inline' (default: 'overlay')
- * @param {string} [options.theme] - 'light' or 'dark' (default: 'light')
- * @param {boolean} [options.allowLogout] - allow user to switch Paddle account (default: false)
+ * @param {Object} [options]
+ * @param {string} [options.priceId]
+ * @param {string} [options.customerEmail]
+ * @param {Object} [options.customData]
+ * @param {string} [options.successUrl]
+ * @param {string} [options.theme]
  */
 export const openPaddleCheckout = async ({
-  priceId,
-  items,
+  priceId = PADDLE_PRICE_ID,
   customerEmail,
   customData = {},
   successUrl,
-  displayMode = 'overlay',
-  theme = 'light',
-  allowLogout = false
+  theme = 'light'
 } = {}) => {
   try {
     const paddle = await getPaddle();
@@ -163,44 +219,29 @@ export const openPaddleCheckout = async ({
       return;
     }
 
-    const activePriceId = priceId || PADDLE_DEFAULT_PRICE_ID;
-
-    // Build line items
-    const checkoutItems = items && items.length > 0
-      ? items
-      : activePriceId
-      ? [{ priceId: activePriceId, quantity: 1 }]
-      : [];
-
-    if (checkoutItems.length === 0) {
-      console.error('[Paddle] No items provided for checkout.');
-      return;
-    }
-
+    const activePriceId = priceId || PADDLE_PRICE_ID;
     const currentLang = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en' ? 'en' : 'tr';
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const resolvedSuccessUrl = successUrl || (origin ? `${origin}/welcome` : '/welcome');
+
     const checkoutSettings = {
-      displayMode: displayMode || 'overlay', // Varsayılan popup overlay pencere
-      theme: theme || 'light',              // 'light' veya 'dark'
-      allowLogout: allowLogout ?? false,    // Oturumu kapatmaya izin verme
-      locale: currentLang
+      displayMode: 'overlay',   // Overlay modal checkout
+      variant: 'one-page',       // One-page checkout experience
+      theme: theme || 'light',
+      locale: currentLang,
+      successUrl: resolvedSuccessUrl
     };
 
-    // successUrl tanımlanmazsa Paddle kendi başarı ekranını pencere içinde tutar
-    if (successUrl) {
-      checkoutSettings.successUrl = successUrl;
-    }
-
     const checkoutOptions = {
-      items: checkoutItems,
+      items: [{ priceId: activePriceId, quantity: 1 }],
       settings: checkoutSettings,
       customData
     };
 
-    // Giriş yapmış kullanıcının e-postasını otomatik aktar
+    // Firebase Auth'taki aktif kullanıcının e-postasını otomatik aktar (Prefill)
     const activeUser = auth.currentUser || getUser();
     const resolvedEmail = customerEmail || activeUser?.email;
 
-    // Prefill customer email to skip contact screen if available
     if (resolvedEmail && typeof resolvedEmail === 'string' && resolvedEmail.includes('@')) {
       checkoutOptions.customer = {
         email: resolvedEmail.trim()
@@ -216,6 +257,8 @@ export const openPaddleCheckout = async ({
 
 export default {
   getPaddle,
+  getAnnualPricePreview,
   getPricePreviews,
-  openPaddleCheckout
+  openPaddleCheckout,
+  PADDLE_PRICE_ID
 };

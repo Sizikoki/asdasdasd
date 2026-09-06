@@ -235,7 +235,14 @@ export const Flashcards = () => {
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">
                 {currentLanguage === 'en' ? t('englishDefinitionLabel', 'Definition / English Meaning') : t('turkishDefinitionLabel', 'Türkçe Tanım')}
               </div>
-              <div className="text-xl sm:text-2xl font-bold text-center text-foreground max-w-md px-2 leading-relaxed mb-4">
+              {currentLanguage === 'en' && (currentTerm.english || currentTerm.turkish) && currentTerm.englishDefinition && (
+                <div className="text-lg sm:text-xl font-bold text-primary text-center mb-1.5">
+                  {currentTerm.english || currentTerm.turkish}
+                </div>
+              )}
+              <div className={`text-center text-foreground max-w-md px-2 leading-relaxed mb-4 ${
+                currentLanguage === 'en' && currentTerm.englishDefinition ? 'text-sm sm:text-base font-medium' : 'text-xl sm:text-2xl font-bold'
+              }`}>
                 {currentLanguage === 'en'
                   ? (currentTerm.englishDefinition || currentTerm.english || currentTerm.turkish || currentTerm.turkishDefinition || currentTerm.definition)
                   : (currentTerm.turkishDefinition || currentTerm.definition)}

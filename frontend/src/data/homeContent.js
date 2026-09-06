@@ -165,34 +165,22 @@ export const HOME_CONTENT = {
     },
     pricing: {
       eyebrow: 'Fiyatlandırma',
-      title: 'Yıllık abonelik.',
-      topline: 'Aylık değil yıllık ücretlendirme. Abonelik her yıl otomatik yenilenir.',
-      basicTitle: 'Temel Paket',
-      basicPrice: '249 TL',
-      basicPeriod: 'yıllık',
-      basicFeatures: [
-        { active: true, text: '3 kategori: Kemikler, Eklemler, Kas Sistemi' },
-        { active: true, text: 'Bilgi Kartları ve Quiz modları' },
-        { active: true, text: 'TR ⟷ EN çift dil desteği' },
-        { active: false, text: 'Eşleştirme ve Morfem Oyunu yok' },
-        { active: false, text: 'İlerleme istatistikleri ve seviye sistemi yok' },
-        { active: false, text: 'Morfem kütüphanesi yok' }
-      ],
-      basicBtn: (price) => `Temel Paketi Aç — ${price || '249 TL'}`,
-      proBadge: 'EN ÇOK TERCİH EDİLEN',
-      proTitle: 'Tam Paket',
-      proPrice: '499 TL',
-      proPeriod: 'yıllık',
-      proFeatures: (totalMorphemes) => [
+      title: 'Yıllık Pro Üyelik',
+      badge: 'YILLIK TAM ERİŞİM',
+      topline: 'Tek bir yıllık plan ile tüm Latince tıp kütüphanesine ve interaktif modüllere sınırsız erişim.',
+      planTitle: 'Annual Pro Membership',
+      period: 'yıllık faturalandırılır',
+      features: (totalMorphemes) => [
         { active: true, text: `10 kategorinin tamamı + ${totalMorphemes}'den fazla morfem kütüphanesi` },
         { active: true, text: '4 oyun modunun tamamı (Bilgi Kartları, Eşleştirme, Quiz, Morfem Oyunu)' },
         { active: true, text: 'İlerleme istatistikleri ve seviye sistemi' },
         { active: true, text: 'TR ⟷ EN çift dil desteği' },
-        { active: true, text: 'Gelecek tüm yeni modüller ve güncellemeler dahil' }
+        { active: true, text: 'Gelecek tüm yeni modüller ve güncellemeler dahil' },
+        { active: true, text: 'İstediğiniz zaman tek tıkla iptal etme özgürlüğü' }
       ],
-      proBtn: () => '3 Gün Ücretsiz Dene / Satın Al',
-      flowLine: 'Ödemeni yap → hesabın açılır → 2 dakika sonra ilk kategorindesin. Abonelik her yıl otomatik yenilenir, istediğin an iptal edebilirsin.',
-      expensiveLine: 'Evet, ücretsiz alternatiflerden pahalıyız. Ezberleyip unutmak bedava; bir daha unutmamak yılda 499 TL.'
+      btnText: 'Hemen Katıl',
+      flowLine: 'Ödemeni yap → hesabın anında açılsın → 2 dakika sonra ilk kategorindesin. Abonelik her yıl otomatik yenilenir, dilediğin an iptal edebilirsin.',
+      guaranteeLine: 'Tüm modüller, sınavlar ve güncellemeler tek üyelikle elinizin altında.'
     },
     footer: {
       term: 'STERNO · CLEIDO · MASTOIDEUS',
@@ -314,34 +302,22 @@ export const HOME_CONTENT = {
     },
     pricing: {
       eyebrow: 'Pricing',
-      title: 'Annual subscription.',
-      topline: 'Billed annually, not monthly. Subscription renews automatically each year.',
-      basicTitle: 'Basic Plan',
-      basicPrice: '$15',
-      basicPeriod: 'annual',
-      basicFeatures: [
-        { active: true, text: '3 categories: Bones, Joints, Muscular System' },
-        { active: true, text: 'Flashcards and Quiz modes' },
-        { active: true, text: 'TR ⟷ EN bilingual support' },
-        { active: false, text: 'No Matching or Morpheme Game' },
-        { active: false, text: 'No progress statistics or leveling system' },
-        { active: false, text: 'No morpheme library' }
-      ],
-      basicBtn: (price) => `Unlock Basic Plan — ${price || '$15'}`,
-      proBadge: 'MOST POPULAR',
-      proTitle: 'Pro Plan',
-      proPrice: '$20',
-      proPeriod: 'annual',
-      proFeatures: (totalMorphemes) => [
+      title: 'Annual Pro Membership',
+      badge: 'FULL ANNUAL ACCESS',
+      topline: 'One single annual plan with unlimited access to the entire Latin medical terminology library and interactive modules.',
+      planTitle: 'Annual Pro Membership',
+      period: 'billed annually',
+      features: (totalMorphemes) => [
         { active: true, text: `All 10 categories + over ${totalMorphemes} morpheme library` },
         { active: true, text: 'All 4 game modes (Flashcards, Matching, Quiz, Morpheme Game)' },
         { active: true, text: 'Progress statistics and leveling system' },
         { active: true, text: 'TR ⟷ EN bilingual support' },
-        { active: true, text: 'All upcoming modules and updates included' }
+        { active: true, text: 'All upcoming modules and updates included' },
+        { active: true, text: 'Cancel anytime with one click' }
       ],
-      proBtn: () => 'Start 3-Day Free Trial / Buy',
-      flowLine: 'Complete payment → your account unlocks → start your first category in 2 minutes. Renews automatically annually, cancel anytime.',
-      expensiveLine: 'Yes, we cost more than free alternatives. Memorizing and forgetting is free; never forgetting again is $20 a year.'
+      btnText: 'Subscribe Now',
+      flowLine: 'Complete payment → your account unlocks immediately → start your first category in 2 minutes. Renews automatically annually, cancel anytime.',
+      guaranteeLine: 'All modules, quizzes, and future updates in one single membership.'
     },
     footer: {
       term: 'STERNO · CLEIDO · MASTOIDEUS',

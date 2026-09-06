@@ -17,6 +17,7 @@ import { ProgressPage } from '@/pages/Progress';
 import { Profile } from '@/pages/Profile';
 import { Contact } from '@/pages/Contact';
 import { Legal } from '@/pages/Legal';
+import { Welcome } from '@/pages/Welcome';
 import { isLoggedIn, syncProgressFromFirestore } from '@/utils/storage';
 import { seedMedicalTerms } from '@/firebase/seeder';
 import { getPaddle } from '@/services/paddle';
@@ -70,6 +71,8 @@ function App() {
             <Route path="/refund" element={<Legal activeDoc="refund" />} />
             <Route path="/legal" element={<Navigate to="/terms" replace />} />
             <Route path="/progress" element={<ProgressPage />} />
+            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/success" element={<Navigate to="/welcome" replace />} />
             <Route path="/profile" element={
               <ProtectedRoute>
                 <Profile />

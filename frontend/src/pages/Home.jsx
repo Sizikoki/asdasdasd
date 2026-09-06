@@ -5,7 +5,7 @@ import { getAllTerms } from '@/data/medicalTerms';
 import { PREFIXES, ROOTS, SUFFIXES } from '@/data/morphemesData';
 import { db, auth } from '@/firebase/config';
 import { collection, getDocs } from 'firebase/firestore';
-import { getPricePreviews, openPaddleCheckout, PADDLE_PRICE_BASIC, PADDLE_PRICE_PRO } from '@/services/paddle';
+import { getAnnualPricePreview, openPaddleCheckout, PADDLE_PRICE_ID } from '@/services/paddle';
 import { getUser } from '@/utils/storage';
 import { useLanguage } from '@/context/LanguageContext';
 import { getHomeDemoRounds, HOME_CONTENT } from '@/data/homeContent';
@@ -21,40 +21,47 @@ export const Home = () => {
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
   const [revealedIndices, setRevealedIndices] = useState([]);
   const [termCount, setTermCount] = useState(() => getAllTerms().length);
-  const [paddlePrices, setPaddlePrices] = useState({});
+  const [annualPrice, setAnnualPrice] = useState(null);
+  const [isPriceLoading, setIsPriceLoading] = useState(true);
 
   const totalMorphemes = PREFIXES.length + ROOTS.length + SUFFIXES.length; // 571 morfem
 
-  // Fetch Paddle localized price previews
+  // Fetch Paddle localized price preview for Annual Pro Membership
   useEffect(() => {
-    const fetchPrices = async () => {
-      const basicId = PADDLE_PRICE_BASIC;
-      const proId = PADDLE_PRICE_PRO;
-
-      const priceIds = [basicId, proId].filter(Boolean);
-      if (priceIds.length > 0) {
-        const previews = await getPricePreviews(priceIds);
-        setPaddlePrices(previews);
+    let isMounted = true;
+    const fetchPrice = async () => {
+      try {
+        setIsPriceLoading(true);
+        const preview = await getAnnualPricePreview(PADDLE_PRICE_ID);
+        if (isMounted && preview?.formattedTotal) {
+          // Direct formatted total from Paddle (no frontend math or rounding)
+          setAnnualPrice(preview.formattedTotal);
+        }
+      } catch (err) {
+        console.warn('[Paddle] Failed to fetch price preview:', err);
+      } finally {
+        if (isMounted) setIsPriceLoading(false);
       }
     };
-    fetchPrices();
+    fetchPrice();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  // Handle Paddle checkout opening
-  const handlePaddleCheckout = async (priceId, planName, planKey = 'pro') => {
+  // Handle Paddle checkout opening (Overlay + One-Page + Auth Prefill)
+  const handlePaddleCheckout = async () => {
     const currentUser = auth.currentUser || getUser();
     const customerEmail = currentUser?.email || undefined;
-
-    const targetPriceId = priceId || (planKey === 'basic' ? PADDLE_PRICE_BASIC : PADDLE_PRICE_PRO);
 
     try {
       const loadingMsg = lang === 'en' ? 'Opening Paddle Checkout...' : 'Paddle Checkout açılıyor...';
       toast.loading(loadingMsg, { id: 'paddle-loading' });
       await openPaddleCheckout({
-        priceId: targetPriceId,
+        priceId: PADDLE_PRICE_ID,
         customerEmail,
         customData: {
-          plan: planName,
+          plan: 'Annual Pro Membership',
           userId: currentUser?.uid || currentUser?.email || 'guest'
         }
       });
@@ -135,7 +142,7 @@ export const Home = () => {
                 className="site-btn-primary flex items-center"
                 onClick={() => scrollToSection('fiyat')}
               >
-                {lang === 'en' ? 'Start 3-Day Free Trial / Buy' : '3 Gün Ücretsiz Dene / Satın Al'}
+                {content.pricing.btnText || (lang === 'en' ? 'Subscribe Now' : 'Hemen Katıl')}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </button>
             </div>
@@ -492,43 +499,16 @@ export const Home = () => {
             <h2>{content.pricing.title}</h2>
             <p className="price-topline">{content.pricing.topline}</p>
 
-            <div className="tiers">
-              {/* Temel Paket */}
-              <div className="tier">
-                <h3>{content.pricing.basicTitle}</h3>
-                <div className="price">{paddlePrices[PADDLE_PRICE_BASIC]?.formattedTotal || content.pricing.basicPrice || '249 TL'}</div>
-                <div className="once">{content.pricing.basicPeriod}</div>
-                <ul>
-                  {content.pricing.basicFeatures.map((feat, idx) => (
-                    <li key={idx} className={feat.active ? '' : 'opacity-40'}>
-                      {feat.active ? (
-                        <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
-                      ) : (
-                        <Minus className="w-4 h-4 shrink-0 mt-1" />
-                      )}
-                      <span>{feat.text}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="btn-container">
-                  <button
-                    type="button"
-                    onClick={() => handlePaddleCheckout(PADDLE_PRICE_BASIC, content.pricing.basicTitle, 'basic')}
-                    className="site-btn-secondary w-full text-center"
-                  >
-                    {content.pricing.basicBtn(paddlePrices[PADDLE_PRICE_BASIC]?.formattedTotal || content.pricing.basicPrice || '249 TL')}
-                  </button>
+            <div className="single-tier-wrap">
+              <div className="tier hot single-tier">
+                <span className="badge">{content.pricing.badge}</span>
+                <h3 className="text-primary text-xl font-bold">{content.pricing.planTitle}</h3>
+                <div className="price">
+                  {annualPrice || (isPriceLoading ? '...' : (lang === 'en' ? '$20' : '499 TL'))}
                 </div>
-              </div>
-
-              {/* Tam Paket (Öne Çıkan) */}
-              <div className="tier hot">
-                <span className="badge">{content.pricing.proBadge}</span>
-                <h3 className="text-primary">{content.pricing.proTitle}</h3>
-                <div className="price">{paddlePrices[PADDLE_PRICE_PRO]?.formattedTotal || content.pricing.proPrice || '499 TL'}</div>
-                <div className="once">{content.pricing.proPeriod}</div>
+                <div className="once">{content.pricing.period}</div>
                 <ul>
-                  {content.pricing.proFeatures(totalMorphemes).map((feat, idx) => (
+                  {content.pricing.features(totalMorphemes).map((feat, idx) => (
                     <li key={idx} className={feat.active ? '' : 'opacity-40'}>
                       {feat.active ? (
                         <Check className="w-4 h-4 text-primary shrink-0 mt-1" />
@@ -542,10 +522,10 @@ export const Home = () => {
                 <div className="btn-container">
                   <button
                     type="button"
-                    onClick={() => handlePaddleCheckout(PADDLE_PRICE_PRO, content.pricing.proTitle, 'pro')}
-                    className="site-btn-primary w-full text-center"
+                    onClick={handlePaddleCheckout}
+                    className="site-btn-primary w-full text-center py-3.5 text-base font-bold shadow-lg hover:shadow-primary/25 transition-all"
                   >
-                    {content.pricing.proBtn(paddlePrices[PADDLE_PRICE_PRO]?.formattedTotal || content.pricing.proPrice || '499 TL')}
+                    {content.pricing.btnText}
                   </button>
                 </div>
               </div>
@@ -553,7 +533,7 @@ export const Home = () => {
 
             <div className="after-price">
               <p className="flow-line">{content.pricing.flowLine}</p>
-              <p className="expensive-line">{content.pricing.expensiveLine}</p>
+              <p className="expensive-line">{content.pricing.guaranteeLine}</p>
             </div>
           </div>
         </section>
