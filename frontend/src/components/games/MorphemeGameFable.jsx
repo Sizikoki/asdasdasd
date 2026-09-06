@@ -8,7 +8,7 @@
  *  border-border, bg-muted, gradient-primary) %100 uyumludur.
  * =====================================================================
  */
-import React, { useReducer, useEffect, useMemo, useCallback, useRef } from "react";
+import React, { useState, useReducer, useEffect, useMemo, useCallback, useRef } from "react";
 import {
   Check,
   X,
@@ -17,8 +17,18 @@ import {
   ArrowLeft,
   Trophy,
   Puzzle,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 import { saveMorphemeScore, updateStreak } from "@/utils/storage";
+import {
+  playCorrectSound,
+  playWrongSound,
+  playTapSound,
+  playVictorySound,
+  isSoundEnabled,
+  setSoundEnabled,
+} from "@/utils/soundEffects";
 
 const STRINGS = {
   tr: {
@@ -446,6 +456,13 @@ export default function MorphemeGameFable({
 
   const [model, dispatch] = useReducer(update, questions, init);
   const hasSavedRef = useRef(false);
+  const [soundActive, setSoundActive] = useState(() => isSoundEnabled());
+
+  const toggleSound = () => {
+    const next = !soundActive;
+    setSoundActive(next);
+    setSoundEnabled(next);
+  };
 
   useEffect(() => {
     hasSavedRef.current = false;
@@ -454,6 +471,11 @@ export default function MorphemeGameFable({
 
   useEffect(() => {
     if (model.state.tag !== "AnswerChecked") return;
+    if (model.state.isSuccess) {
+      playCorrectSound();
+    } else {
+      playWrongSound();
+    }
     const timer = setTimeout(
       () =>
         dispatch(
@@ -478,6 +500,7 @@ export default function MorphemeGameFable({
   useEffect(() => {
     if (finished && total > 0 && !hasSavedRef.current) {
       hasSavedRef.current = true;
+      playVictorySound();
       const pct = Math.max(0, Math.min(100, Math.round((Math.max(0, model.score) / total) * 100)));
       saveMorphemeScore(model.score, total, pct);
       updateStreak();
@@ -558,15 +581,31 @@ export default function MorphemeGameFable({
           <span className="text-sm font-semibold text-foreground">{tr("gameTitle")}</span>
         </div>
 
-        <div
-          className={`rounded-full border px-3 py-1 font-mono text-sm font-medium ${
-            model.score >= 0
-              ? "border-border bg-muted text-foreground"
-              : "border-rose-500/40 bg-rose-500/10 text-rose-600 dark:text-rose-300"
-          }`}
-          aria-live="polite"
-        >
-          {tr("score")}: {model.score > 0 ? `+${model.score}` : model.score}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={toggleSound}
+            aria-label={soundActive ? (language === "en" ? "Mute sound" : "Sesi kapat") : (language === "en" ? "Enable sound" : "Sesi aç")}
+            className="p-1.5 rounded-lg border border-border bg-muted/40 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
+            title={soundActive ? (language === "en" ? "Sound: ON" : "Ses Efektleri: Açık") : (language === "en" ? "Sound: OFF" : "Ses Efektleri: Kapalı")}
+          >
+            {soundActive ? (
+              <Volume2 aria-hidden="true" className="h-4 w-4 text-primary" />
+            ) : (
+              <VolumeX aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
+            )}
+          </button>
+
+          <div
+            className={`rounded-full border px-3 py-1 font-mono text-sm font-medium ${
+              model.score >= 0
+                ? "border-border bg-muted text-foreground"
+                : "border-rose-500/40 bg-rose-500/10 text-rose-600 dark:text-rose-300"
+            }`}
+            aria-live="polite"
+          >
+            {tr("score")}: {model.score > 0 ? `+${model.score}` : model.score}
+          </div>
         </div>
       </div>
 
@@ -637,7 +676,10 @@ export default function MorphemeGameFable({
                   tr={tr}
                   language={language}
                   dimmed={!isPlaying}
-                  onClick={() => dispatch({ type: "DeselectPart", part })}
+                  onClick={() => {
+                    playTapSound();
+                    dispatch({ type: "DeselectPart", part });
+                  }}
                 />
               </React.Fragment>
             ))}
@@ -701,7 +743,10 @@ export default function MorphemeGameFable({
               tr={tr}
               language={language}
               dimmed={!isPlaying}
-              onClick={() => dispatch({ type: "SelectPart", part })}
+              onClick={() => {
+                playTapSound();
+                dispatch({ type: "SelectPart", part });
+              }}
             />
           ))}
         </div>
