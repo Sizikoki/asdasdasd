@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getStats, getUser, saveUser, getStreak, getQuizScores, getProgress, getMatchScores, getMorphemeScores, logout } from '@/utils/storage';
 import { signOut, updateProfile, sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '@/firebase/config';
+import { collection, query, where, getDocs, writeBatch } from 'firebase/firestore';
+import { auth, db } from '@/firebase/config';
 import { toast } from 'sonner';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -146,19 +147,48 @@ export const Profile = () => {
   };
 
   const handleDeleteAccount = async () => {
-    const confirmation = window.confirm(t('deleteAccountConfirm', 'Hesabınızı silmek istediğinize emin misiniz? Bu işlem geri alınamaz.'));
+    const confirmation = window.confirm(
+      t('deleteAccountConfirm', 'Hesabınızı silmek istediğinize emin misiniz? Bu işlem geri alınamaz.')
+    );
     if (confirmation) {
       try {
         const currentUser = auth.currentUser;
+        const userIdentifier = currentUser?.uid || currentUser?.email || user?.uid || user?.email;
+
+        // 1. Firestore'daki tüm user_progress belgelerini topluca (Batch Delete) temizle
+        if (userIdentifier) {
+          try {
+            const progressRef = collection(db, 'user_progress');
+            const q = query(progressRef, where('userId', '==', userIdentifier));
+            const snapshot = await getDocs(q);
+
+            if (!snapshot.empty) {
+              const batch = writeBatch(db);
+              snapshot.forEach((docSnap) => {
+                batch.delete(docSnap.ref);
+              });
+              await batch.commit();
+              console.log(`[Firestore] ${snapshot.size} user_progress kayıtları başarıyla silindi.`);
+            }
+          } catch (dbErr) {
+            console.warn('[Firestore] Kullanıcı ilerleme kayıtları silinirken hata oluştu:', dbErr);
+          }
+        }
+
+        // 2. Firebase Auth kullanıcısını kalıcı olarak sil
         if (currentUser) {
           await currentUser.delete();
         }
+
+        // 3. Yerel oturumu temizle ve kayıt sayfasına yönlendir
         logout();
-        toast.success(t('accountDeleted', 'Hesabınız kalıcı olarak silindi.'));
+        toast.success(t('accountDeleted', 'Hesabınız ve tüm verileriniz kalıcı olarak silindi.'));
         navigate('/register');
       } catch (err) {
         console.error('Delete account error:', err);
-        toast.error(t('deleteAccountRelogin', 'Güvenlik nedeniyle, hesabınızı silmeden önce çıkış yapıp tekrar giriş yapmanız gerekmektedir.'));
+        toast.error(
+          t('deleteAccountRelogin', 'Güvenlik nedeniyle, hesabınızı silmeden önce çıkış yapıp tekrar giriş yapmanız gerekmektedir.')
+        );
       }
     }
   };
