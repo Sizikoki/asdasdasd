@@ -120,7 +120,7 @@ export const Flashcards = () => {
         .replace('{learned}', finalLearned)
         .replace('{total}', terms.length);
       toast.success(finishMsg);
-      navigate('/games');
+      navigate(categoryId && categoryId !== 'all' ? `/games?category=${categoryId}` : '/games');
     }
   };
 
@@ -151,7 +151,7 @@ export const Flashcards = () => {
           <h3 className="text-xl font-semibold mb-2 text-destructive">{t('error', 'Hata')}</h3>
           <p className="text-muted-foreground mb-4">{t('noTermsInCategory')}</p>
           <Button asChild className="gradient-primary">
-            <Link to="/games">{t('backToGames')}</Link>
+            <Link to={categoryId && categoryId !== 'all' ? `/games?category=${categoryId}` : '/games'}>{t('backToGames')}</Link>
           </Button>
         </Card>
       </div>
@@ -166,7 +166,7 @@ export const Flashcards = () => {
         <div className="mb-6">
           <Button
             variant="ghost"
-            onClick={() => navigate('/games')}
+            onClick={() => navigate(categoryId && categoryId !== 'all' ? `/games?category=${categoryId}` : '/games')}
             className="mb-4"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />

@@ -248,7 +248,7 @@ export const MatchGame = () => {
           <h3 className="text-xl font-semibold mb-2 text-destructive">{t('error', 'Hata')}</h3>
           <p className="text-muted-foreground mb-4">{t('matchNoTerms')}</p>
           <Button asChild className="gradient-primary">
-            <Link to="/games">{t('backToGames')}</Link>
+            <Link to={categoryId && categoryId !== 'all' ? `/games?category=${categoryId}` : '/games'}>{t('backToGames')}</Link>
           </Button>
         </Card>
       </div>
@@ -263,7 +263,7 @@ export const MatchGame = () => {
         <div className="mb-6">
           <Button
             variant="ghost"
-            onClick={() => navigate('/games')}
+            onClick={() => navigate(categoryId && categoryId !== 'all' ? `/games?category=${categoryId}` : '/games')}
             className="mb-4"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -384,7 +384,7 @@ export const MatchGame = () => {
                     <RotateCw className="w-4 h-4 mr-2" />
                     {t('playAgain')}
                   </Button>
-                  <Button onClick={() => navigate('/games')} className="flex-1 gradient-primary">
+                  <Button onClick={() => navigate(categoryId && categoryId !== 'all' ? `/games?category=${categoryId}` : '/games')} className="flex-1 gradient-primary">
                     {t('viewGames')}
                   </Button>
                 </div>

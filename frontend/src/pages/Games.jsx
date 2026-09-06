@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { BookOpen, Shuffle, Brain, ArrowRight, Puzzle, UserPlus, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,6 +13,8 @@ import { getAllTerms, getTermsByCategory } from '@/data/medicalTerms';
 import { adaptTermsToMorphemeQuestions } from '@/utils/morphemeAdapter';
 import MorphemeGameFable from '@/components/games/MorphemeGameFable';
 import QuizGameFable from '@/components/games/QuizGameFable';
+
+const GAMES_CATEGORY_KEY = 'healthlex_selected_game_category';
 
 const GAME_CATEGORIES = [
   { id: 'skull_bones', key: 'skullBones', name: 'Kafatası Kemikleri' },
@@ -32,7 +34,43 @@ const INLINE_GAMES = ['morpheme', 'quiz'];
 
 export const Games = () => {
   const { currentLanguage, t } = useLanguage();
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchParams] = useSearchParams();
+  const paramCategory = searchParams.get('category');
+
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    if (paramCategory) return paramCategory;
+    try {
+      return localStorage.getItem(GAMES_CATEGORY_KEY) || 'all';
+    } catch (e) {
+      return 'all';
+    }
+  });
+
+  const handleCategoryChange = (val) => {
+    setSelectedCategory(val);
+    try {
+      localStorage.setItem(GAMES_CATEGORY_KEY, val);
+    } catch (e) {
+      console.warn('Error saving game category preference:', e);
+    }
+  };
+
+  useEffect(() => {
+    if (paramCategory) {
+      setSelectedCategory((prev) => {
+        if (prev !== paramCategory) {
+          try {
+            localStorage.setItem(GAMES_CATEGORY_KEY, paramCategory);
+          } catch (e) {
+            console.warn('Error saving game category preference:', e);
+          }
+          return paramCategory;
+        }
+        return prev;
+      });
+    }
+  }, [paramCategory]);
+
   const [activeGame, setActiveGame] = useState(null);
   const [isLimitModalOpen, setIsLimitModalOpen] = useState(false);
   const [liveTerms, setLiveTerms] = useState(() => getAllTerms());
@@ -236,7 +274,7 @@ export const Games = () => {
               {/* Category Selector */}
               <div className="flex items-center justify-center gap-4 max-w-md mx-auto">
                 <span className="text-sm font-medium text-muted-foreground">{t('category')}:</span>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <Select value={selectedCategory} onValueChange={handleCategoryChange}>
                   <SelectTrigger className="w-64">
                     <SelectValue placeholder={t('selectCategoryPlaceholder')} />
                   </SelectTrigger>

@@ -31,14 +31,14 @@ export const Quiz = () => {
         terms={categoryTerms}
         categoryId={category}
         language={currentLanguage}
-        onBack={() => navigate('/games')}
+        onBack={() => navigate(category && category !== 'all' ? `/games?category=${category}` : '/games')}
         t={t}
       />
       <GuestLimitModal
         isOpen={showLimitModal}
         onClose={() => {
           setShowLimitModal(false);
-          navigate('/games');
+          navigate(category && category !== 'all' ? `/games?category=${category}` : '/games');
         }}
       />
     </div>
