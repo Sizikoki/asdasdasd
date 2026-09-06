@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Check, Minus, ArrowRight, BookOpen, Layers, Trophy, Brain, Mail } from 'lucide-react';
 import { getAllTerms } from '@/data/medicalTerms';
 import { PREFIXES, ROOTS, SUFFIXES } from '@/data/morphemesData';
 import { db, auth } from '@/firebase/config';
 import { collection, getDocs } from 'firebase/firestore';
-import { getAnnualPricePreview, openPaddleCheckout, PADDLE_PRICE_ID } from '@/services/paddle';
+import { getAnnualPricePreview, openPaddleCheckout, PADDLE_PRICE_ID, IS_PAYMENT_ACTIVE } from '@/services/paddle';
 import { getUser } from '@/utils/storage';
 import { useLanguage } from '@/context/LanguageContext';
 import { getHomeDemoRounds, HOME_CONTENT } from '@/data/homeContent';
@@ -13,6 +13,7 @@ import { toast } from 'sonner';
 import './LandingPage.css';
 
 export const Home = () => {
+  const navigate = useNavigate();
   const { currentLanguage } = useLanguage();
   const lang = currentLanguage === 'en' ? 'en' : 'tr';
   const content = HOME_CONTENT[lang] || HOME_CONTENT.tr;
@@ -140,9 +141,17 @@ export const Home = () => {
               <button
                 type="button"
                 className="site-btn-primary flex items-center"
-                onClick={() => scrollToSection('fiyat')}
+                onClick={() => {
+                  if (IS_PAYMENT_ACTIVE) {
+                    scrollToSection('fiyat');
+                  } else {
+                    navigate('/study');
+                  }
+                }}
               >
-                {content.pricing.btnText || (lang === 'en' ? 'Subscribe Now' : 'Hemen Katıl')}
+                {IS_PAYMENT_ACTIVE
+                  ? (content.pricing.btnText || (lang === 'en' ? 'Subscribe Now' : 'Hemen Katıl'))
+                  : (lang === 'en' ? 'Explore Dictionary' : 'Sözlüğü Keşfet')}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </button>
             </div>
@@ -214,9 +223,17 @@ export const Home = () => {
                   <button
                     type="button"
                     className="site-btn-primary"
-                    onClick={() => scrollToSection('fiyat')}
+                    onClick={() => {
+                      if (IS_PAYMENT_ACTIVE) {
+                        scrollToSection('fiyat');
+                      } else {
+                        navigate('/study');
+                      }
+                    }}
                   >
-                    {content.demo.finalBtn}
+                    {IS_PAYMENT_ACTIVE
+                      ? content.demo.finalBtn
+                      : (lang === 'en' ? 'Explore Dictionary' : 'Sözlüğü Keşfet')}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>
                 </div>
@@ -522,10 +539,12 @@ export const Home = () => {
                 <div className="btn-container">
                   <button
                     type="button"
-                    onClick={handlePaddleCheckout}
+                    onClick={IS_PAYMENT_ACTIVE ? handlePaddleCheckout : () => navigate('/study')}
                     className="site-btn-primary w-full text-center py-3.5 text-base font-bold shadow-lg hover:shadow-primary/25 transition-all"
                   >
-                    {content.pricing.btnText}
+                    {IS_PAYMENT_ACTIVE
+                      ? content.pricing.btnText
+                      : (lang === 'en' ? 'Explore Dictionary' : 'Sözlüğü Keşfet')}
                   </button>
                 </div>
               </div>
@@ -552,9 +571,17 @@ export const Home = () => {
           <button
             type="button"
             className="site-btn-primary"
-            onClick={() => scrollToSection('fiyat')}
+            onClick={() => {
+              if (IS_PAYMENT_ACTIVE) {
+                scrollToSection('fiyat');
+              } else {
+                navigate('/study');
+              }
+            }}
           >
-            {content.footer.ctaBtn}
+            {IS_PAYMENT_ACTIVE
+              ? content.footer.ctaBtn
+              : (lang === 'en' ? 'Explore Dictionary' : 'Sözlüğü Keşfet')}
             <ArrowRight className="w-4 h-4 ml-2" />
           </button>
 

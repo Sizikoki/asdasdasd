@@ -22,6 +22,9 @@ export const PADDLE_PRICE_ID =
   process.env.REACT_APP_PADDLE_PRICE_PRO ||
   'pri_01m1hbkgmff67g3mght6w6bj2q';
 
+// Flag to control active payments (toggle to true once Paddle live account verification is fully approved)
+export const IS_PAYMENT_ACTIVE = false;
+
 // Backward compatibility alias
 export const PADDLE_PRICE_PRO = PADDLE_PRICE_ID;
 export const PADDLE_DEFAULT_PRICE_ID = PADDLE_PRICE_ID;
