@@ -539,10 +539,10 @@ export const Home = () => {
                     <div className="my-3">
                       <div className="flex items-baseline gap-2.5 flex-wrap">
                         <span className="font-['Space_Grotesk'] font-extrabold text-3xl sm:text-4xl text-primary tracking-tight">
-                          {lang === 'en' ? 'Free (0$)' : 'Ücretsiz (0 ₺)'}
+                          {lang === 'en' ? 'Free ($0)' : 'Ücretsiz (0 ₺)'}
                         </span>
                         <span className="text-muted-foreground line-through text-base sm:text-lg font-medium">
-                          {annualPrice || (lang === 'en' ? '$20 / yr' : '499 TL / yıl')}
+                          {lang === 'en' ? '$20 / year' : (annualPrice || '499 TL / yıl')}
                         </span>
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
                           {lang === 'en' ? '🎁 100% Free Access' : '🎁 Erken Erişim Hediyesi'}
