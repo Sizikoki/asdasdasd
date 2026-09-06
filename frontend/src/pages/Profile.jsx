@@ -21,6 +21,7 @@ export const Profile = () => {
   const [editName, setEditName] = useState(user?.name || '');
   const [editEmail, setEditEmail] = useState(user?.email || '');
   const [saveLoading, setSaveLoading] = useState(false);
+  const [isDeletingAccount, setIsDeletingAccount] = useState(false);
 
   // Toggle States
   const [emailNotifications, setEmailNotifications] = useState(false);
@@ -149,29 +150,41 @@ export const Profile = () => {
     const confirmation = window.confirm(
       t('deleteAccountConfirm', 'Hesabınızı silmek istediğinize emin misiniz? Bu işlem geri alınamaz.')
     );
-    if (confirmation) {
-      try {
-        const currentUser = auth.currentUser;
-        const userObj = user || { uid: currentUser?.uid, email: currentUser?.email };
+    if (!confirmation) return;
 
-        // 1. Firestore ve LocalStorage'daki tüm kullanıcı ilerleme ve skor verilerini kalıcı olarak temizle
-        await clearAllUserData(currentUser || userObj);
+    try {
+      setIsDeletingAccount(true);
+      const loadingMsg = currentLanguage === 'en' ? 'Deleting account and cloud data...' : 'Hesabınız ve tüm verileriniz siliniyor...';
+      toast.loading(loadingMsg, { id: 'delete-acc-loading' });
 
-        // 2. Firebase Auth kullanıcısını kalıcı olarak sil
-        if (currentUser) {
-          await currentUser.delete();
-        }
+      const currentUser = auth.currentUser;
+      const userObj = user || { uid: currentUser?.uid, email: currentUser?.email };
 
-        // 3. Yerel oturumu temizle ve kayıt sayfasına yönlendir
-        logout();
-        toast.success(t('accountDeleted', 'Hesabınız ve tüm verileriniz kalıcı olarak silindi.'));
-        navigate('/register');
-      } catch (err) {
-        console.error('Delete account error:', err);
+      // 1. Firestore ve LocalStorage'daki tüm kullanıcı verilerini kalıcı olarak temizle
+      await clearAllUserData(currentUser || userObj);
+
+      // 2. Firebase Auth kullanıcısını kalıcı olarak sil
+      if (currentUser) {
+        await currentUser.delete();
+      }
+
+      // 3. Yerel oturumu temizle ve yönlendir
+      logout();
+      toast.dismiss('delete-acc-loading');
+      toast.success(t('accountDeleted', 'Hesabınız ve tüm verileriniz kalıcı olarak silindi.'));
+      navigate('/register');
+    } catch (err) {
+      toast.dismiss('delete-acc-loading');
+      console.error('Delete account error:', err);
+      if (err?.code === 'auth/requires-recent-login') {
         toast.error(
           t('deleteAccountRelogin', 'Güvenlik nedeniyle, hesabınızı silmeden önce çıkış yapıp tekrar giriş yapmanız gerekmektedir.')
         );
+      } else {
+        toast.error(t('deleteAccountError', 'Hesap silinirken bir sorun oluştu.'));
       }
+    } finally {
+      setIsDeletingAccount(false);
     }
   };
 
@@ -451,9 +464,12 @@ export const Profile = () => {
                 </div>
                 <button 
                   onClick={handleDeleteAccount}
-                  className="btn btn-danger-outline bg-transparent border border-[#F0C9C0] text-[var(--coral)] hover:bg-[#FBEAE6] transition-all font-semibold rounded-[9px]"
+                  disabled={isDeletingAccount}
+                  className="btn btn-danger-outline bg-transparent border border-[#F0C9C0] text-[var(--coral)] hover:bg-[#FBEAE6] disabled:opacity-50 disabled:cursor-not-allowed transition-all font-semibold rounded-[9px]"
                 >
-                  {t('deleteAccountBtn')}
+                  {isDeletingAccount
+                    ? (currentLanguage === 'en' ? 'Deleting...' : 'Siliniyor...')
+                    : t('deleteAccountBtn')}
                 </button>
               </div>
             </div>
