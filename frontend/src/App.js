@@ -19,6 +19,8 @@ import { Contact } from '@/pages/Contact';
 import { Legal } from '@/pages/Legal';
 import { Welcome } from '@/pages/Welcome';
 import { isLoggedIn, syncProgressFromFirestore } from '@/utils/storage';
+import { auth } from '@/firebase/config';
+import { onAuthStateChanged } from 'firebase/auth';
 import { seedMedicalTerms } from '@/firebase/seeder';
 import { getPaddle } from '@/services/paddle';
 import { LanguageProvider } from '@/context/LanguageContext';
@@ -35,9 +37,14 @@ function App() {
     seedMedicalTerms();
     getPaddle(); // Pre-warm & initialize Paddle.js with live client-side token
     initAnalyticsOnLoad(); // Check cookie consent and boot Google Analytics if accepted
-    if (isLoggedIn()) {
-      syncProgressFromFirestore();
-    }
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        syncProgressFromFirestore();
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
 
 

@@ -1,6 +1,6 @@
 // Browser localStorage utilities for user progress tracking
 // All user-specific data is namespaced by user email to ensure data isolation
-import { db } from '@/firebase/config';
+import { auth, db } from '@/firebase/config';
 import { doc, setDoc, deleteDoc, collection, query, where, getDocs, writeBatch } from 'firebase/firestore';
 
 const STORAGE_KEYS = {
@@ -16,10 +16,11 @@ const STORAGE_KEYS = {
 // Helper function to generate user-specific storage keys
 const getUserStorageKey = (baseKey) => {
   const user = getUser();
-  if (!user || !user.email) {
+  const email = user?.email || auth?.currentUser?.email;
+  if (!email) {
     return `${baseKey}_guest`;
   }
-  return `${baseKey}_${user.email}`;
+  return `${baseKey}_${email}`;
 };
 
 // Guest 3-Day Trial Limit Utilities (Her iki paket için de 3 günlük misafir deneme süresi)
@@ -73,11 +74,31 @@ export const saveUser = (userData) => {
 
 export const getUser = () => {
   const data = localStorage.getItem(STORAGE_KEYS.USER);
-  return data ? JSON.parse(data) : null;
+  if (data) {
+    try {
+      const parsed = JSON.parse(data);
+      if (parsed && (parsed.uid || parsed.email)) {
+        return parsed;
+      }
+    } catch (e) {
+      console.error('Error parsing user data:', e);
+    }
+  }
+  if (auth && auth.currentUser) {
+    const fallbackUser = {
+      uid: auth.currentUser.uid,
+      name: auth.currentUser.displayName || auth.currentUser.email?.split('@')[0] || 'User',
+      email: auth.currentUser.email,
+      joinDate: auth.currentUser.metadata?.creationTime || new Date().toISOString()
+    };
+    saveUser(fallbackUser);
+    return fallbackUser;
+  }
+  return null;
 };
 
 export const isLoggedIn = () => {
-  return getUser() !== null;
+  return getUser() !== null || (auth && auth.currentUser !== null);
 };
 
 export const logout = () => {
@@ -149,7 +170,7 @@ export const saveProgress = async (termId, isLearned) => {
   if (!key) return; // Fallback
 
   const user = getUser();
-  const userIdentifier = user ? (user.uid || user.email) : null;
+  const userIdentifier = auth?.currentUser?.uid || user?.uid;
 
   // 1. Update local storage cache immediately for fast UI feedback
   const progress = getProgress();
@@ -186,8 +207,8 @@ export const saveProgress = async (termId, isLearned) => {
 // Synchronize progress from Firestore back into localStorage
 export const syncProgressFromFirestore = async () => {
   const user = getUser();
-  if (!user) return;
-  const userIdentifier = user.uid || user.email;
+  const userIdentifier = auth?.currentUser?.uid || user?.uid;
+  if (!userIdentifier) return;
 
   try {
     const progressRef = collection(db, 'user_progress');
