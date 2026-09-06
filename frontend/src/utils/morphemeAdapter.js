@@ -390,8 +390,8 @@ export function adaptTermsToMorphemeQuestions(terms, roundSize = 10) {
     }
   });
 
-  // Kategori 10'dan az soru üretiyorsa genel havuzdan 10'a tamamla
-  if (candidateQuestions.length < roundSize) {
+  // Yalnızca kategoride hiç soru üretilemediyse genel havuzdan fallback yap
+  if (candidateQuestions.length === 0) {
     const fallbackTerms = getAllTerms();
     fallbackTerms.forEach((term, idx) => {
       const primaryTerm = getPrimaryLatinTerm(term.term);
@@ -416,11 +416,11 @@ export function adaptTermsToMorphemeQuestions(terms, roundSize = 10) {
     });
   }
 
-  // Havuzu karıştırıp tam roundSize (10) soru seç
+  // Havuzu karıştırıp soru listesini belirle
   const shuffledCandidates = [...candidateQuestions].sort(() => Math.random() - 0.5);
   const selectedQuestions = shuffledCandidates.slice(0, Math.min(roundSize, shuffledCandidates.length));
 
-  const pool = allParsedParts.length >= 6 ? allParsedParts : [...allParsedParts, ...FALLBACK_DISTRACTORS];
+  const pool = [...allParsedParts, ...FALLBACK_DISTRACTORS];
 
   selectedQuestions.forEach((q) => {
     const correctTexts = new Set(q.correctSequence.map((p) => p.text.toLowerCase()));
