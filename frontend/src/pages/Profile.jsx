@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getStats, getUser, saveUser, getStreak, getQuizScores, getProgress, getMatchScores, getMorphemeScores, logout } from '@/utils/storage';
 import { signOut, updateProfile, sendPasswordResetEmail } from 'firebase/auth';
-import { collection, query, where, getDocs, writeBatch } from 'firebase/firestore';
+import { doc, deleteDoc } from 'firebase/firestore';
 import { auth, db } from '@/firebase/config';
 import { toast } from 'sonner';
 import { useLanguage } from '@/context/LanguageContext';
@@ -153,25 +153,14 @@ export const Profile = () => {
     if (confirmation) {
       try {
         const currentUser = auth.currentUser;
-        const userIdentifier = currentUser?.uid || currentUser?.email || user?.uid || user?.email;
+        const uid = currentUser?.uid || user?.uid;
 
-        // 1. Firestore'daki tüm user_progress belgelerini topluca (Batch Delete) temizle
-        if (userIdentifier) {
+        // 1. Firestore'daki kullanıcı ilerleme belgesini doğrudan UID ile sil
+        if (uid) {
           try {
-            const progressRef = collection(db, 'user_progress');
-            const q = query(progressRef, where('userId', '==', userIdentifier));
-            const snapshot = await getDocs(q);
-
-            if (!snapshot.empty) {
-              const batch = writeBatch(db);
-              snapshot.forEach((docSnap) => {
-                batch.delete(docSnap.ref);
-              });
-              await batch.commit();
-              console.log(`[Firestore] ${snapshot.size} user_progress kayıtları başarıyla silindi.`);
-            }
+            await deleteDoc(doc(db, 'user_progress', uid));
           } catch (dbErr) {
-            console.warn('[Firestore] Kullanıcı ilerleme kayıtları silinirken hata oluştu:', dbErr);
+            console.warn('[Firestore] user_progress silinirken hata:', dbErr);
           }
         }
 
