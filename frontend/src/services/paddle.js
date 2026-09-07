@@ -23,7 +23,7 @@ export const PADDLE_PRICE_ID =
   'pri_01m1hbkgmff67g3mght6w6bj2q';
 
 // Flag to control active payments (toggle to true once Paddle live account verification is fully approved)
-export const IS_PAYMENT_ACTIVE = false;
+export const IS_PAYMENT_ACTIVE = true;
 
 // Backward compatibility alias
 export const PADDLE_PRICE_PRO = PADDLE_PRICE_ID;
