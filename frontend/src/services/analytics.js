@@ -3,7 +3,7 @@
  * HealthLexMed — KVKK & GDPR Compliant Analytics Handler
  */
 
-export const GA_MEASUREMENT_ID = process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-F8ROPV1YKQ';
+export const GA_MEASUREMENT_ID = process.env.REACT_APP_GA_MEASUREMENT_ID || 'G-F8RSPV39KQ';
 export const COOKIE_CONSENT_KEY = 'hlx_cookie_consent'; // 'accepted' | 'declined'
 
 /**

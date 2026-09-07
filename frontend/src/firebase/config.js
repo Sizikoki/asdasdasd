@@ -15,7 +15,7 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || "healthlexmed.firebasestorage.app",
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || "494749993763",
   appId: process.env.REACT_APP_FIREBASE_APP_ID || "1:494749993763:web:a3979b80df608b91779a96",
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID || "G-F8ROPV1YKQ"
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID || "G-F8RSPV39KQ"
 };
 
 // Initialize Firebase
