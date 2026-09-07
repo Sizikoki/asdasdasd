@@ -70,6 +70,9 @@ export const Login = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // ?redirect= parametresini oku
+  const redirectTo = new URLSearchParams(window.location.search).get('redirect') || '/';
+
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!email || !password) {
@@ -94,7 +97,8 @@ export const Login = () => {
       await syncProgressFromFirestore();
 
       toast.success(t('loginSuccess', 'Giriş başarılı! Hoş geldiniz.'));
-      navigate('/');
+      // redirect parametresi varsa oraya, yoksa anasayfaya git
+      navigate(redirectTo, { replace: true });
     } catch (error) {
       console.error('Login error:', error);
       const message = getAuthErrorMessage(error.code, isTr);

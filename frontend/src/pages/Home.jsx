@@ -51,9 +51,23 @@ export const Home = () => {
   }, []);
 
   // Handle Paddle checkout opening (Overlay + One-Page + Auth Prefill)
+  // Auth Guard: Kullanıcı giriş yapmamışsa Paddle Checkout kesinlikle açılmaz.
   const handlePaddleCheckout = async () => {
     const currentUser = auth.currentUser || getUser();
-    const customerEmail = currentUser?.email || undefined;
+
+    // Auth Guard — giriş yapılmamışsa checkout'u engelle
+    if (!currentUser) {
+      const loginMsg = lang === 'en'
+        ? 'Please sign in to continue with your purchase.'
+        : 'Satın alma işlemine devam etmek için lütfen giriş yapın.';
+      toast.info(loginMsg, { duration: 4000 });
+      // Ödeme sayfasına geri dönebilmek için redirect parametresi ekle
+      navigate('/login?redirect=' + encodeURIComponent(window.location.pathname + '#fiyat'));
+      return;
+    }
+
+    const customerEmail = currentUser.email || undefined;
+    const userId = currentUser.uid || currentUser.email || undefined;
 
     try {
       const loadingMsg = lang === 'en' ? 'Opening Paddle Checkout...' : 'Paddle Checkout açılıyor...';
@@ -63,7 +77,7 @@ export const Home = () => {
         customerEmail,
         customData: {
           plan: 'Annual Pro Membership',
-          userId: currentUser?.uid || currentUser?.email || 'guest'
+          userId: userId ?? 'unknown'
         }
       });
       toast.dismiss('paddle-loading');

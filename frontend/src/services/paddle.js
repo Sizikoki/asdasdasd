@@ -204,6 +204,8 @@ export const getPricePreviews = async (priceIds = [PADDLE_PRICE_ID]) => {
  * - Prefills current signed-in Firebase user email
  * - Redirects to /welcome on success
  * 
+ * AUTH GUARD: Kullanıcı giriş yapmamışsa checkout kesinlikle açılmaz.
+ * 
  * @param {Object} [options]
  * @param {string} [options.priceId]
  * @param {string} [options.customerEmail]
@@ -218,8 +220,24 @@ export const openPaddleCheckout = async ({
   successUrl,
   theme = 'light'
 } = {}) => {
+  const currentLang = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en' ? 'en' : 'tr';
+
+  // ── AUTH GUARD ──────────────────────────────────────────────────────────────
+  // Kullanıcı giriş yapmamışsa Paddle Checkout kesinlikle açılmasın.
+  const activeUser = auth.currentUser || getUser();
+  if (!activeUser) {
+    toast.error(
+      currentLang === 'en'
+        ? 'You must be signed in to make a purchase.'
+        : 'Satın alma yapabilmek için giriş yapmanız gerekiyor.',
+      { duration: 4000 }
+    );
+    console.warn('[Paddle] Checkout blocked: no authenticated user.');
+    return;
+  }
+  // ────────────────────────────────────────────────────────────────────────────
+
   try {
-    const currentLang = typeof window !== 'undefined' && localStorage.getItem('healthlex_lang') === 'en' ? 'en' : 'tr';
     const paddle = await getPaddle();
     if (!paddle) {
       toast.error(currentLang === 'en' ? 'Payment system could not be initialized. Please check your connection.' : 'Ödeme sistemi başlatılamadı. Lütfen internet bağlantınızı kontrol edin.');
@@ -238,15 +256,20 @@ export const openPaddleCheckout = async ({
       successUrl: resolvedSuccessUrl
     };
 
+    // customer.email — aktif kullanıcıdan çek (Prefill)
+    const resolvedEmail = customerEmail || activeUser?.email;
+
+    // customData.userId — uid yoksa email'i fallback olarak kullan
+    const resolvedUserId = activeUser?.uid || activeUser?.email || 'unknown';
+
     const checkoutOptions = {
       items: [{ priceId: activePriceId, quantity: 1 }],
       settings: checkoutSettings,
-      customData
+      customData: {
+        ...customData,
+        userId: resolvedUserId   // Her zaman iletilmesi garanti
+      }
     };
-
-    // Firebase Auth'taki aktif kullanıcının e-postasını otomatik aktar (Prefill)
-    const activeUser = auth.currentUser || getUser();
-    const resolvedEmail = customerEmail || activeUser?.email;
 
     if (resolvedEmail && typeof resolvedEmail === 'string' && resolvedEmail.includes('@')) {
       checkoutOptions.customer = {
