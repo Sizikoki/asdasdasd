@@ -5,6 +5,7 @@ import { getAllTerms } from '@/data/medicalTerms';
 import { PREFIXES, ROOTS, SUFFIXES } from '@/data/morphemesData';
 import { db, auth } from '@/firebase/config';
 import { collection, getDocs } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
 import { getAnnualPricePreview, openPaddleCheckout, PADDLE_PRICE_ID, IS_PAYMENT_ACTIVE } from '@/services/paddle';
 import { getUser } from '@/utils/storage';
 import { useLanguage } from '@/context/LanguageContext';
@@ -18,6 +19,25 @@ export const Home = () => {
   const lang = currentLanguage === 'en' ? 'en' : 'tr';
   const content = HOME_CONTENT[lang] || HOME_CONTENT.tr;
   const demoRounds = getHomeDemoRounds(lang);
+
+  // ── Auth Redirect (Flash-Free) ─────────────────────────────────────────────
+  // onAuthStateChanged tamamlanana kadar hiçbir şey render edilmez (flash önleme).
+  // Giriş yapmış kullanıcı /dashboard'a yönlendirilir.
+  const [authChecked, setAuthChecked] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser || getUser()) {
+        // Kullanıcı giriş yapmış → dashboard'a yönlendir
+        navigate('/dashboard', { replace: true });
+      } else {
+        // Kullanıcı giriş yapmamış → landing page'i göster
+        setAuthChecked(true);
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
+  // ────────────────────────────────────────────────────────────────────────────
 
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
   const [revealedIndices, setRevealedIndices] = useState([]);
@@ -136,6 +156,17 @@ export const Home = () => {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Auth kontrolü tamamlanmadan landing page'i render etme (flash önleme)
+  if (!authChecked) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="flex flex-col items-center gap-3 text-muted-foreground">
+          <div className="w-7 h-7 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="landing-page" id="top">

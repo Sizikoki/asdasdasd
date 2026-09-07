@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, LogOut } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, User, LogOut, LayoutDashboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getUser, logout, isLoggedIn, getStats } from '@/utils/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
@@ -17,6 +17,7 @@ import {
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const [firebaseUser, setFirebaseUser] = useState(null);
   const { currentLanguage, setLanguage, t } = useLanguage();
 
@@ -43,13 +44,22 @@ export const Navbar = () => {
     window.location.href = '/login';
   };
 
-  const navLinks = [
-    { path: '/', label: t('home', 'Ana Sayfa') },
-    { path: '/study', label: t('study') },
-    { path: '/morphemes', label: t('morphemes', 'Morfemler') },
-    { path: '/games', label: t('games') },
-    { path: '/progress', label: t('progress') },
-  ];
+  // Giriş yapmış kullanıcılar için Dashboard linki öne eklendi
+  const navLinks = loggedIn
+    ? [
+        { path: '/dashboard', label: t('dashboard', 'Panel'), icon: <LayoutDashboard className="w-3.5 h-3.5" /> },
+        { path: '/study', label: t('study') },
+        { path: '/morphemes', label: t('morphemes', 'Morfemler') },
+        { path: '/games', label: t('games') },
+        { path: '/progress', label: t('progress') },
+      ]
+    : [
+        { path: '/', label: t('home', 'Ana Sayfa') },
+        { path: '/study', label: t('study') },
+        { path: '/morphemes', label: t('morphemes', 'Morfemler') },
+        { path: '/games', label: t('games') },
+        { path: '/progress', label: t('progress') },
+      ];
 
   const LanguageSwitcher = () => (
     <div className="flex items-center bg-card border border-border rounded-lg p-1 text-xs font-semibold shadow-sm">
@@ -82,8 +92,8 @@ export const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border" data-purpose="main-header">
       <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+          {/* Logo — giriş yapmış kullanıcıda /dashboard'a götürür */}
+          <Link to={loggedIn ? '/dashboard' : '/'} className="flex items-center gap-2 flex-shrink-0">
             <div className="bg-primary p-2 rounded-md">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 12h4l2 7 4-14 2 7h6" />
@@ -100,12 +110,13 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3.5 py-2 text-[0.92rem] font-medium transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 text-[0.92rem] font-medium transition-all ${
                   isActive(link.path)
                     ? 'bg-card border border-border text-foreground shadow-sm rounded-lg font-semibold'
                     : 'text-muted-foreground hover:text-foreground hover:bg-muted/80 rounded-lg'
                 }`}
               >
+                {link.icon && <span className="opacity-70">{link.icon}</span>}
                 {link.label}
               </Link>
             ))}
