@@ -77,14 +77,23 @@ agenthub/agents/youtube/db
 .cache/
 
 # Mobile development
-android-sdk/ -e 
+android-sdk/
+
 # Environment files
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 *.env
 *.env.*
--e 
-# Environment files
-*.env
-*.env.* 
 
+# Certificates, private keys & service account credentials
+*.pem
+*.key
+*.crt
 serviceAccountKey.json
 **/serviceAccountKey.json
+*serviceAccount*.json
+*firebase-adminsdk*.json

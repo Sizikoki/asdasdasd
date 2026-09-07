@@ -260,7 +260,7 @@ export const MorphemeExplorer = () => {
       {/* Schema.org JSON-LD Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd).replace(/</g, '\\u003c') }}
       />
 
       <div className="max-w-7xl mx-auto space-y-8">

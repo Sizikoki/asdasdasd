@@ -37,7 +37,7 @@ export const Dashboard = () => {
   // Auth Guard
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user && !getUser()) {
+      if (!user) {
         navigate('/login', { replace: true });
       } else {
         setFirebaseUser(user);

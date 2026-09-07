@@ -1,0 +1,54 @@
+﻿rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── 1. Tıbbi Terimler (terms) ───────────────────────────────────────────
+    // Herkese açık okunabilir (Guest & Auth), istemciden ASLA yazılamaz/değiştirilemez
+    match /terms/{termId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ── 2. Meta Veriler (metadata) ──────────────────────────────────────────
+    // Salt-okunur (read-only); istemciden yazma veya sıfırlama yapılamaz
+    match /metadata/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ── 3. Kullanıcı Dokümanları (users) ────────────────────────────────────
+    // Kullanıcılar yalnızca kendi belgelerine erişebilir.
+    // 'isPro' ve 'subscriptionStatus' alanlarının istemci tarafından değiştirilmesi
+    // KESİNLİKLE yasaklanmıştır (yalnızca yetkili backend / Paddle Webhook güncelleyebilir).
+    match /users/{userId} {
+      // Yalnızca doküman sahibi okuyabilir
+      allow read: if request.auth != null && request.auth.uid == userId;
+
+      // Doküman ilk oluşturulurken isPro: false ve subscriptionStatus: 'free' olmak ZORUNDADIR
+      allow create: if request.auth != null && request.auth.uid == userId
+                    && request.resource.data.isPro == false
+                    && request.resource.data.subscriptionStatus == 'free';
+
+      // Doküman güncellenirken isPro ve subscriptionStatus alanlarına dokunulamaz
+      allow update: if request.auth != null && request.auth.uid == userId
+                    && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isPro', 'subscriptionStatus']);
+
+      // Kullanıcı dokümanı doğrudan silinemez (yalnızca GDPR/KVKK talebi veya backend akışı ile)
+      allow delete: if false;
+    }
+
+    // ── 4. Kullanıcı İlerleme Verileri (user_progress) ──────────────────────
+    // Kullanıcılar yalnızca kendi ilerleme (quiz, eşleştirme, öğrenilen kelimeler) kayıtlarını yönetebilir
+    match /user_progress/{progressId} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // ── 5. Varsayılan Güvenlik Kuralı ───────────────────────────────────────
+    // Açıkça izin verilmeyen diğer tüm koleksiyonlar varsayılan olarak reddedilir
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

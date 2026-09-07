@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/sonner';
 import { Navbar } from '@/components/Navbar';
@@ -19,7 +19,7 @@ import { Profile } from '@/pages/Profile';
 import { Contact } from '@/pages/Contact';
 import { Legal } from '@/pages/Legal';
 import { Welcome } from '@/pages/Welcome';
-import { isLoggedIn, syncProgressFromFirestore } from '@/utils/storage';
+import { syncProgressFromFirestore } from '@/utils/storage';
 import { auth } from '@/firebase/config';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getPaddle } from '@/services/paddle';
@@ -28,8 +28,41 @@ import { CookieBanner } from '@/components/CookieBanner';
 import { initAnalyticsOnLoad } from '@/services/analytics';
 import './App.css';
 
+/**
+ * Robust, asynchronous Auth Guard:
+ * Eliminates race condition flickers and prevents forged localStorage bypasses.
+ */
 const ProtectedRoute = ({ children }) => {
-  return isLoggedIn() ? children : <Navigate to="/login" replace />;
+  const [authState, setAuthState] = useState({
+    user: null,
+    loading: true
+  });
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setAuthState({
+        user: currentUser,
+        loading: false
+      });
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  if (authState.loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background">
+        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin mb-3" />
+        <span className="text-xs text-muted-foreground animate-pulse font-medium">Doğrulanıyor...</span>
+      </div>
+    );
+  }
+
+  if (!authState.user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
 };
 
 function App() {

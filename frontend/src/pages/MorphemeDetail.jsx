@@ -96,7 +96,7 @@ export const MorphemeDetail = () => {
           "termCode": morpheme.slug,
           "description": `${morpheme.meaningTr} / ${morpheme.meaningEn}`,
           "inDefinedTermSet": "https://healthlexmed.com/morphemes"
-        })
+        }).replace(/</g, '\\u003c')
       }} />
 
       <div className="max-w-4xl mx-auto space-y-8">
