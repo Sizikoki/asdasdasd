@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getStats, getUser, saveUser, getStreak, getQuizScores, getProgress, getMatchScores, getMorphemeScores, logout, clearAllUserData } from '@/utils/storage';
 import { signOut, updateProfile, sendPasswordResetEmail } from 'firebase/auth';
-import { auth } from '@/firebase/config';
+import { collection, query, where, getDocs, writeBatch } from 'firebase/firestore';
+import { auth, db } from '@/firebase/config';
 import { toast } from 'sonner';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -159,16 +160,46 @@ export const Profile = () => {
 
       const currentUser = auth.currentUser;
       const userObj = user || { uid: currentUser?.uid, email: currentUser?.email };
+      const targetUid = currentUser?.uid || userObj?.uid;
 
-      // 1. Firestore ve LocalStorage'daki tüm kullanıcı verilerini kalıcı olarak temizle
+      // 1. Firestore user_progress koleksiyonundaki belgeleri ({userId}_{termId}) where('userId', '==', targetUid) ile toplu sil (batch delete)
+      if (targetUid) {
+        try {
+          const progressRef = collection(db, 'user_progress');
+          const q = query(progressRef, where('userId', '==', targetUid));
+          const snapshot = await getDocs(q);
+
+          if (!snapshot.empty) {
+            let batch = writeBatch(db);
+            let uncommittedOps = 0;
+            for (const docSnap of snapshot.docs) {
+              batch.delete(docSnap.ref);
+              uncommittedOps++;
+              if (uncommittedOps === 400) {
+                await batch.commit();
+                batch = writeBatch(db);
+                uncommittedOps = 0;
+              }
+            }
+            if (uncommittedOps > 0) {
+              await batch.commit();
+            }
+            console.log(`[Firestore] Deleted ${snapshot.size} user_progress documents for userId: ${targetUid}`);
+          }
+        } catch (dbErr) {
+          console.error('[Firestore] Error batch deleting user_progress:', dbErr);
+        }
+      }
+
+      // 2. LocalStorage ve diğer ilişkili kullanıcı verilerini temizle
       await clearAllUserData(currentUser || userObj);
 
-      // 2. Firebase Auth kullanıcısını kalıcı olarak sil
+      // 3. Firebase Auth kullanıcısını kalıcı olarak sil
       if (currentUser) {
         await currentUser.delete();
       }
 
-      // 3. Yerel oturumu temizle ve yönlendir
+      // 4. Yerel oturumu temizle ve yönlendir
       logout();
       toast.dismiss('delete-acc-loading');
       toast.success(t('accountDeleted', 'Hesabınız ve tüm verileriniz kalıcı olarak silindi.'));

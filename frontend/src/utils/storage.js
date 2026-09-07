@@ -127,16 +127,19 @@ export const clearAllUserData = async (currentUser) => {
 
       if (!snapshot.empty) {
         let batch = writeBatch(db);
-        let opCount = 0;
+        let uncommittedOps = 0;
         for (const docSnap of snapshot.docs) {
           batch.delete(docSnap.ref);
-          opCount++;
-          if (opCount % 400 === 0) {
+          uncommittedOps++;
+          if (uncommittedOps === 400) {
             await batch.commit();
             batch = writeBatch(db);
+            uncommittedOps = 0;
           }
         }
-        await batch.commit();
+        if (uncommittedOps > 0) {
+          await batch.commit();
+        }
         console.log(`[Firestore] Deleted ${snapshot.size} user_progress documents for identifier: ${identifier}`);
       }
     } catch (err) {
