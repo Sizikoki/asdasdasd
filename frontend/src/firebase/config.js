@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { 
   initializeFirestore, 
   persistentLocalCache, 
@@ -21,6 +21,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+// Google Auth Provider — singleton, tüm bileşenler bu instance'ı kullanır
+export const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
 
 // Kalıcı yerel önbellek ile Firestore başlatma (Çok sekmeli / multi-tab IndexedDB desteği)
 const db = initializeFirestore(app, {
