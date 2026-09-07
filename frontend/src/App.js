@@ -21,7 +21,6 @@ import { Welcome } from '@/pages/Welcome';
 import { isLoggedIn, syncProgressFromFirestore } from '@/utils/storage';
 import { auth } from '@/firebase/config';
 import { onAuthStateChanged } from 'firebase/auth';
-import { seedMedicalTerms } from '@/firebase/seeder';
 import { getPaddle } from '@/services/paddle';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { CookieBanner } from '@/components/CookieBanner';
@@ -34,7 +33,6 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   useEffect(() => {
-    seedMedicalTerms();
     getPaddle(); // Pre-warm & initialize Paddle.js with live client-side token
     initAnalyticsOnLoad(); // Check cookie consent and boot Google Analytics if accepted
 

@@ -1,5 +1,5 @@
 import { db } from './config';
-import { collection, writeBatch, doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
+import { collection, writeBatch, doc, getDoc, setDoc } from 'firebase/firestore';
 import { getAllTerms } from '@/data/medicalTerms';
 
 /**
@@ -11,13 +11,9 @@ import { getAllTerms } from '@/data/medicalTerms';
  * Implements a safe, one-time execution guard using a hybrid localStorage and Firestore document check.
  */
 export const seedMedicalTerms = async () => {
-  // Ensure the test term 999 is deleted from Firestore
-  try {
-    const testDocRef = doc(db, 'terms', '999');
-    await deleteDoc(testDocRef);
-    console.log('Deleted test term 999 from Firestore.');
-  } catch (error) {
-    console.error('Failed to delete test term 999:', error);
+  // Prevent execution in production bundle to avoid permission errors and unnecessary writes
+  if (process.env.NODE_ENV === 'production') {
+    return;
   }
 
   // 1. Check local storage first to prevent redundant Firestore reads
