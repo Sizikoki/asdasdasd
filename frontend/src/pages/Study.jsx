@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, BookOpen, Menu, X, Sparkles } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -46,7 +46,7 @@ export const Study = () => {
 
   const [selectedCategoryId, setSelectedCategoryId] = useState(CATEGORIES[0].id);
   const [searchQuery, setSearchQuery] = useState('');
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [allTerms, setAllTerms] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -104,6 +104,18 @@ export const Study = () => {
   }, []);
 
   const selectedCategory = CATEGORIES.find(c => c.id === selectedCategoryId) || CATEGORIES[0];
+
+  const categoryCounts = useMemo(() => {
+    const counts = {};
+    CATEGORIES.forEach((cat) => {
+      counts[cat.id] = allTerms.filter((t) => {
+        if (cat.category) return t.category === cat.category;
+        if (cat.subcategory) return t.subcategory === cat.subcategory;
+        return true;
+      }).length;
+    });
+    return counts;
+  }, [allTerms]);
 
   const filteredTerms = allTerms.filter(t => {
     if (selectedCategory.category) {
@@ -282,61 +294,85 @@ export const Study = () => {
 
   return (
     <div className="min-h-screen bg-muted/30 flex">
-      {/* Left Sidebar - Desktop only */}
-      <div className={`hidden md:block ${sidebarOpen ? 'w-64' : 'w-0'} bg-background border-r border-border flex-shrink-0 overflow-y-auto transition-all duration-300 ${!sidebarOpen && 'border-r-0'}`}>
-        <div className={`${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-300`}>
-          <div className="p-4 border-b border-border">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">{t('categories')}</h2>
-              <button
-                onClick={() => setSidebarOpen(false)}
-                className="p-1 rounded-lg hover:bg-muted transition-colors"
-                aria-label={isTr ? "Menüyü kapat" : "Close menu"}
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+      {/* Sol Kategori Kenar Çubuğu - Masaüstünde (PC) Her Zaman Açık & Sabit */}
+      <aside className="hidden md:flex flex-col w-64 lg:w-72 xl:w-80 bg-background border-r border-border flex-shrink-0 sticky top-20 h-[calc(100vh-80px)] z-20 shadow-xs">
+        <div className="p-4 sm:p-5 border-b border-border flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-primary" />
+            <h2 className="font-bold text-base text-foreground font-serif tracking-tight">
+              {t('categories', 'Kategoriler')}
+            </h2>
           </div>
-          <div className="p-2 space-y-1">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => { setSelectedCategoryId(cat.id); setSearchQuery(''); }}
-                className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${selectedCategoryId === cat.id
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                  }`}
-              >
-                {t(cat.key, cat.name)}
-              </button>
-            ))}
-          </div>
+          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border/50">
+            {CATEGORIES.length}
+          </span>
         </div>
-      </div>
 
-      {/* Mobile Sidebar - Drawer Overlay */}
-      <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
-        <SheetContent side="left" className="w-[280px] p-0 flex flex-col h-full">
-          <SheetHeader className="p-4 border-b border-border flex-shrink-0">
-            <SheetTitle className="text-left font-semibold">{t('categories')}</SheetTitle>
-          </SheetHeader>
-          <div className="p-2 space-y-1 overflow-y-auto flex-1">
-            {CATEGORIES.map((cat) => (
+        <div className="p-3 space-y-1.5 overflow-y-auto flex-1">
+          {CATEGORIES.map((cat) => {
+            const isSelected = selectedCategoryId === cat.id;
+            const count = categoryCounts[cat.id];
+            return (
               <button
                 key={cat.id}
                 onClick={() => {
                   setSelectedCategoryId(cat.id);
                   setSearchQuery('');
-                  setSidebarOpen(false);
                 }}
-                className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${selectedCategoryId === cat.id
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                  }`}
+                className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer flex items-center justify-between group ${
+                  isSelected
+                    ? 'bg-primary text-primary-foreground font-bold shadow-xs'
+                    : 'text-muted-foreground hover:bg-muted/80 hover:text-foreground'
+                }`}
               >
-                {t(cat.key, cat.name)}
+                <span className="truncate pr-2">{t(cat.key, cat.name)}</span>
+                {count !== undefined && (
+                  <span
+                    className={`text-[11px] font-semibold px-2 py-0.5 rounded-md transition-colors flex-shrink-0 ${
+                      isSelected
+                        ? 'bg-primary-foreground/20 text-primary-foreground'
+                        : 'bg-muted text-muted-foreground group-hover:text-foreground'
+                    }`}
+                  >
+                    {count}
+                  </span>
+                )}
               </button>
-            ))}
+            );
+          })}
+        </div>
+      </aside>
+
+      {/* Mobil Kenar Çubuğu (Drawer / Sheet) - Sadece Mobil Ekranlar İçin */}
+      <Sheet open={mobileDrawerOpen} onOpenChange={setMobileDrawerOpen}>
+        <SheetContent side="left" className="w-[280px] p-0 flex flex-col h-full">
+          <SheetHeader className="p-4 border-b border-border flex-shrink-0">
+            <SheetTitle className="text-left font-semibold">{t('categories')}</SheetTitle>
+          </SheetHeader>
+          <div className="p-2 space-y-1 overflow-y-auto flex-1">
+            {CATEGORIES.map((cat) => {
+              const count = categoryCounts[cat.id];
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    setSelectedCategoryId(cat.id);
+                    setSearchQuery('');
+                    setMobileDrawerOpen(false);
+                  }}
+                  className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center justify-between cursor-pointer ${
+                    selectedCategoryId === cat.id
+                      ? 'bg-primary text-primary-foreground font-bold'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  }`}
+                >
+                  <span className="truncate pr-2">{t(cat.key, cat.name)}</span>
+                  {count !== undefined && (
+                    <span className="text-xs opacity-80">{count}</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </SheetContent>
       </Sheet>
@@ -344,18 +380,18 @@ export const Study = () => {
       {/* Main Content */}
       <div className="flex-1 min-w-0 flex flex-col">
         {/* Top bar */}
-        <div className="bg-background border-b border-border p-4 flex items-center justify-between gap-4 sticky top-0 z-10 shadow-xs">
+        <div className="bg-background border-b border-border p-4 flex items-center justify-between gap-4 sticky top-20 z-10 shadow-xs">
           <div className="flex items-center gap-3">
             <button
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors border border-border text-xs font-semibold text-foreground"
-              aria-label={isTr ? "Kategorileri Göster/Gizle" : "Toggle categories"}
+              onClick={() => setMobileDrawerOpen(true)}
+              className="md:hidden inline-flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted transition-colors border border-border text-xs font-semibold text-foreground cursor-pointer"
+              aria-label={isTr ? "Kategorileri Göster" : "Show categories"}
             >
               <Menu className="w-4 h-4" />
               <span className="hidden sm:inline">{t('categories', 'Kategoriler')}</span>
             </button>
             <div>
-              <h1 className="text-xl font-bold">{t(selectedCategory.key, selectedCategory.name)}</h1>
+              <h1 className="text-xl font-bold font-serif text-foreground">{t(selectedCategory.key, selectedCategory.name)}</h1>
               <p className="text-xs text-muted-foreground">{terms.length} {t('termsCount')}</p>
             </div>
           </div>
