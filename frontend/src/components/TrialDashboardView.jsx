@@ -210,8 +210,8 @@ export const TrialDashboardView = ({ user: propUser, userData: propUserData }) =
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased transition-colors">
-      <div className="w-full max-w-[1720px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8">
+    <div className="min-h-screen bg-background text-foreground antialiased transition-colors flex flex-col justify-between">
+      <div className="w-full max-w-[1720px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-8 flex-1">
         
         {/* Karşılama ve Tarih */}
         <div className="pb-2">
@@ -429,7 +429,6 @@ export const TrialDashboardView = ({ user: propUser, userData: propUserData }) =
             })}
           </div>
         </div>
-
       </div>
     </div>
   );

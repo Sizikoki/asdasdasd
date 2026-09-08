@@ -675,40 +675,6 @@ export const Home = () => {
               : (lang === 'en' ? 'Explore Dictionary' : 'Sözlüğü Keşfet')}
             <ArrowRight className="w-4 h-4 ml-2" />
           </button>
-
-          {/* Footer Nav: İletişim/Destek + Sözleşme Yer Tutucuları */}
-          <div className="footer-nav-row">
-            <div className="footer-nav-links">
-              <Link to="/contact" className="footer-nav-link footer-nav-highlight">
-                {content.footer?.links?.contact || (lang === 'tr' ? 'İletişim & Destek' : 'Contact & Support')}
-              </Link>
-              <Link to="/terms" className="footer-nav-link">
-                {content.footer?.links?.terms || (lang === 'tr' ? 'Kullanım Koşulları' : 'Terms of Service')}
-              </Link>
-              <Link to="/privacy" className="footer-nav-link">
-                {content.footer?.links?.privacy || (lang === 'tr' ? 'Gizlilik Politikası' : 'Privacy Policy')}
-              </Link>
-              <Link to="/refund" className="footer-nav-link">
-                {content.footer?.links?.refund || (lang === 'tr' ? 'İptal ve İade' : 'Refund Policy')}
-              </Link>
-            </div>
-
-            <div className="footer-contact-badge">
-              <Mail className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-              <a href="mailto:help@healthlexmed.com" className="footer-email-link">
-                help@healthlexmed.com
-              </a>
-              <span className="footer-dot">·</span>
-              <span className="footer-sla">
-                {content.footer?.slaNotice || (lang === 'tr' ? 'Taleplerinize 24-48 saat içinde dönüş sağlanır' : '24-48h response')}
-              </span>
-            </div>
-          </div>
-
-          <div className="footer-meta">
-            <span>{content.footer.meta}</span>
-            <span>© 2026 HealthLexMed · healthlexmed.com</span>
-          </div>
         </div>
       </footer>
     </div>

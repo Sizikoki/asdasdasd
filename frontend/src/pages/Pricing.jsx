@@ -301,7 +301,7 @@ export const PricingView = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased transition-colors">
+    <div className="min-h-screen bg-background text-foreground antialiased transition-colors flex flex-col justify-between">
       {/* ==================================================================== */}
       {/* 1) MOBİL GÖRÜNÜM (lg:hidden): FABLE SEÇENEK TABLI & TEK KART TASARIMI */}
       {/* ==================================================================== */}
@@ -506,7 +506,7 @@ export const PricingView = () => {
       {/* ==================================================================== */}
       {/* 2) MASAÜSTÜ GÖRÜNÜM (hidden lg:flex): 4'LÜ GENİŞ KART IZGARASI & TABLO */}
       {/* ==================================================================== */}
-      <div className="hidden lg:flex w-full max-w-[1720px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-col gap-12 items-center">
+      <div className="hidden lg:flex w-full max-w-[1720px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-col gap-12 items-center flex-1">
         
         {/* Başlık ve Aylık / Yıllık Seçici */}
         <div className="text-center flex flex-col gap-3.5 items-center max-w-4xl w-full">
@@ -710,7 +710,6 @@ export const PricingView = () => {
             </span>
           </span>
         </div>
-
       </div>
     </div>
   );

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Toaster } from '@/components/ui/sonner';
 import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 import { Home } from '@/pages/Home';
 import { Dashboard } from '@/pages/Dashboard';
 import { Login, Register } from '@/pages/Auth';
@@ -66,6 +67,33 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
+/**
+ * Global AppFooter:
+ * Bilgi, çalışma, sözlük, profil ve tarife sayfalarında Footer'ı otomatik render eder.
+ * Tüm oyun sayfalarında (/games, /flashcards, /match, /quiz, /morpheme) ise footer'ı kesinlikle gizler.
+ */
+const AppFooter = () => {
+  const location = useLocation();
+  const p = (location.pathname || '').toLowerCase().replace(/\/+$/, '') || '/';
+
+  // Oyun sayfalarında (menü veya oynanış modu fark etmeksizin) footer kesinlikle gösterilmez
+  const isGameRoute =
+    p === '/games' ||
+    p.startsWith('/games/') ||
+    p === '/flashcards' ||
+    p.startsWith('/flashcards/') ||
+    p === '/match' ||
+    p.startsWith('/match/') ||
+    p === '/quiz' ||
+    p.startsWith('/quiz/') ||
+    (p.startsWith('/morpheme') && !p.startsWith('/morphemes'));
+
+  if (isGameRoute) {
+    return null;
+  }
+  return <Footer />;
+};
+
 function App() {
   useEffect(() => {
     getPaddle(); // Pre-warm & initialize Paddle.js with live client-side token
@@ -85,7 +113,7 @@ function App() {
     <LanguageProvider>
       <BrowserRouter>
 
-        <div className="App min-h-screen bg-background">
+        <div className="App min-h-screen bg-background flex flex-col justify-between">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -110,10 +138,16 @@ function App() {
             <Route path="/morpheme-explorer" element={<MorphemeExplorer />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/iletisim" element={<Navigate to="/contact" replace />} />
+            <Route path="/hakkinda" element={<Navigate to="/contact" replace />} />
+            <Route path="/sss" element={<Navigate to="/contact" replace />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/terms" element={<Legal activeDoc="terms" />} />
+            <Route path="/kullanim-kosullari" element={<Navigate to="/terms" replace />} />
             <Route path="/privacy" element={<Legal activeDoc="privacy" />} />
+            <Route path="/gizlilik" element={<Navigate to="/privacy" replace />} />
             <Route path="/refund" element={<Legal activeDoc="refund" />} />
+            <Route path="/iptal-iade" element={<Navigate to="/refund" replace />} />
+            <Route path="/cerez" element={<Navigate to="/privacy" replace />} />
             <Route path="/legal" element={<Navigate to="/terms" replace />} />
             <Route path="/progress" element={<ProgressPage />} />
             <Route path="/welcome" element={<Welcome />} />
@@ -125,6 +159,7 @@ function App() {
             } />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
+          <AppFooter />
           <Toaster position="top-right" richColors />
           <CookieBanner />
         </div>
