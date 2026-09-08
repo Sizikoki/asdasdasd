@@ -19,6 +19,12 @@ const TRANSLATIONS = {
     currentPlan: 'MEVCUT PLAN',
     title: 'Sana uygun tarifeyi seç',
     sub: 'Ücretsiz 3 gün boyunca dene. Sana uygun tarifeyi seç.',
+    titleVisitor: 'Terimleri parçala, anla, birleştir.',
+    subVisitor: '3 gün ücretsiz dene, kart bilgisi gerekmez. Sonra sana uygun tarifeyle devam et.',
+    noCardNote: 'Kart bilgisi gerekmez.',
+    startTrial: '3 gün ücretsiz dene',
+    save: '2 ay bedava',
+    tabNames: ['Ücretsiz', 'Temel', 'Pro', 'Ömür'],
     monthly: 'Aylık',
     yearly: 'Yıllık',
     compare: 'ÖZELLİKLER',
@@ -122,6 +128,12 @@ const TRANSLATIONS = {
     currentPlan: 'CURRENT PLAN',
     title: 'Pick the plan that fits',
     sub: 'Try free for 3 days. Choose the plan that fits you.',
+    titleVisitor: 'Split, understand, rebuild terms.',
+    subVisitor: 'Try 3 days free, no card required. Then continue with the plan that fits you.',
+    noCardNote: 'No card required.',
+    startTrial: 'Try 3 days free',
+    save: '2 months free',
+    tabNames: ['Free', 'Basic', 'Pro', 'Lifetime'],
     monthly: 'Monthly',
     yearly: 'Yearly',
     compare: 'FEATURES',
@@ -217,8 +229,9 @@ const TRANSLATIONS = {
 
 export const PricingView = () => {
   const navigate = useNavigate();
-  const { currentLanguage } = useLanguage();
+  const { currentLanguage, setLanguage } = useLanguage();
   const [period, setPeriod] = useState('yearly');
+  const [mobileTab, setMobileTab] = useState(2); // 0: Ücretsiz, 1: Temel, 2: Pro, 3: Ömür
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const isTr = currentLanguage === 'tr';
@@ -228,6 +241,34 @@ export const PricingView = () => {
   const currentUser = auth?.currentUser || getUser();
   const trialState = getUserTrialState(currentUser);
   const trialDaysLeft = trialState.daysLeft;
+
+  const selPlan = t.plans[mobileTab];
+  const isMobFree = mobileTab === 0;
+  const isMobBasic = mobileTab === 1;
+  const isMobPro = mobileTab === 2;
+  const isMobLife = mobileTab === 3;
+
+  let mobPrice = selPlan.mo;
+  let mobPer = t.perMo;
+  let mobNote = selPlan.noteMo;
+
+  if (isMobFree) {
+    mobPrice = t.free;
+    mobPer = '';
+    mobNote = selPlan.note;
+  } else if (isMobLife) {
+    mobPrice = selPlan.once;
+    mobPer = t.perOnce;
+    mobNote = selPlan.note;
+  } else if (isMobPro) {
+    mobPrice = selPlan.yrp;
+    mobPer = t.perYr;
+    mobNote = yr ? selPlan.noteYr : selPlan.noteMo;
+  } else if (isMobBasic) {
+    mobPrice = yr ? selPlan.yrp : selPlan.mo;
+    mobPer = yr ? t.perYr : t.perMo;
+    mobNote = yr ? selPlan.noteYr : selPlan.noteMo;
+  }
 
   const handlePlanClick = async (planIndex) => {
     if (planIndex === 0) {
@@ -261,7 +302,211 @@ export const PricingView = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased transition-colors">
-      <div className="w-full max-w-[1720px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex flex-col gap-12 items-center">
+      {/* ==================================================================== */}
+      {/* 1) MOBİL GÖRÜNÜM (lg:hidden): FABLE SEÇENEK TABLI & TEK KART TASARIMI */}
+      {/* ==================================================================== */}
+      <div className="w-full flex lg:hidden flex-col gap-4 max-w-md mx-auto px-4 py-6 pb-28">
+        {/* Mobil Üst Başlık Kartı (Dark Banner) */}
+        <div className="bg-[#0f1b33] dark:bg-slate-900 text-white rounded-2xl p-5 shadow-sm flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <div
+              onClick={() => navigate('/')}
+              className="font-extrabold text-base tracking-tight font-sans cursor-pointer"
+            >
+              Health<span className="font-serif italic font-bold text-[#8fb3ff]">Lex</span>Med
+            </div>
+            <div className="flex items-center gap-2">
+              {/* TR / EN Dil Seçici */}
+              <div
+                onClick={() => setLanguage(isTr ? 'en' : 'tr')}
+                className="flex bg-white/10 rounded-lg p-0.5 text-[11px] font-extrabold cursor-pointer select-none"
+                role="button"
+                tabIndex={0}
+              >
+                <span className={`px-2 py-1 rounded-md transition-all ${isTr ? 'bg-primary text-white' : 'text-slate-300'}`}>
+                  TR
+                </span>
+                <span className={`px-2 py-1 rounded-md transition-all ${!isTr ? 'bg-primary text-white' : 'text-slate-300'}`}>
+                  EN
+                </span>
+              </div>
+              {currentUser ? (
+                <button
+                  onClick={() => navigate('/dashboard')}
+                  className="text-xs font-bold text-white/90 hover:text-white underline cursor-pointer"
+                >
+                  {isTr ? 'Panelim' : 'Dashboard'}
+                </button>
+              ) : (
+                <button
+                  onClick={() => navigate('/login')}
+                  className="text-xs font-bold text-white/90 hover:text-white underline cursor-pointer"
+                >
+                  {isTr ? 'Giriş yap' : 'Log in'}
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div>
+            <h1 className="m-0 font-serif font-semibold text-2xl leading-snug text-white">
+              {t.titleVisitor}
+            </h1>
+            <p className="m-0 text-xs sm:text-sm text-slate-300 leading-relaxed mt-2">
+              {t.subVisitor}
+            </p>
+          </div>
+        </div>
+
+        {/* 4 Segmentli Plan Tab Seçici ([Ücretsiz] [Temel] [Pro] [Ömür]) */}
+        <div className="flex bg-card border border-border rounded-xl p-1 font-bold text-xs shadow-xs select-none">
+          {t.tabNames.map((name, idx) => {
+            const isSelected = mobileTab === idx;
+            return (
+              <button
+                key={idx}
+                onClick={() => setMobileTab(idx)}
+                className={`flex-1 py-2.5 rounded-lg text-center transition-all cursor-pointer ${
+                  isSelected
+                    ? 'bg-[#0f1b33] dark:bg-primary text-white shadow-xs font-extrabold'
+                    : 'text-muted-foreground hover:text-foreground font-semibold'
+                }`}
+              >
+                {name}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Seçili Plan Kartı */}
+        <div
+          className={`bg-card border rounded-2xl p-5 sm:p-6 flex flex-col gap-4 relative shadow-sm transition-all ${
+            isMobPro ? 'border-primary ring-2 ring-primary/20' : 'border-border'
+          }`}
+        >
+          {/* Rozet */}
+          {selPlan.badge && (
+            <span
+              className={`absolute -top-3 left-5 text-white font-extrabold text-[10px] tracking-wider py-1 px-3 rounded-md shadow-xs ${
+                isMobLife ? 'bg-gradient-to-r from-blue-600 to-indigo-600' : 'bg-orange-500'
+              }`}
+            >
+              {selPlan.badge}
+            </span>
+          )}
+          {isMobFree && (
+            <span className="absolute -top-3 left-5 bg-slate-900 dark:bg-slate-700 text-white font-extrabold text-[10px] tracking-wider py-1 px-3 rounded-md shadow-xs">
+              {t.currentPlan}
+            </span>
+          )}
+
+          <div>
+            <div className="font-extrabold text-lg sm:text-xl text-foreground">{selPlan.name}</div>
+            <div className="font-normal text-xs sm:text-sm leading-snug text-muted-foreground mt-1">
+              {selPlan.tag}
+            </div>
+          </div>
+
+          {/* Fiyat Alanı */}
+          <div className="flex flex-col gap-1">
+            {selPlan.old && (
+              <span className="font-semibold text-xs text-muted-foreground/60 line-through">
+                {selPlan.old}
+              </span>
+            )}
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <span className="font-extrabold text-3xl sm:text-4xl text-foreground tracking-tight">
+                {mobPrice}
+              </span>
+              {mobPer && <span className="font-semibold text-xs sm:text-sm text-muted-foreground">{mobPer}</span>}
+            </div>
+            <span className="text-xs text-muted-foreground">{mobNote}</span>
+          </div>
+
+          {/* Aylık / Yıllık Toggle (Temel veya Pro için) */}
+          {(isMobBasic || isMobPro) && (
+            <div
+              onClick={() => setPeriod(yr ? 'monthly' : 'yearly')}
+              className="flex bg-muted/60 border border-border rounded-xl p-1 font-bold text-xs cursor-pointer select-none"
+            >
+              <span
+                className={`flex-1 py-2 text-center rounded-lg transition-all ${
+                  !yr ? 'bg-card text-foreground shadow-xs' : 'text-muted-foreground'
+                }`}
+              >
+                {t.monthly}
+              </span>
+              <span
+                className={`flex-1 py-2 text-center rounded-lg transition-all ${
+                  yr ? 'bg-card text-foreground shadow-xs' : 'text-muted-foreground'
+                }`}
+              >
+                {t.yearly} · {t.save}
+              </span>
+            </div>
+          )}
+
+          {/* Özellik Listesi */}
+          <div className="flex flex-col gap-2.5 border-t border-border/80 pt-4">
+            {selPlan.feats.map((f, fIdx) => {
+              const isChecked = f[0] === '✓';
+              return (
+                <div
+                  key={fIdx}
+                  className={`flex gap-2.5 items-start text-xs sm:text-sm leading-snug font-medium ${
+                    isChecked ? 'text-foreground' : 'text-muted-foreground/60'
+                  }`}
+                >
+                  <span
+                    className={`font-extrabold flex-none ${
+                      isChecked ? 'text-primary' : 'text-muted-foreground/40'
+                    }`}
+                  >
+                    {f[0]}
+                  </span>
+                  <span>{f[1]}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Güven Rozeti */}
+        <div className="text-center font-semibold text-xs text-muted-foreground py-1">
+          ✓ {t.cancel} · ✓ {t.vat} · 🔒 {t.secure}
+        </div>
+
+        {/* Mobil Alt Yapışkan CTA Alanı */}
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-t border-border p-3 sm:p-4 shadow-lg lg:hidden flex flex-col gap-2">
+          <button
+            onClick={() => handlePlanClick(mobileTab)}
+            disabled={checkoutLoading || isMobFree}
+            className={`w-full text-center font-bold text-sm sm:text-base py-3 px-4 rounded-xl transition-all cursor-pointer shadow-sm ${
+              isMobFree
+                ? 'bg-muted text-muted-foreground border border-border cursor-default'
+                : isMobPro
+                ? 'bg-gradient-to-r from-[#2b7fff] to-[#5aa9ff] hover:from-[#2563eb] hover:to-[#3b82f6] text-white shadow-md'
+                : 'bg-primary text-primary-foreground'
+            }`}
+          >
+            {isMobFree ? selPlan.ctaCurrent : `${selPlan.cta} →`}
+          </button>
+          <div className="text-xs text-muted-foreground text-center">
+            {t.noCardNote}{' '}
+            <button
+              onClick={() => navigate('/terms')}
+              className="font-bold text-primary hover:underline cursor-pointer"
+            >
+              {t.startTrial}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ==================================================================== */}
+      {/* 2) MASAÜSTÜ GÖRÜNÜM (hidden lg:flex): 4'LÜ GENİŞ KART IZGARASI & TABLO */}
+      {/* ==================================================================== */}
+      <div className="hidden lg:flex w-full max-w-[1720px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-col gap-12 items-center">
         
         {/* Başlık ve Aylık / Yıllık Seçici */}
         <div className="text-center flex flex-col gap-3.5 items-center max-w-4xl w-full">
