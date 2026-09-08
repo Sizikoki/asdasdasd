@@ -1,23 +1,23 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { BookOpen, Gamepad2, CreditCard, Layers, BarChart3, LogOut, User, ArrowRight, Zap, Star, Flame } from 'lucide-react';
-import { getStats, getUser, getStreak, logout } from '@/utils/storage';
+import { getStats, getUser, getStreak, logout, formatTurkishName, getUserTrialState } from '@/utils/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth, db } from '@/firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
 import { openPaddleCheckout, PADDLE_PRICE_ID, IS_PAYMENT_ACTIVE } from '@/services/paddle';
 import { useLanguage } from '@/context/LanguageContext';
+import { TrialDashboardView } from '@/components/TrialDashboardView';
 import { toast } from 'sonner';
 
 // --- Abonelik Durumu Kontrolü (Esnek) ---
-// Firestore users/{uid} dokümanındaki aşağıdaki alanlardan herhangi biri
-// Pro'yu ifade ediyorsa kullanıcı Pro sayılır:
-//   - subscriptionStatus === 'active' | 'pro' | 'trialing'
-//   - isPro === true
+// Sadece aktif Pro üyeler tam paneli görür; free veya trial durumundaki
+// kullanıcılar TrialDashboardView bileşenine yönlendirilir.
 const resolveIsPro = (userData) => {
   if (!userData) return false;
   const status = userData.subscriptionStatus;
-  if (status === 'active' || status === 'pro' || status === 'trialing') return true;
+  if (status === 'trial' || status === 'trialing' || status === 'free') return false;
+  if (status === 'active' || status === 'pro') return true;
   if (userData.isPro === true) return true;
   return false;
 };
@@ -30,6 +30,7 @@ export const Dashboard = () => {
   // State
   const [firebaseUser, setFirebaseUser] = useState(null);
   const [authReady, setAuthReady] = useState(false);
+  const [firestoreData, setFirestoreData] = useState(null);
   const [isPro, setIsPro] = useState(false);
   const [subLoading, setSubLoading] = useState(true);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
@@ -59,7 +60,9 @@ export const Dashboard = () => {
       try {
         const snap = await getDoc(doc(db, 'users', uid));
         if (snap.exists()) {
-          setIsPro(resolveIsPro(snap.data()));
+          const data = snap.data();
+          setFirestoreData(data);
+          setIsPro(resolveIsPro(data));
         }
       } catch (err) {
         console.warn('[Dashboard] Could not fetch subscription status:', err);
@@ -73,21 +76,15 @@ export const Dashboard = () => {
   // Kullanıcı bilgileri
   const storedUser = getUser();
   const rawName =
+    firestoreData?.displayName ||
+    firestoreData?.name ||
     firebaseUser?.displayName ||
     storedUser?.name ||
     firebaseUser?.email?.split('@')[0] ||
     storedUser?.email?.split('@')[0] ||
     (isTr ? 'Kullanıcı' : 'User');
 
-  const formatName = (name) => {
-    if (!name) return '';
-    return name
-      .split(' ')
-      .map(w => w ? w.charAt(0).toLocaleUpperCase('tr-TR') + w.slice(1).toLocaleLowerCase('tr-TR') : '')
-      .join(' ');
-  };
-
-  const userName = formatName(rawName);
+  const userName = formatTurkishName(rawName);
   const stats = getStats();
   const streak = getStreak();
 
@@ -124,12 +121,17 @@ export const Dashboard = () => {
   }, [firebaseUser, storedUser, isTr]);
 
   // Loading State
-  if (!authReady) {
+  if (!authReady || subLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="w-7 h-7 border-2 border-primary border-t-transparent rounded-full animate-spin" />
       </div>
     );
+  }
+
+  // Kullanıcı durumu free/trial olduğunda TrialDashboardView bileşenini render et
+  if (!isPro) {
+    return <TrialDashboardView user={firebaseUser} userData={firestoreData} />;
   }
 
   // Quick Actions

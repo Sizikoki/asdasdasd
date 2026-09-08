@@ -67,6 +67,98 @@ export const incrementGuestPlay = () => {
   return canGuestPlay();
 };
 
+// ── Türkçe Karakter ve İsim Biçimlendirici ──────────────────────────────────────
+export const formatTurkishName = (name) => {
+  if (!name || typeof name !== 'string') return '';
+  const cleaned = name.replace(/[._-]+/g, ' ').trim();
+  const asciiTurkishMap = {
+    'cicek': 'Çiçek',
+    'siddik': 'Sıddık',
+    'ismail': 'İsmail',
+    'ilker': 'İlker',
+    'ilhan': 'İlhan',
+    'ilknur': 'İlknur',
+    'ilayda': 'İlayda',
+    'cetin': 'Çetin',
+    'caglar': 'Çağlar',
+    'can': 'Can',
+    'caner': 'Caner',
+    'cem': 'Cem',
+    'cemre': 'Cemre',
+    'ugur': 'Uğur',
+    'ozgur': 'Özgür',
+    'gokce': 'Gökçe',
+    'gokhan': 'Gökhan',
+    'baris': 'Barış',
+    'yagmur': 'Yağmur',
+    'sukru': 'Şükrü',
+    'senol': 'Şenol',
+    'sevval': 'Şevval',
+    'serife': 'Şerife',
+    'ayse': 'Ayşe',
+    'fatma': 'Fatma',
+    'zeynep': 'Zeynep',
+    'elif': 'Elif',
+    'omer': 'Ömer',
+    'osman': 'Osman',
+    'huseyin': 'Hüseyin',
+    'hasan': 'Hasan',
+    'ibrahim': 'İbrahim',
+    'mustafa': 'Mustafa',
+    'emre': 'Emre',
+    'burak': 'Burak',
+    'ahmet': 'Ahmet',
+    'mehmet': 'Mehmet',
+    'alper': 'Alper',
+    'alperen': 'Alperen'
+  };
+
+  return cleaned
+    .split(/\s+/)
+    .map(word => {
+      if (!word) return '';
+      const lower = word.toLowerCase();
+      if (asciiTurkishMap[lower]) {
+        return asciiTurkishMap[lower];
+      }
+      return word.charAt(0).toLocaleUpperCase('tr-TR') + word.slice(1).toLocaleLowerCase('tr-TR');
+    })
+    .join(' ');
+};
+
+// ── Kullanıcı 3 Günlük Deneme Durumu (Dinamik) ───────────────────────────────
+export const getUserTrialState = (currentUser) => {
+  const user = currentUser || getUser() || auth?.currentUser;
+  const storageKey = user?.uid ? `healthlex_trial_start_${user.uid}` : 'healthlex_user_trial_start';
+  let startTime = localStorage.getItem(storageKey);
+
+  if (!startTime) {
+    if (user?.joinDate || user?.metadata?.creationTime) {
+      startTime = new Date(user.joinDate || user.metadata.creationTime).getTime().toString();
+    } else {
+      startTime = Date.now().toString();
+    }
+    localStorage.setItem(storageKey, startTime);
+  }
+
+  const startMs = parseInt(startTime, 10) || Date.now();
+  const trialDurationMs = 3 * 24 * 60 * 60 * 1000;
+  const elapsedMs = Math.max(0, Date.now() - startMs);
+  const remainingMs = Math.max(0, trialDurationMs - elapsedMs);
+  const daysLeft = Math.max(1, Math.min(3, Math.ceil(remainingMs / (24 * 60 * 60 * 1000))));
+  const currentDay = Math.min(3, Math.max(1, 4 - daysLeft));
+  const endDate = new Date(startMs + trialDurationMs);
+
+  return {
+    startMs,
+    remainingMs,
+    daysLeft,
+    currentDay,
+    endDate,
+    isExpired: remainingMs <= 0
+  };
+};
+
 // User management
 export const saveUser = (userData) => {
   localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(userData));

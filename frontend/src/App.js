@@ -18,6 +18,7 @@ import { ProgressPage } from '@/pages/Progress';
 import { Profile } from '@/pages/Profile';
 import { Contact } from '@/pages/Contact';
 import { Legal } from '@/pages/Legal';
+import { Pricing } from '@/pages/Pricing';
 import { Welcome } from '@/pages/Welcome';
 import { syncProgressFromFirestore } from '@/utils/storage';
 import { auth } from '@/firebase/config';
@@ -109,6 +110,7 @@ function App() {
             <Route path="/morpheme-explorer" element={<MorphemeExplorer />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/iletisim" element={<Navigate to="/contact" replace />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/terms" element={<Legal activeDoc="terms" />} />
             <Route path="/privacy" element={<Legal activeDoc="privacy" />} />
             <Route path="/refund" element={<Legal activeDoc="refund" />} />

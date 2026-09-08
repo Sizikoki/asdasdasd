@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, User, LogOut, LayoutDashboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getUser, logout, isLoggedIn, getStats } from '@/utils/storage';
+import { getUser, logout, isLoggedIn, getStats, getUserTrialState, formatTurkishName } from '@/utils/storage';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/firebase/config';
 import { useLanguage } from '@/context/LanguageContext';
@@ -31,6 +31,12 @@ export const Navbar = () => {
   const loggedIn = !!firebaseUser || isLoggedIn();
   const user = getUser();
   const stats = loggedIn ? getStats() : null;
+  const trialState = getUserTrialState(user || firebaseUser);
+  const trialDaysLeft = trialState.daysLeft;
+  const formattedUserName = formatTurkishName(
+    firebaseUser?.displayName || user?.name || firebaseUser?.email?.split('@')[0] || user?.email?.split('@')[0]
+  );
+  const userInitial = (formattedUserName.charAt(0) || 'U').toLocaleUpperCase('tr-TR');
 
   const isActive = (path) => location.pathname === path;
 
@@ -44,13 +50,15 @@ export const Navbar = () => {
     window.location.href = '/login';
   };
 
-  // Giriş yapmış kullanıcılar için Dashboard linki öne eklendi
+  const isTr = currentLanguage !== 'en';
+
   const navLinks = loggedIn
     ? [
         { path: '/dashboard', label: t('dashboard', 'Panel'), icon: <LayoutDashboard className="w-3.5 h-3.5" /> },
         { path: '/study', label: t('study') },
         { path: '/morphemes', label: t('morphemes', 'Morfemler') },
         { path: '/games', label: t('games') },
+        { path: '/pricing', label: t('pricing', 'Tarifeler') },
         { path: '/progress', label: t('progress') },
       ]
     : [
@@ -58,6 +66,7 @@ export const Navbar = () => {
         { path: '/study', label: t('study') },
         { path: '/morphemes', label: t('morphemes', 'Morfemler') },
         { path: '/games', label: t('games') },
+        { path: '/pricing', label: t('pricing', 'Tarifeler') },
         { path: '/progress', label: t('progress') },
       ];
 
@@ -90,7 +99,7 @@ export const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border" data-purpose="main-header">
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1720px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo — giriş yapmış kullanıcıda /dashboard'a götürür */}
           <Link to={loggedIn ? '/dashboard' : '/'} className="flex items-center gap-2 flex-shrink-0">
@@ -129,12 +138,20 @@ export const Navbar = () => {
             {loggedIn ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <div className="flex items-center gap-[14px] cursor-pointer select-none">
-                    <div className="streak-badge flex items-center gap-[6px] bg-amber-500/10 border border-amber-500/30 px-[12px] py-[7px] rounded-[20px] font-semibold text-[0.85rem] text-amber-700 dark:text-amber-400">
-                      🔥 {stats?.currentStreak || 0} {t('daysStreak')}
-                    </div>
-                    <div className="avatar w-[36px] h-[36px] rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold text-[0.95rem]">
-                      {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                  <div className="flex items-center gap-[12px] cursor-pointer select-none">
+                    {trialState.currentDay >= 3 ? (
+                      <div className="trial-badge flex items-center gap-2 bg-[#fff4e6] dark:bg-amber-950/40 border border-[#ffe0b8] dark:border-amber-800 text-[#b45309] dark:text-amber-300 font-extrabold text-[13px] px-3 py-1.5 rounded-[9px] whitespace-nowrap shadow-xs">
+                        <span className="w-2 h-2 rounded-full bg-[#f97316] animate-pulse" />
+                        <span>{currentLanguage === 'en' ? 'Trial · Last day' : 'Deneme · Son gün'}</span>
+                      </div>
+                    ) : (
+                      <div className="trial-badge flex items-center gap-2 bg-[#e8f0fe] dark:bg-blue-950/40 border border-[#c7d9fb] dark:border-blue-800 text-[#1d4ed8] dark:text-blue-300 font-extrabold text-[13px] px-3 py-1.5 rounded-[9px] whitespace-nowrap shadow-xs">
+                        <span className="w-2 h-2 rounded-full bg-[#2563eb] animate-pulse" />
+                        <span>{currentLanguage === 'en' ? `Trial · ${trialDaysLeft} days left` : `Deneme · ${trialDaysLeft} gün kaldı`}</span>
+                      </div>
+                    )}
+                    <div className="avatar w-[36px] h-[36px] rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-[0.95rem] shadow-xs">
+                      {userInitial}
                     </div>
                   </div>
                 </DropdownMenuTrigger>
